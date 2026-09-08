@@ -7,7 +7,7 @@ const scenes = [
   {
     id: 'priestor',
     label: 'Tvoj priestor',
-    image: '/illustrations/priestor.webp',
+    image: '/photos/priestory.jpg',
     alt: 'Tréningový priestor Lady Fitness s posilňovacími strojmi a modrými sedadlami.',
     first: 'Tvoja sila.',
     last: 'Tvoj priestor.',
@@ -19,7 +19,7 @@ const scenes = [
   {
     id: 'pohyb',
     label: 'Tvoj pohyb',
-    image: '/illustrations/pohyb.webp',
+    image: '/photos/trening.jpg',
     alt: 'Ženy cvičia spoločne v priestoroch Lady Fitness.',
     first: 'Začni tam,',
     last: 'kde práve si.',
@@ -31,7 +31,7 @@ const scenes = [
   {
     id: 'komunita',
     label: 'Tvoja komunita',
-    image: '/illustrations/komunita.webp',
+    image: '/photos/komunita.jpg',
     alt: 'Komunitné stretnutie žien v Lady Fitness.',
     first: 'Spolu sa',
     last: 'hýbe ľahšie.',
@@ -191,7 +191,7 @@ export default function ScrollStory() {
               <img
                 className="story-art"
                 src={scene.image}
-                alt={`${scene.alt} Ilustrované spracovanie.`}
+                alt={scene.alt}
                 width={1672}
                 height={941}
                 fetchPriority={i === 0 ? 'high' : 'auto'}

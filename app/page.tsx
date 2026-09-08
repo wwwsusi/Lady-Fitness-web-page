@@ -64,8 +64,8 @@ export default function Home() {
           <div className="service-grid">
             <article className="service-card featured">
               <img
-                src="/illustrations/pohyb.webp"
-                alt="Ilustrovaná scéna spoločného tréningu v Lady Fitness"
+                src="/photos/trening.jpg"
+                alt="Ženy cvičia spoločne v priestoroch Lady Fitness"
                 loading="lazy"
                 width="960"
                 height="960"
@@ -441,8 +441,8 @@ export default function Home() {
           <div className="gallery">
             <figure>
               <img
-                src="/illustrations/priestor.webp"
-                alt="Ilustrovaný tréningový priestor Lady Fitness s posilňovacími strojmi"
+                src="/photos/vybavenie.jpg"
+                alt="Posilňovacie stroje a tréningový priestor Lady Fitness"
                 loading="lazy"
                 width="1440"
                 height="1440"
@@ -461,8 +461,8 @@ export default function Home() {
             </figure>
             <figure>
               <img
-                src="/illustrations/komunita.webp"
-                alt="Ilustrované komunitné stretnutie žien v Lady Fitness"
+                src="/photos/komunita.jpg"
+                alt="Komunitné stretnutie žien vo fitness centre"
                 loading="lazy"
                 width="960"
                 height="960"
