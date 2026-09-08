@@ -1024,6 +1024,11 @@ svg {
 .quote-strip { background: #fff5f7; border-color: #efd6de; }
 .quote-strip .trust-note { color: var(--purple); font-size: 14px; margin-top: 10px; }
 .booking-form, .practical { background: #fff2f5; }
+.contact-options { display:grid; gap:10px; margin-top:28px; }
+.contact-options a { display:grid; gap:4px; padding:16px 18px; border:1px solid #efd1db; border-radius:12px; background:#fff; transition:transform .2s ease, border-color .2s ease; }
+.contact-options a:hover { transform:translateX(4px); border-color:var(--purple); }
+.contact-options strong { color:var(--ink); font-size:16px; }
+.contact-options span { color:#777; font-size:14px; }
 .contact { background: var(--purple); }
 .story-top>p>span, .eyebrow:before { background: var(--purple); }
 .story-copy em { color: var(--purple); }

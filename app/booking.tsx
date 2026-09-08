@@ -21,6 +21,8 @@ const services = [
   'Záujem o seminár',
   'Spolupráca — mobilita seniorov',
 ];
+const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
+const MAP = 'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9';
 function messageFor(name: string, service: string, time: string) {
   return `Dobrý deň, mám záujem o: ${service}.${name ? ` Moje meno je ${name}.` : ''}${time ? ` Vyhovovalo by mi: ${time}.` : ''} Prosím o informácie a potvrdenie možností/termínu. Ďakujem.`;
 }
@@ -126,21 +128,19 @@ export default function Booking() {
       <div>
         <p className="eyebrow">Dohodni si návštevu</p>
         <h2>
-          Radšej napíšeš?
+          Vyber si svoj
           <br />
-          Priprav si správu.
+          spôsob kontaktu.
         </h2>
         <p className="booking-explainer">
-          Vyber službu a napíš, kedy by ti návšteva vyhovovala. Pripravíme SMS
-          pre Lady Fitness — odošleš ju zo svojho telefónu.
+          Príď osobne, zavolaj alebo nám napíš. Ak si chceš pripraviť správu,
+          generátor nájdeš hneď vedľa.
         </p>
-        <p className="booking-note">
-          Termín platí až po našom potvrdení. Pri pripravovaných programoch nám
-          takto môžeš oznámiť svoj záujem.
-        </p>
-        <a className="text-link" href="tel:+421908891961">
-          Alebo zavolaj: +421 908 891 961 ↗
-        </a>
+        <div className="contact-options">
+          <a href={MAP} target="_blank" rel="noreferrer"><strong>Príď osobne</strong><span>Hrnčiarska 11, Humenné ↗</span></a>
+          <a href="tel:+421908891961"><strong>Zavolaj</strong><span>+421 908 891 961 ↗</span></a>
+          <a href={FB} target="_blank" rel="noreferrer"><strong>Napíš správu</strong><span>Facebook Lady Fitness ↗</span></a>
+        </div>
       </div>
       <form
         className="booking-form"
