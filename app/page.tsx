@@ -555,9 +555,6 @@ export default function Home() {
                 Zisti aktuálnu cenu vstupu, tréningu alebo konzultácie priamo u
                 nás. Pomôžeme ti vybrať možnosť podľa tvojho záujmu.
               </p>
-              <a className="text-link" href="tel:+421908891961">
-                Informovať sa o cenách ↗
-              </a>
             </div>
           </div>
           <p className="first-step-bridge">
