@@ -16,7 +16,6 @@ const services = [
   'Osobný tréning',
   'Strava a poradenstvo',
   'Psychohygiena',
-  'Detská zumba vo fitku',
   'Detská zumba pre škôlku',
   'Záujem o pripravované kurzy',
   'Záujem o seminár',

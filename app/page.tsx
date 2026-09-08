@@ -16,7 +16,7 @@ export default function Home() {
       <header className="site-header">
         <div className="wrap topbar">
           <a className="brand" href="#" aria-label="Lady Fitness — úvod">
-            lady fitness<small>HUMENNÉ</small>
+            <span className="brand-mark" aria-hidden="true">LF</span><span>lady fitness</span><small>HUMENNÉ</small>
           </a>
           <nav className="nav" aria-label="Hlavná navigácia">
             {links.slice(0, 4).map(([href, text]) => (
@@ -170,18 +170,14 @@ export default function Home() {
                 <span className="chip">Najviac 25 detí</span>
               </div>
               <p>
-                <strong>50 € / lekcia pre škôlku.</strong> Lady Fitness
-                zabezpečí lektorku, obsah a hudbu. Škôlka poskytne vhodný
-                priestor, skupinu detí a dohodnutý termín. Službu fakturujeme
-                materskej škole.
+                Lady Fitness zabezpečí lektorku, obsah a hudbu. Škôlka poskytne
+                vhodný priestor, skupinu detí a dohodnutý termín. Kontaktujte
+                riaditeľa alebo riaditeľku vašej materskej školy a požiadajte
+                ich o spojenie s Lady Fitness.
               </p>
               <a className="button" href="#objednanie">
                 Chceme zumbu v našej škôlke <Arrow />
               </a>
-              <p className="small-copy">
-                Si rodič a hľadáš detskú zumbu vo fitku? Ozvi sa nám pre
-                aktuálne skupiny a termíny.
-              </p>
             </div>
           </div>
         </section>
@@ -501,8 +497,8 @@ export default function Home() {
         </section>
       </main>
       <footer className="wrap footer">
-        <a className="brand" href="#">
-          lady fitness<small>HUMENNÉ</small>
+          <a className="brand" href="#">
+          <span className="brand-mark" aria-hidden="true">LF</span><span>lady fitness</span><small>HUMENNÉ</small>
         </a>
         <p>© {new Date().getFullYear()} Lady Fitness Humenné</p>
         <a href="#kontakt">Kontakt</a>

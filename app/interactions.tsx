@@ -58,7 +58,7 @@ const faqs = [
   ],
   [
     'Pre aký vek je detská zumba?',
-    'Vekové zaradenie a voľné miesta ti potvrdíme podľa aktuálnej skupiny. Pri kontakte nám napíš vek dieťaťa a či máš záujem o lekciu vo fitku alebo spoluprácu s materskou školou.',
+    'Detskú zumbu organizujeme ako program pre materské školy. Ak máte záujem, kontaktujte riaditeľa alebo riaditeľku vašej materskej školy a požiadajte ich o spojenie s Lady Fitness.',
   ],
   [
     'Kedy začnú nové kurzy a mobilita pre seniorov?',

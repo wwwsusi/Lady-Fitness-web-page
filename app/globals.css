@@ -946,6 +946,54 @@ svg {
     transition: none !important;
   }
 }
+
+/* Final brand pass: one calm visual system, clearer hierarchy. */
+:root {
+  --purple: #7446c8;
+  --lime: #7446c8;
+  --primary: #7446c8;
+  --ink: #222126;
+  --background: #fbfbfa;
+}
+.brand { display: inline-grid; grid-template-columns: 34px auto; grid-template-rows: auto auto; column-gap: 10px; align-items: center; letter-spacing: -1.5px; }
+.brand-mark { grid-row: 1 / span 2; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--purple); color: white; font-size: 12px; font-weight: 800; letter-spacing: -.5px; transform: rotate(-7deg); }
+.brand > span:not(.brand-mark) { line-height: .9; }
+.brand small { grid-column: 2; margin-top: 5px; color: #777; letter-spacing: 3px; }
+.button.lime, .button.light { background: var(--purple); color: #fff; }
+.dark-section { background: #f0ecf8; color: var(--ink); }
+.dark-section .eyebrow:before { background: var(--purple); }
+.dark-section .section-head p, .course p { color: #666; }
+.course { border-color: #d2cbe2; background: rgba(255,255,255,.55); }
+.course small { color: var(--purple); }
+.course-foot p, .senior p { color: #666; }
+.senior { border-top-color: #d2cbe2; }
+.senior .eyebrow { color: var(--ink); }
+.mind { background: #eeeaf7; }
+.mind p { color: #555; }
+.service-card.featured { background: var(--ink); }
+.service-card.featured { background: #eeeaf7; color: var(--ink); }
+.service-card.featured p { color: #666; }
+.service-card.purple { background: #eeeaf7; }
+.big-icon { color: var(--purple); }
+.quote-strip { background: #f3f1f6; border-color: #e0dce8; }
+.booking-form, .practical { background: #f1eff4; }
+.contact { background: var(--purple); }
+.story-top>p>span, .eyebrow:before { background: var(--purple); }
+.story-copy em { color: var(--purple); }
+.story-progress { background: var(--purple); }
+.story-bottom button[aria-current='step'] { background: var(--purple); }
+.story-bottom button[aria-current='step'] span { color: #fff; }
+.story-trust .trust { border-bottom-color: #ddd9e4; }
+.section h2, .booking-section h2, .faq-section h2 { font-size: clamp(42px, 4.4vw, 66px); }
+.section p, .service-body p, .split-copy p, .course p, .step p, .practical p, .booking-explainer { font-size: 16px; }
+.section-head p, .hero-intro p, .story-description { font-size: 17px; }
+.small-copy { margin-top: 18px; }
+@media (max-width: 760px) {
+  .brand { font-size: 23px; }
+  .brand-mark { width: 30px; height: 30px; font-size: 11px; }
+  .section h2, .booking-section h2, .faq-section h2 { font-size: 42px; }
+  .section p, .service-body p, .split-copy p, .course p, .step p, .practical p, .booking-explainer { font-size: 16px; }
+}
 .education-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
