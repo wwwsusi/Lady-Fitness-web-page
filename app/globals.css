@@ -23,6 +23,19 @@
   --lime: #d2ff4b;
   --purple: #784bd7;
 }
+/* Page flow: future programs follow the core offer, spaces and founder story. */
+main#obsah { display:flex; flex-direction:column; }
+main#obsah > #ponuka { order:1; }
+main#obsah > #doplnky { order:2; }
+main#obsah > #o-nas { order:3; }
+main#obsah > #zumba { order:4; }
+main#obsah > #prva-navsteva { order:5; }
+main#obsah > #priestory { order:6; }
+main#obsah > #seminare { order:7; }
+main#obsah > #kurzy { order:8; }
+main#obsah > .faq-section { order:9; }
+main#obsah > .booking-section { order:10; }
+main#obsah > #kontakt { order:11; }
 * {
   box-sizing: border-box;
 }
