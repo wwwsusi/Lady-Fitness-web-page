@@ -964,6 +964,24 @@ svg {
   }
 }
 
+/* Typography audit pass: fewer scales, stronger reading sizes, calmer rhythm. */
+.nav { font-size: 14px; }
+.eyebrow { font-size: 13px; letter-spacing: 1.5px; }
+h1, h2, h3 { line-height: 1.1; letter-spacing: -0.04em; }
+.section h2, .booking-section h2, .faq-section h2 { font-size: clamp(42px, 4.4vw, 66px); }
+.service-body h3, .course h3, .education-grid h3, .sms-preview h3 { font-size: 28px; }
+.service-body p, .course p, .step p, .practical p, .education-grid p { font-size: 16px; }
+.text-link, .card-link { font-size: 15px; }
+.supplement-item span, .practical-grid span, .founder-facts small { font-size: 14px; }
+.supplement-list small, .booking-note { font-size: 14px; }
+.contact-options span { font-size: 15px; }
+.pricing-grid h3 { font-size: 26px; }
+@media (min-width: 761px) and (max-width: 1100px) { .nav { font-size: 14px; gap: 12px; } }
+@media (max-width: 760px) {
+  .eyebrow { font-size: 12px; letter-spacing: 1.25px; }
+  .section h2, .booking-section h2, .faq-section h2 { font-size: 42px; }
+}
+
 .supplement-card { display:grid; grid-template-columns:70px 1.25fr .8fr; gap:35px; align-items:center; padding:42px; border:1px solid #ded9e7; border-radius:22px; background:#f2eff7; }
 .supplement-symbol { display:grid; place-items:center; width:58px; height:58px; border-radius:16px; background:var(--purple); color:white; }
 .supplement-card h2 { margin:20px 0; }
