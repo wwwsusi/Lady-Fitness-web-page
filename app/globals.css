@@ -994,38 +994,40 @@ svg {
 
 /* Final brand pass: one calm visual system, clearer hierarchy. */
 :root {
-  --purple: #7446c8;
-  --lime: #7446c8;
-  --primary: #7446c8;
+  --purple: #e8849f;
+  --lime: #e8849f;
+  --primary: #e8849f;
   --ink: #222126;
-  --background: #fbfbfa;
+  --background: #fffafb;
 }
-.brand { display: inline-grid; grid-template-columns: 34px auto; grid-template-rows: auto auto; column-gap: 10px; align-items: center; letter-spacing: -1.5px; }
+.brand { display:block; letter-spacing: -1.5px; }
+.brand img { display:block; width:148px; height:auto; object-fit:contain; }
 .brand-mark { grid-row: 1 / span 2; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--purple); color: white; font-size: 12px; font-weight: 800; letter-spacing: -.5px; transform: rotate(-7deg); }
 .brand > span:not(.brand-mark) { line-height: .9; }
 .brand small { grid-column: 2; margin-top: 5px; color: #777; letter-spacing: 3px; }
 .button.lime, .button.light { background: var(--purple); color: #fff; }
-.dark-section { background: #f0ecf8; color: var(--ink); }
+.dark-section { background: #fff0f4; color: var(--ink); }
 .dark-section .eyebrow:before { background: var(--purple); }
 .dark-section .section-head p, .course p { color: #666; }
-.course { border-color: #d2cbe2; background: rgba(255,255,255,.55); }
+.course { border-color: #efcbd6; background: rgba(255,255,255,.7); }
 .course small { color: var(--purple); }
 .course-foot p, .senior p { color: #666; }
 .senior { border-top-color: #d2cbe2; }
 .senior .eyebrow { color: var(--ink); }
-.mind { background: #eeeaf7; }
+.mind { background: #fff0f4; }
 .mind p { color: #555; }
 .service-card.featured { background: var(--ink); }
-.service-card.featured { background: #eeeaf7; color: var(--ink); }
+.service-card.featured { background: #fff0f4; color: var(--ink); }
 .service-card.featured p { color: #666; }
-.service-card.purple { background: #eeeaf7; }
+.service-card.purple { background: #fff0f4; }
 .big-icon { color: var(--purple); }
-.quote-strip { background: #f3f1f6; border-color: #e0dce8; }
+.quote-strip { background: #fff5f7; border-color: #efd6de; }
 .quote-strip .trust-note { color: var(--purple); font-size: 14px; margin-top: 10px; }
-.booking-form, .practical { background: #f1eff4; }
+.booking-form, .practical { background: #fff2f5; }
 .contact { background: var(--purple); }
 .story-top>p>span, .eyebrow:before { background: var(--purple); }
 .story-copy em { color: var(--purple); }
+.story-art { filter: hue-rotate(55deg) saturate(.82); }
 .story-progress { background: var(--purple); }
 .story-bottom button[aria-current='step'] { background: var(--purple); }
 .story-bottom button[aria-current='step'] span { color: #fff; }

@@ -16,7 +16,7 @@ export default function Home() {
       <header className="site-header">
         <div className="wrap topbar">
           <a className="brand" href="#" aria-label="Lady Fitness — úvod">
-            <span className="brand-mark" aria-hidden="true">LF</span><span>lady fitness</span><small>HUMENNÉ</small>
+            <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
           </a>
           <nav className="nav" aria-label="Hlavná navigácia">
             {links.slice(0, 6).map(([href, text]) => (
@@ -589,7 +589,7 @@ export default function Home() {
       </main>
       <footer className="wrap footer">
           <a className="brand" href="#">
-          <span className="brand-mark" aria-hidden="true">LF</span><span>lady fitness</span><small>HUMENNÉ</small>
+          <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
         </a>
         <p>© {new Date().getFullYear()} Lady Fitness Humenné</p>
         <a href="#kontakt">Kontakt</a>
