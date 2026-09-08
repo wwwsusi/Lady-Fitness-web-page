@@ -171,6 +171,62 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section id="o-nas" className="wrap section founder-section">
+          <div className="founder-grid">
+            <div className="founder-photo-wrap">
+              <img
+                className="founder-photo"
+                src="/photos/trenerka.jpg"
+                alt="Trénerka Lady Fitness v priestoroch fitka"
+                loading="lazy"
+                width="1006"
+                height="1563"
+              />
+            </div>
+            <div className="founder-copy">
+              <p className="eyebrow">TVOJ ČLOVEK V POHYBE</p>
+              <h2>Fitko, ktoré vzniklo z lásky k pohybu.</h2>
+              <p>
+                Lady Fitness založila trénerka s rokmi skúseností, viacerými
+                certifikátmi a osobným prístupom ku každej žene. Po skúsenostiach
+                v iných fitness centrách si vytvorila vlastný priestor, kde môže
+                robiť veci po svojom — pokojne, odborne a s rešpektom.
+              </p>
+              <p>
+                Od začiatku chcela vytvoriť fitko iba pre ženy: miesto, kde sa
+                môžeš učiť, posilňovať a cítiť sa dobre bez porovnávania.
+              </p>
+              <div className="founder-facts">
+                <span><strong>21. 1. 2019</strong><small>otvorenie Lady Fitness</small></span>
+                <span><strong>6:00 – 20:00</strong><small>otvorené každý deň</small></span>
+              </div>
+            </div>
+          </div>
+          <div className="trust-grid">
+            <div>
+              <p className="eyebrow">HLAS KLIENTOK</p>
+              <h3>Atmosféra, ku ktorej sa chceš vracať.</h3>
+              <p>
+                „Príjemné super ľudia a človek sa tam cíti ako doma.“
+              </p>
+              <p>
+                „Pani, ktorá je veľmi zlatá a poradí, ako správne cvičiť.“
+              </p>
+              <p>
+                „Super atmosféra, super trénerka.“
+              </p>
+              <small>Referencie klientok z verejných odporúčaní na Facebooku.</small>
+            </div>
+            <img
+              className="testimonial-shot"
+              src="/photos/referencie.png"
+              alt="Verejné odporúčania klientok pre Lady Fitness na Facebooku"
+              loading="lazy"
+              width="1212"
+              height="1270"
+            />
+          </div>
+        </section>
         <section id="zumba" className="wrap section" style={{ paddingTop: 0 }}>
           <div className="split">
             <img
