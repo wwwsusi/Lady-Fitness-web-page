@@ -25,10 +25,10 @@
 }
 /* Page flow: future programs follow the core offer, spaces and founder story. */
 main#obsah { display:flex; flex-direction:column; }
-main#obsah > #ponuka { order:1; }
-main#obsah > #doplnky { order:2; }
-main#obsah > #cennik { order:3; }
-main#obsah > #o-nas { order:4; }
+main#obsah > #o-nas { order:1; }
+main#obsah > #ponuka { order:2; }
+main#obsah > #doplnky { order:3; }
+main#obsah > #cennik { order:4; }
 main#obsah > #zumba { order:5; }
 main#obsah > #prva-navsteva { order:6; }
 main#obsah > .booking-section { order:7; }
