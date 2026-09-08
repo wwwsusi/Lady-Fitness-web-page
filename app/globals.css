@@ -1071,6 +1071,10 @@ svg {
 .section p, .service-body p, .split-copy p, .course p, .step p, .practical p, .booking-explainer { font-size: 16px; }
 .section-head p, .hero-intro p, .story-description { font-size: 17px; }
 .small-copy { margin-top: 18px; }
+.story-art { filter: none; }
+.booking-form-intro { display:grid; gap:6px; margin-bottom:24px; padding-bottom:18px; border-bottom:1px solid #efd6de; }
+.booking-form-intro strong { color:var(--ink); font-size:20px; }
+.booking-form-intro span { color:#666; font-size:15px; line-height:1.45; }
 @media (max-width: 760px) {
   .brand { font-size: 23px; }
   .brand-mark { width: 30px; height: 30px; font-size: 11px; }

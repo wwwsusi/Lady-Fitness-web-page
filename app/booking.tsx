@@ -150,6 +150,10 @@ export default function Booking() {
           setNotice('Návrh je pripravený. Správa ešte nebola odoslaná.');
         }}
       >
+        <div className="booking-form-intro">
+          <strong>Oslov nás cez správu</strong>
+          <span>Priprav správu a pošli ju cez SMS alebo Facebook Messenger.</span>
+        </div>
         <label htmlFor="visit-service">O čo máš záujem?</label>
         <Select
           value={service}
@@ -203,7 +207,7 @@ export default function Booking() {
           aplikácii; nepíš sem zdravotné informácie.
         </p>
         <button className="button" type="submit">
-          Pripraviť SMS ↗
+          Pripraviť správu ↗
         </button>
         {message && (
           <div className="sms-preview">
