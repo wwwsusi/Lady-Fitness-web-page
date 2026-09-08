@@ -1001,7 +1001,7 @@ svg {
   --background: #fffafb;
 }
 .brand { display:block; letter-spacing: -1.5px; }
-.brand img { display:block; width:148px; height:auto; object-fit:contain; }
+.brand img { display:block; width:180px; height:72px; object-fit:contain; object-position:left center; }
 .brand-mark { grid-row: 1 / span 2; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--purple); color: white; font-size: 12px; font-weight: 800; letter-spacing: -.5px; transform: rotate(-7deg); }
 .brand > span:not(.brand-mark) { line-height: .9; }
 .brand small { grid-column: 2; margin-top: 5px; color: #777; letter-spacing: 3px; }

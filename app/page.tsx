@@ -189,8 +189,7 @@ export default function Home() {
                 robiť veci po svojom — pokojne, odborne a s rešpektom.
               </p>
               <p>
-                Lady Fitness funguje v Humennom od roku 2019 a počas rokov si
-                vybudovalo komunitu spokojných klientok.
+                Lady Fitness funguje v Humennom od roku 2019.
               </p>
               <p>
                 Od začiatku chcela vytvoriť fitko iba pre ženy: miesto, kde sa
