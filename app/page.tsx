@@ -144,7 +144,7 @@ export default function Home() {
         </section>
         <section id="doplnky" className="wrap section supplement-section">
           <div className="supplement-card">
-            <div className="supplement-symbol" aria-hidden="true">+</div>
+            <div className="supplement-symbol" aria-hidden="true"><Dumbbell size={29} strokeWidth={1.5} /></div>
             <div>
               <p className="eyebrow">Doplnky stravy</p>
               <h2>Vyberaj si<br />s rozumom.</h2>
@@ -153,19 +153,21 @@ export default function Home() {
                 doplniť tvoj režim, tréning a starostlivosť o seba — nenahrádzajú
                 pestrú stravu ani odbornú zdravotnú starostlivosť.
               </p>
-              <p className="supplement-note">
-                Ako klientka Lady Fitness máš na vybrané doplnky zvýhodnené ceny.
-                O aktuálnej ponuke a cenách sa informuj priamo na recepcii vo fitku.
-              </p>
-              <a className="button" href="https://prosupplements.sk" target="_blank" rel="noreferrer">
-                Pozrieť ProSupplements <Arrow />
-              </a>
+              <div className="supplement-discount-banner">
+                <p>
+                  Ako klientka Lady Fitness máš na vybrané doplnky zvýhodnené ceny.
+                  O aktuálnej ponuke a cenách sa informuj priamo na recepcii vo fitku.
+                </p>
+              </div>
             </div>
             <div className="supplement-side">
               <img className="supplement-product" src="/products/pro8.png" alt="Pro8 od ProSupplements" loading="lazy" width="484" height="724" />
               <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
-                <span>PRO 8</span><span>PRO Magnesium</span><span>PRO Liver</span><span>NAD+</span>
-                <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode ProSupplements.</small>
+                <div className="supplement-item"><strong>PRO 8</strong><span>Esenciálne aminokyseliny pre regeneráciu a svaly.</span></div>
+                <div className="supplement-item"><strong>PRO Magnesium</strong><span>Horčík pre nervový systém a normálnu funkciu svalov.</span></div>
+                <div className="supplement-item"><strong>PRO Liver</strong><span>Doplnok zameraný na starostlivosť o pečeň.</span></div>
+                <div className="supplement-item"><strong>NAD+</strong><span>Doplnok pre energiu a bunkový metabolizmus.</span></div>
+                <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode ProSupplements a viac info o produktoch.</small>
               </div>
             </div>
           </div>
