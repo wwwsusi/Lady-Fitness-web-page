@@ -36,6 +36,7 @@ main#obsah > #kurzy { order:8; }
 main#obsah > .faq-section { order:9; }
 main#obsah > .booking-section { order:10; }
 main#obsah > #kontakt { order:11; }
+.nav { gap:20px; font-size:13px; }
 * {
   box-sizing: border-box;
 }

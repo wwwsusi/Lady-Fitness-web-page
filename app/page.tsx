@@ -19,7 +19,7 @@ export default function Home() {
             <span className="brand-mark" aria-hidden="true">LF</span><span>lady fitness</span><small>HUMENNÉ</small>
           </a>
           <nav className="nav" aria-label="Hlavná navigácia">
-            {links.slice(0, 5).map(([href, text]) => (
+            {links.slice(0, 6).map(([href, text]) => (
               <a href={href} key={href}>
                 {text}
               </a>
