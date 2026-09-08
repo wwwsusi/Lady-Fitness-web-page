@@ -1,8 +1,9 @@
 export const links = [
   ['#ponuka', 'Cvičenie'],
   ['#zumba', 'Detská zumba'],
-  ['#seminare', 'Seminár'],
-  ['#kurzy', 'Nové programy'],
+  ['#seminare', 'Vzdelávanie'],
+  ['#doplnky', 'Doplnky stravy'],
+  ['#kurzy', 'Pripravujeme'],
   ['#prva-navsteva', 'Prvá návšteva'],
   ['#objednanie', 'Objednanie'],
   ['#kontakt', 'Kontakt'],

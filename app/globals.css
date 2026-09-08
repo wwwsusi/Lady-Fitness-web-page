@@ -935,6 +935,16 @@ svg {
     flex: 0.8;
   }
 }
+
+.supplement-card { display:grid; grid-template-columns:70px 1.25fr .8fr; gap:35px; align-items:center; padding:42px; border:1px solid #ded9e7; border-radius:22px; background:#f2eff7; }
+.supplement-symbol { display:grid; place-items:center; width:58px; height:58px; border-radius:16px; background:var(--purple); color:white; font-size:42px; font-weight:300; line-height:1; }
+.supplement-card h2 { margin:20px 0; }
+.supplement-lead { max-width:560px; color:#555; font-size:17px; margin-bottom:25px; }
+.supplement-list { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-items:center; }
+.supplement-list span { padding:10px 14px; border:1px solid #cfc7df; border-radius:99px; background:#fff; font-size:14px; }
+.supplement-list small { width:100%; text-align:right; color:#666; font-size:13px; line-height:1.5; margin-top:12px; }
+@media (max-width: 900px) { .supplement-card { grid-template-columns:58px 1fr; } .supplement-list { grid-column:2; justify-content:flex-start; } .supplement-list small { text-align:left; } }
+@media (max-width: 760px) { .supplement-card { grid-template-columns:1fr; gap:20px; padding:26px; } .supplement-list { grid-column:auto; } }
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -19,7 +19,7 @@ export default function Home() {
             <span className="brand-mark" aria-hidden="true">LF</span><span>lady fitness</span><small>HUMENNÉ</small>
           </a>
           <nav className="nav" aria-label="Hlavná navigácia">
-            {links.slice(0, 4).map(([href, text]) => (
+            {links.slice(0, 5).map(([href, text]) => (
               <a href={href} key={href}>
                 {text}
               </a>
@@ -140,6 +140,27 @@ export default function Home() {
             <a className="text-link" href="#seminare">
               Spoznaj pripravované témy ↗
             </a>
+          </div>
+        </section>
+        <section id="doplnky" className="wrap section supplement-section">
+          <div className="supplement-card">
+            <div className="supplement-symbol" aria-hidden="true">+</div>
+            <div>
+              <p className="eyebrow">Doplnky stravy</p>
+              <h2>Vyberaj si<br />s rozumom.</h2>
+              <p className="supplement-lead">
+                V Lady Fitness nájdeš aj vybrané doplnky ProSupplements. Môžu
+                doplniť tvoj režim, tréning a starostlivosť o seba — nenahrádzajú
+                pestrú stravu ani odbornú zdravotnú starostlivosť.
+              </p>
+              <a className="button" href="https://prosupplements.sk" target="_blank" rel="noreferrer">
+                Pozrieť ProSupplements <Arrow />
+              </a>
+            </div>
+            <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
+              <span>PRO 8</span><span>PRO Magnesium</span><span>PRO Liver</span><span>NAD+</span>
+              <small>Aktuálnu dostupnosť a ceny nájdeš v obchode ProSupplements.</small>
+            </div>
           </div>
         </section>
         <section id="zumba" className="wrap section" style={{ paddingTop: 0 }}>
