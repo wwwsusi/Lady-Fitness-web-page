@@ -220,6 +220,7 @@ export default function Home() {
           <div className="practical-grid" aria-label="Praktické informácie">
             <div><strong>6:00 – 20:00</strong><span>otvorené každý deň</span></div>
             <div><strong>Parkovanie zdarma</strong><span>pohodlne zaparkuješ pri fitku</span></div>
+            <div><strong>Vstup na poschodí</strong><span>Lady Fitness nájdeš na poschodí</span></div>
             <div><strong>Šatňa a sprchy</strong><span>komfort pred aj po tréningu</span></div>
             <div><strong>Pre každú ženu</strong><span>bez ohľadu na vek či skúsenosti</span></div>
           </div>
