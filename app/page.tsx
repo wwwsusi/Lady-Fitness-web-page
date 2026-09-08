@@ -199,7 +199,7 @@ export default function Home() {
               />
             </div>
             <div className="founder-copy">
-              <p className="eyebrow">TVOJ ČLOVEK V POHYBE</p>
+              <p className="eyebrow">MÔJ PRÍBEH</p>
               <h2>Fitko, ktoré vzniklo z lásky k pohybu.</h2>
               <p>
                 Lady Fitness založila trénerka s rokmi skúseností, viacerými
