@@ -202,6 +202,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="practical-grid" aria-label="Praktické informácie">
+            <div><strong>6:00 – 20:00</strong><span>otvorené každý deň</span></div>
+            <div><strong>Parkovanie zdarma</strong><span>pohodlne zaparkuješ pri fitku</span></div>
+            <div><strong>Šatňa a sprchy</strong><span>komfort pred aj po tréningu</span></div>
+            <div><strong>Pre každú ženu</strong><span>bez ohľadu na vek či skúsenosti</span></div>
+          </div>
           <div className="trust-grid">
             <div>
               <p className="eyebrow">HLAS KLIENTOK</p>

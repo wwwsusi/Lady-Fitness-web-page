@@ -953,6 +953,10 @@ svg {
 .founder-facts span { display:grid; gap:4px; }
 .founder-facts strong { font-size:22px; color:var(--ink); }
 .founder-facts small { color:#777; font-size:13px; }
+.practical-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:48px; }
+.practical-grid > div { display:grid; gap:7px; padding:20px; border:1px solid #e0dce8; border-radius:14px; background:#f7f5fa; }
+.practical-grid strong { font-size:16px; color:var(--ink); }
+.practical-grid span { color:#777; font-size:13px; line-height:1.4; }
 .trust-grid { display:grid; grid-template-columns:1fr .8fr; gap:52px; align-items:center; margin-top:90px; padding-top:60px; border-top:1px solid #e0dce8; }
 .trust-grid h3 { margin:18px 0 22px; font-size:clamp(28px,3vw,44px); }
 .trust-grid p:not(.eyebrow) { color:#4f4d55; font-size:18px; line-height:1.5; margin:16px 0; }
@@ -960,7 +964,8 @@ svg {
 .testimonial-shot { display:block; width:100%; max-height:520px; object-fit:cover; object-position:top; border-radius:18px; border:1px solid #e0dce8; }
 @media (max-width: 900px) { .supplement-card { grid-template-columns:58px 1fr; } .supplement-list { grid-column:2; justify-content:flex-start; } .supplement-list small { text-align:left; } }
 @media (max-width: 760px) { .supplement-card { grid-template-columns:1fr; gap:20px; padding:26px; } .supplement-list { grid-column:auto; } }
-@media (max-width: 760px) { .founder-grid, .trust-grid { grid-template-columns:1fr; gap:28px; } .founder-photo { height:430px; } .trust-grid { margin-top:60px; padding-top:42px; } .founder-facts { gap:24px; flex-wrap:wrap; } }
+@media (max-width: 900px) { .practical-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width: 760px) { .founder-grid, .trust-grid { grid-template-columns:1fr; gap:28px; } .founder-photo { height:430px; } .trust-grid { margin-top:60px; padding-top:42px; } .founder-facts { gap:24px; flex-wrap:wrap; } .practical-grid { grid-template-columns:1fr; } }
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
