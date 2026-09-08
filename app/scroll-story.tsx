@@ -26,7 +26,7 @@ const scenes = [
     description:
       'Vlastné tempo. Prvý tréning aj nový cieľ. Daj pohybu miesto vo svojom každodennom živote.',
     cta: 'Dohodni si prvý krok',
-    href: '#objednanie',
+    href: '#prva-navsteva',
   },
   {
     id: 'komunita',

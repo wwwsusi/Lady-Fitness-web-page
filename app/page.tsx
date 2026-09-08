@@ -25,7 +25,7 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <a className="button desktop-cta" href="#objednanie">
+          <a className="button desktop-cta" href="#prva-navsteva">
             Poďme začať <Arrow />
           </a>
           <MobileMenu />
