@@ -228,7 +228,7 @@ export default function ScrollStory() {
           ))}
         </div>
         <div className="story-bottom">
-          <nav aria-label="Kapitoly príbehu">
+          <nav className="banner-template" aria-label="Kapitoly príbehu">
             {scenes.map((scene, i) => (
               <button
                 type="button"

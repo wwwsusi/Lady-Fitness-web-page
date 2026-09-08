@@ -129,7 +129,7 @@ export default function Home() {
               </div>
             </article>
           </div>
-          <div className="quote-strip">
+          <div className="quote-strip banner-template">
             <div>
               <h3>Rozumieť telu. Lepšie sa rozhodovať.</h3>
               <p>
@@ -532,7 +532,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div id="rozvrh" className="practical">
+          <div id="rozvrh" className="practical banner-template">
             <div>
               <h3>Rozvrh & otváracie hodiny</h3>
               <p>

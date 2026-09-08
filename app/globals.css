@@ -996,6 +996,16 @@ svg {
 @media (max-width: 1100px) { .practical-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width: 760px) { .founder-grid, .trust-grid { grid-template-columns:1fr; gap:28px; } .founder-photo { height:430px; } .trust-grid { margin-top:60px; padding-top:42px; } .founder-facts { gap:24px; flex-wrap:wrap; } .practical-grid { grid-template-columns:1fr; } }
 @media (max-width: 760px) { .pricing-grid { grid-template-columns:1fr; } }
+
+/* Shared banner surface: one visual language for navigation and information strips. */
+.banner-template {
+  border: 1px solid #efd6de;
+  border-radius: 18px;
+  background: #fff5f7;
+}
+.quote-strip.banner-template { padding: 25px 30px; }
+.practical.banner-template { padding: 35px; }
+.story-bottom nav.banner-template { background: #fff5f7e8; }
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1587,17 +1597,15 @@ svg {
 .story-bottom nav {
   display: flex;
   gap: 10px;
-  background: #fffdf7e0;
-  padding: 5px;
-  border: 1px solid #2222;
-  border-radius: 99px;
+  padding: 7px;
+  border-radius: 18px;
   backdrop-filter: blur(12px);
 }
 .story-bottom button {
   background: transparent;
-  border: 0;
-  border-radius: 99px;
-  padding: 11px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 13px 16px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -1610,11 +1618,11 @@ svg {
   color: #777;
 }
 .story-bottom button[aria-current='step'] {
-  background: #27242d;
-  color: white;
+  background: var(--purple);
+  color: #fff;
 }
 .story-bottom button[aria-current='step'] span {
-  color: #d2ff4b;
+  color: #fff;
 }
 .scroll-hint {
   display: flex;
@@ -1696,7 +1704,7 @@ svg {
   text-decoration: underline;
 }
 .story-bottom button:hover {
-  background: #e8e3ee;
+  background: #fff0f4;
 }
 @media (min-width: 1700px) {
   .story-copy h1,
