@@ -217,12 +217,13 @@ export default function Home() {
               </p>
               <div className="founder-facts">
                 <span><strong>Od 2019</strong><small>Lady Fitness v Humennom</small></span>
-                <span><strong>6:00 – 20:00</strong><small>otvorené každý deň</small></span>
+                <span><strong>Po–Pi 6:00 – 19:30</strong><small>otvorené</small></span>
+                <span><strong>So–Ne 8:00 – 16:30</strong><small>otvorené</small></span>
               </div>
             </div>
           </div>
           <div className="practical-grid" aria-label="Praktické informácie">
-            <div><strong>6:00 – 20:00</strong><span>otvorené každý deň</span></div>
+            <div><strong>Po–Pi 6:00 – 19:30</strong><span>otvorené</span><strong>So–Ne 8:00 – 16:30</strong></div>
             <div><strong>Parkovanie zdarma</strong><span>pohodlne zaparkuješ pri fitku</span></div>
             <div><strong>Vstup na poschodí</strong><span>Lady Fitness nájdeš na poschodí</span></div>
             <div><strong>Šatňa a sprchy</strong><span>komfort pred aj po tréningu</span></div>
@@ -538,7 +539,7 @@ export default function Home() {
             <div>
               <h3>Rozvrh & otváracie hodiny</h3>
               <p>
-                Otvorené máme každý deň od 6:00 do 20:00. Aktuálne časy cvičení
+                Otvorené máme pondelok až piatok od 6:00 do 19:30 a v sobotu a nedeľu od 8:00 do 16:30. Aktuálne časy cvičení
                 a prípadné zmeny nájdeš na Facebooku. Pred prvou lekciou si s
                 nami potvrď termín.
               </p>
