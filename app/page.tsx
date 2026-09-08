@@ -2,6 +2,7 @@ import { ArrowUpRight, Dumbbell, Heart, MoveUpRight } from 'lucide-react';
 import { MobileMenu, Faq } from './interactions';
 import { links } from './navigation';
 import Booking from './booking';
+import ScrollStory from './scroll-story';
 const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
 const MAP =
   'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9';
@@ -31,63 +32,22 @@ export default function Home() {
         </div>
       </header>
       <main id="obsah">
-        <section className="wrap hero">
-          <div className="hero-top">
-            <p className="eyebrow">Dámske fitness · Humenné</p>
-            <h1 className="hero-title">
-              Tvoja sila.
-              <br />
-              Tvoj <em>priestor.</em>
-            </h1>
-            <div className="hero-intro">
-              <p>
-                Vypni svet. Zapni seba. Pohyb, podpora a čas pre teba — v kruhu
-                žien, ktoré ti rozumejú.
-              </p>
-              <div className="hero-actions">
-                <a className="button" href="#prva-navsteva">
-                  Chcem začať <Arrow />
-                </a>
-                <a className="text-link" href="#ponuka">
-                  Spoznaj Lady Fitness ↓
-                </a>
-              </div>
+        <ScrollStory />
+        <div className="story-trust">
+          <div className="wrap">
+            <div className="trust">
+              <span>
+                <b>Fitness pre ženy</b> v každom veku
+              </span>
+              <span>
+                <b>Vlastné tempo.</b> Spoločná energia.
+              </span>
+              <span>
+                <b>Hrnčiarska 11</b> · Humenné
+              </span>
             </div>
           </div>
-          <div className="hero-photo">
-            <img
-              src="/photos/priestory.jpg"
-              alt="Svetlé priestory Lady Fitness Humenné s drevenou podlahou a posilňovacími strojmi"
-              fetchPriority="high"
-              width="1440"
-              height="1440"
-            />
-            <div className="photo-shade" />
-            <div className="photo-caption">
-              <p>
-                Miesto, kde sa
-                <br />
-                môžeš cítiť sama sebou.
-              </p>
-              <small>Hrnčiarska 11 · Humenné</small>
-            </div>
-            <div className="round-stamp">
-              <strong>TY.</strong>
-              <span>Tu si prioritou.</span>
-            </div>
-          </div>
-          <div className="trust">
-            <span>
-              <b>Fitness pre ženy</b> v každom veku
-            </span>
-            <span>
-              <b>Vlastné tempo.</b> Spoločná energia.
-            </span>
-            <span>
-              <b>Hrnčiarska 11</b> · Humenné
-            </span>
-          </div>
-        </section>
+        </div>
         <section id="ponuka" className="section wrap">
           <p className="eyebrow">Naša ponuka</p>
           <div className="section-head">

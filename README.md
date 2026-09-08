@@ -13,3 +13,9 @@ The private draft has indexing disabled. Before public launch, confirm fitness p
 Scripts: `pnpm dev`, `pnpm build`. Framework: Vinext with Sites hosting.
 
 Validation: TypeScript and production build; successful local HTTP rendering. No broad browser interaction or visual QA requested. The optional WebMCP tool `prepare_visit_sms` is feature-detected; runtime verification was unavailable because the browser did not expose WebMCP tools for the document.
+
+## Illustrated scroll introduction
+
+The intro now has three imagegen style-transfer scenes based on the supplied gym, training, and community photographs. Scroll position drives a sticky scene with held reading intervals and eased crossfades. Decorative zoom is disabled on narrow screens. The motion switch and the operating-system reduced-motion preference show the scenes as static sections. A skip link and chapter navigation preserve direct access to the offer.
+
+Validation: TypeScript, production build, HTTP 200, and numerical tests for scene stops, clamping, hold intervals and normalized two-scene blending. Broad browser visual/interaction QA was not requested.
