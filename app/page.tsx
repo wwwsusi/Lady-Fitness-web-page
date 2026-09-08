@@ -143,9 +143,9 @@ export default function Home() {
           </div>
         </section>
         <section id="doplnky" className="wrap section supplement-section">
-          <div className="supplement-card">
+            <div className="supplement-card">
             <div className="supplement-symbol" aria-hidden="true"><Dumbbell size={29} strokeWidth={1.5} /></div>
-            <div className="supplement-copy">
+            <div>
               <p className="eyebrow">Doplnky stravy</p>
               <h2>Vyberaj si<br />s rozumom.</h2>
               <p className="supplement-lead">
@@ -161,6 +161,7 @@ export default function Home() {
               </div>
             </div>
             <div className="supplement-side">
+              <img className="supplement-product" src="/products/pro8.png" alt="Pro8 od ProSupplements" loading="lazy" width="484" height="724" />
               <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
                 <div className="supplement-item"><strong>PRO 8</strong><span>Esenciálne aminokyseliny pre regeneráciu a svaly.</span></div>
                 <div className="supplement-item"><strong>PRO Magnesium</strong><span>Horčík pre nervový systém a normálnu funkciu svalov.</span></div>
