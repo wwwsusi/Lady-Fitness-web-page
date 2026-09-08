@@ -27,15 +27,16 @@
 main#obsah { display:flex; flex-direction:column; }
 main#obsah > #ponuka { order:1; }
 main#obsah > #doplnky { order:2; }
-main#obsah > #o-nas { order:3; }
-main#obsah > #zumba { order:4; }
-main#obsah > #prva-navsteva { order:5; }
-main#obsah > .booking-section { order:6; }
-main#obsah > #priestory { order:7; }
-main#obsah > #seminare { order:8; }
-main#obsah > #kurzy { order:9; }
-main#obsah > .faq-section { order:10; }
-main#obsah > #kontakt { order:11; }
+main#obsah > #cennik { order:3; }
+main#obsah > #o-nas { order:4; }
+main#obsah > #zumba { order:5; }
+main#obsah > #prva-navsteva { order:6; }
+main#obsah > .booking-section { order:7; }
+main#obsah > #priestory { order:8; }
+main#obsah > #seminare { order:9; }
+main#obsah > #kurzy { order:10; }
+main#obsah > .faq-section { order:11; }
+main#obsah > #kontakt { order:12; }
 .nav { gap:20px; font-size:13px; }
 * {
   box-sizing: border-box;
@@ -49,9 +50,15 @@ body {
   font-family: var(--font-geist-sans), Arial, sans-serif;
   background: var(--background);
   color: var(--ink);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
 }
+.pricing-section { background:#fff; }
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:34px 0; }
+.pricing-grid article { padding:24px; border:1px solid #efd1db; border-radius:16px; background:#fff7f9; }
+.pricing-grid span { color:var(--purple); font-size:13px; }
+.pricing-grid h3 { margin:16px 0 10px; font-size:24px; }
+.pricing-grid p { color:#666; font-size:16px; line-height:1.5; }
 a {
   color: inherit;
   text-decoration: none;
@@ -986,6 +993,7 @@ svg {
 @media (max-width: 760px) { .supplement-card { grid-template-columns:1fr; gap:20px; padding:26px; } .supplement-list { grid-column:auto; } }
 @media (max-width: 900px) { .practical-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width: 760px) { .founder-grid, .trust-grid { grid-template-columns:1fr; gap:28px; } .founder-photo { height:430px; } .trust-grid { margin-top:60px; padding-top:42px; } .founder-facts { gap:24px; flex-wrap:wrap; } .practical-grid { grid-template-columns:1fr; } }
+@media (max-width: 760px) { .pricing-grid { grid-template-columns:1fr; } }
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

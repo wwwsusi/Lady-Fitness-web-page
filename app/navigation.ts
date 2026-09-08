@@ -4,6 +4,7 @@ export const links = [
   ['#o-nas', 'Príbeh & referencie'],
   ['#seminare', 'Vzdelávanie'],
   ['#doplnky', 'Doplnky stravy'],
+  ['#cennik', 'Cenník'],
   ['#kurzy', 'Pripravujeme'],
   ['#prva-navsteva', 'Prvá návšteva'],
   ['#objednanie', 'Objednanie'],

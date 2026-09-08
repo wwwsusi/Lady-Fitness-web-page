@@ -19,7 +19,7 @@ export default function Home() {
             <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
           </a>
           <nav className="nav" aria-label="Hlavná navigácia">
-            {links.slice(0, 6).map(([href, text]) => (
+            {links.slice(0, 7).map(([href, text]) => (
               <a href={href} key={href}>
                 {text}
               </a>
@@ -166,6 +166,22 @@ export default function Home() {
               <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode ProSupplements.</small>
             </div>
           </div>
+        </section>
+        <section id="cennik" className="wrap section pricing-section">
+          <p className="eyebrow">Cenník & služby</p>
+          <div className="section-head">
+            <h2>Vyber si, čo potrebuješ.</h2>
+            <p>Ceny doplníme neskôr. Už dnes si môžeš vybrať službu a ozvať sa nám na recepcii, telefonicky alebo správou.</p>
+          </div>
+          <div className="pricing-grid">
+            <article><span>01</span><h3>Jednorazový vstup</h3><p>Príď si zacvičiť v čase, ktorý ti vyhovuje.</p></article>
+            <article><span>02</span><h3>Permanentka</h3><p>Pravidelný pohyb a priestor vytvoriť si vlastný rytmus.</p></article>
+            <article><span>03</span><h3>Osobný tréning</h3><p>Naučiť sa správne cvičiť, nájsť istotu pri strojoch a nastaviť si tréning. Som tu pre teba.</p></article>
+            <article><span>04</span><h3>Strava & poradenstvo</h3><p>Praktické rozhovory o jedle, režime a cieľoch bez extrémov.</p></article>
+            <article><span>05</span><h3>Psychohygiena</h3><p>Čas pre seba, pohyb a príjemná komunita žien.</p></article>
+            <article><span>06</span><h3>Detská zumba pre škôlky</h3><p>Program do materských škôl. Kontaktuj riaditeľa alebo riaditeľku škôlky.</p></article>
+          </div>
+          <a className="button" href="#objednanie">Informovať sa o cenách <Arrow /></a>
         </section>
         <section id="o-nas" className="wrap section founder-section">
           <div className="founder-grid">

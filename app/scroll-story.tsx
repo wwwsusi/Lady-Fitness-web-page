@@ -161,9 +161,7 @@ export default function ScrollStory() {
             LADY FITNESS · HUMENNÉ
           </p>
           <div className="motion-control">
-            {systemReduced ? (
-              <span>Pokojné zobrazenie</span>
-            ) : (
+            {!systemReduced && (
               <>
                 <label htmlFor="story-motion">Pohyb</label>
                 <Switch
@@ -174,9 +172,6 @@ export default function ScrollStory() {
                 />
               </>
             )}
-            <a href="#ponuka">
-              Preskočiť príbeh <ArrowDown size={14} />
-            </a>
           </div>
         </div>
         <div className="story-scenes">
@@ -246,10 +241,7 @@ export default function ScrollStory() {
               </button>
             ))}
           </nav>
-          <p className="scroll-hint">
-            {enabled ? 'Pokračuj scrollovaním' : 'Príbeh bez animácií'}
-            <ArrowDown size={18} />
-          </p>
+          <p className="scroll-hint">Pokračuj nižšie <ArrowDown size={18} /></p>
         </div>
         <div className="story-progress" aria-hidden="true" />
       </div>
