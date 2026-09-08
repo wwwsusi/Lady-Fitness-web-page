@@ -137,8 +137,8 @@ export default function Home() {
                 návykoch.
               </p>
               <p className="trust-note">
-                Lady Fitness funguje v Humennom ako miesto, ktorému dôverujú
-                mnohé spokojné klientky.
+                Lady Fitness funguje v Humennom od 21. januára 2019 ako miesto,
+                ktorému dôverujú mnohé spokojné klientky.
               </p>
             </div>
             <a className="text-link" href="#seminare">
