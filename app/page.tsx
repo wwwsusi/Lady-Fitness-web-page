@@ -136,10 +136,6 @@ export default function Home() {
                 Pripravujeme vzdelávanie o tele, strave, pohybe a každodenných
                 návykoch.
               </p>
-              <p className="trust-note">
-                Lady Fitness funguje v Humennom od 21. januára 2019 ako miesto,
-                ktorému dôverujú mnohé spokojné klientky.
-              </p>
             </div>
             <a className="text-link" href="#seminare">
               Spoznaj pripravované témy ↗
@@ -193,11 +189,15 @@ export default function Home() {
                 robiť veci po svojom — pokojne, odborne a s rešpektom.
               </p>
               <p>
+                Lady Fitness funguje v Humennom od roku 2019 a počas rokov si
+                vybudovalo komunitu spokojných klientok.
+              </p>
+              <p>
                 Od začiatku chcela vytvoriť fitko iba pre ženy: miesto, kde sa
                 môžeš učiť, posilňovať a cítiť sa dobre bez porovnávania.
               </p>
               <div className="founder-facts">
-                <span><strong>21. 1. 2019</strong><small>otvorenie Lady Fitness</small></span>
+                <span><strong>Od 2019</strong><small>Lady Fitness v Humennom</small></span>
                 <span><strong>6:00 – 20:00</strong><small>otvorené každý deň</small></span>
               </div>
             </div>
