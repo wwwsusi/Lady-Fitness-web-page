@@ -11,14 +11,12 @@ import {
 } from '@/components/ui/select';
 const services = [
   'Prvá návšteva fitness',
-  'Jednorazový vstup',
   'Permanentka',
   'Osobný tréning',
   'Strava a poradenstvo',
-  'Psychohygiena',
-  'Detská zumba pre škôlku',
   'Záujem o pripravované kurzy',
   'Záujem o seminár',
+  'Spolupráca — detská zumba',
   'Spolupráca — mobilita seniorov',
 ];
 const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
