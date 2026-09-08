@@ -517,8 +517,9 @@ export default function Home() {
             <div>
               <h3>Rozvrh & otváracie hodiny</h3>
               <p>
-                Aktuálne časy cvičení a prípadné zmeny nájdeš na Facebooku. Pred
-                prvou lekciou si s nami potvrď termín.
+                Otvorené máme každý deň od 6:00 do 20:00. Aktuálne časy cvičení
+                a prípadné zmeny nájdeš na Facebooku. Pred prvou lekciou si s
+                nami potvrď termín.
               </p>
               <a
                 className="text-link"
