@@ -1043,6 +1043,7 @@ svg {
 .contact-options a:hover { transform:translateX(4px); border-color:var(--purple); }
 .contact-options strong { color:var(--ink); font-size:16px; }
 .contact-options span { color:#777; font-size:14px; }
+.first-step-bridge { margin-top:28px; color:var(--purple); font-size:18px; font-weight:550; }
 .contact { background: var(--purple); }
 .story-top>p>span, .eyebrow:before { background: var(--purple); }
 .story-copy em { color: var(--purple); }

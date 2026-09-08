@@ -557,6 +557,10 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <p className="first-step-bridge">
+            Ďalší krok je na tebe — dohodni si návštevu spôsobom, ktorý ti
+            vyhovuje.
+          </p>
         </section>
         <section className="wrap section faq-section">
           <div>
