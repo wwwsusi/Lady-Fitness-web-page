@@ -940,6 +940,7 @@ svg {
 .supplement-symbol { display:grid; place-items:center; width:58px; height:58px; border-radius:16px; background:var(--purple); color:white; font-size:42px; font-weight:300; line-height:1; }
 .supplement-card h2 { margin:20px 0; }
 .supplement-lead { max-width:560px; color:#555; font-size:17px; margin-bottom:25px; }
+.supplement-note { max-width:560px; color:var(--purple); font-size:15px; line-height:1.5; margin: -8px 0 25px; }
 .supplement-list { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-items:center; }
 .supplement-list span { padding:10px 14px; border:1px solid #cfc7df; border-radius:99px; background:#fff; font-size:14px; }
 .supplement-list small { width:100%; text-align:right; color:#666; font-size:13px; line-height:1.5; margin-top:12px; }
@@ -986,6 +987,7 @@ svg {
 .service-card.purple { background: #eeeaf7; }
 .big-icon { color: var(--purple); }
 .quote-strip { background: #f3f1f6; border-color: #e0dce8; }
+.quote-strip .trust-note { color: var(--purple); font-size: 14px; margin-top: 10px; }
 .booking-form, .practical { background: #f1eff4; }
 .contact { background: var(--purple); }
 .story-top>p>span, .eyebrow:before { background: var(--purple); }

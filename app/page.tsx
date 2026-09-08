@@ -136,6 +136,10 @@ export default function Home() {
                 Pripravujeme vzdelávanie o tele, strave, pohybe a každodenných
                 návykoch.
               </p>
+              <p className="trust-note">
+                Lady Fitness funguje v Humennom ako miesto, ktorému dôverujú
+                mnohé spokojné klientky.
+              </p>
             </div>
             <a className="text-link" href="#seminare">
               Spoznaj pripravované témy ↗
@@ -153,13 +157,17 @@ export default function Home() {
                 doplniť tvoj režim, tréning a starostlivosť o seba — nenahrádzajú
                 pestrú stravu ani odbornú zdravotnú starostlivosť.
               </p>
+              <p className="supplement-note">
+                Ako klientka Lady Fitness máš na vybrané doplnky zvýhodnené ceny.
+                O aktuálnej ponuke a cenách sa informuj priamo na recepcii vo fitku.
+              </p>
               <a className="button" href="https://prosupplements.sk" target="_blank" rel="noreferrer">
                 Pozrieť ProSupplements <Arrow />
               </a>
             </div>
             <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
               <span>PRO 8</span><span>PRO Magnesium</span><span>PRO Liver</span><span>NAD+</span>
-              <small>Aktuálnu dostupnosť a ceny nájdeš v obchode ProSupplements.</small>
+              <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode ProSupplements.</small>
             </div>
           </div>
         </section>
