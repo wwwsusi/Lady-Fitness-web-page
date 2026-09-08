@@ -123,7 +123,7 @@ export default function Home() {
                 <div className="chips">
                   <span className="chip">Individuálny prístup</span>
                 </div>
-                <a className="card-link" href="#kontakt">
+                <a className="card-link" href="#prva-navsteva">
                   Dohodni si konzultáciu <Arrow />
                 </a>
               </div>
