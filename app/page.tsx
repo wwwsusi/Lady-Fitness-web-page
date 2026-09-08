@@ -161,9 +161,12 @@ export default function Home() {
                 Pozrieť ProSupplements <Arrow />
               </a>
             </div>
-            <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
-              <span>PRO 8</span><span>PRO Magnesium</span><span>PRO Liver</span><span>NAD+</span>
-              <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode ProSupplements.</small>
+            <div className="supplement-side">
+              <img className="supplement-product" src="/products/pro8.png" alt="Pro8 od ProSupplements" loading="lazy" width="484" height="724" />
+              <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
+                <span>PRO 8</span><span>PRO Magnesium</span><span>PRO Liver</span><span>NAD+</span>
+                <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode ProSupplements.</small>
+              </div>
             </div>
           </div>
         </section>
@@ -181,7 +184,6 @@ export default function Home() {
             <article><span>05</span><h3>Psychohygiena</h3><p>Čas pre seba, pohyb a príjemná komunita žien.</p></article>
             <article><span>06</span><h3>Detská zumba pre škôlky</h3><p>Program do materských škôl. Kontaktuj riaditeľa alebo riaditeľku škôlky.</p></article>
           </div>
-          <a className="button" href="#objednanie">Informovať sa o cenách <Arrow /></a>
         </section>
         <section id="o-nas" className="wrap section founder-section">
           <div className="founder-grid">

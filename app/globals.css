@@ -968,6 +968,8 @@ svg {
 .supplement-card h2 { margin:20px 0; }
 .supplement-lead { max-width:560px; color:#555; font-size:17px; margin-bottom:25px; }
 .supplement-note { max-width:560px; color:var(--purple); font-size:15px; line-height:1.5; margin: -8px 0 25px; }
+.supplement-side { display:grid; gap:18px; justify-items:end; }
+.supplement-product { display:block; width:min(100%, 190px); height:250px; object-fit:contain; object-position:center; border-radius:18px; background:#fffafb; box-shadow:0 18px 38px rgba(52,42,51,.12); }
 .supplement-list { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; align-items:center; }
 .supplement-list span { padding:10px 14px; border:1px solid #cfc7df; border-radius:99px; background:#fff; font-size:14px; }
 .supplement-list small { width:100%; text-align:right; color:#666; font-size:13px; line-height:1.5; margin-top:12px; }
@@ -989,7 +991,7 @@ svg {
 .trust-grid p:not(.eyebrow) { color:#4f4d55; font-size:18px; line-height:1.5; margin:16px 0; }
 .trust-grid > div > small { color:#777; line-height:1.5; }
 .testimonial-shot { display:block; width:100%; max-height:520px; object-fit:cover; object-position:top; border-radius:18px; border:1px solid #e0dce8; }
-@media (max-width: 900px) { .supplement-card { grid-template-columns:58px 1fr; } .supplement-list { grid-column:2; justify-content:flex-start; } .supplement-list small { text-align:left; } }
+@media (max-width: 900px) { .supplement-card { grid-template-columns:58px 1fr; } .supplement-side { grid-column:2; justify-items:start; } .supplement-list { justify-content:flex-start; } .supplement-list small { text-align:left; } }
 @media (max-width: 760px) { .supplement-card { grid-template-columns:1fr; gap:20px; padding:26px; } .supplement-list { grid-column:auto; } }
 @media (max-width: 1100px) { .practical-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width: 760px) { .founder-grid, .trust-grid { grid-template-columns:1fr; gap:28px; } .founder-photo { height:430px; } .trust-grid { margin-top:60px; padding-top:42px; } .founder-facts { gap:24px; flex-wrap:wrap; } .practical-grid { grid-template-columns:1fr; } }
