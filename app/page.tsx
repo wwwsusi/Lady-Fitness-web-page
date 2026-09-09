@@ -1,6 +1,6 @@
 import { ArrowUpRight, Dumbbell, Heart, MoveUpRight } from 'lucide-react';
-import { MobileMenu, Faq } from './interactions';
-import { links } from './navigation';
+import { Faq } from './interactions';
+import SiteHeader from './site-header';
 import Booking from './booking';
 import ScrollStory from './scroll-story';
 const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
@@ -13,25 +13,7 @@ export default function Home() {
       <a className="skip" href="#obsah">
         Preskočiť na obsah
       </a>
-      <header className="site-header">
-        <nav className="version-switch" aria-label="Porovnať verzie stránky"><a href="/" aria-current="page">Neanimovaná verzia</a><a href="/prechadzka">Animovaná verzia ↗</a></nav>
-        <div className="wrap topbar">
-          <a className="brand" href="#" aria-label="Lady Fitness — úvod">
-            <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
-          </a>
-          <nav className="nav" aria-label="Hlavná navigácia">
-            {links.slice(0, 7).map(([href, text]) => (
-              <a href={href} key={href}>
-                {text}
-              </a>
-            ))}
-          </nav>
-          <a className="button desktop-cta" href="#prva-navsteva">
-            Poďme začať <Arrow />
-          </a>
-          <MobileMenu />
-        </div>
-      </header>
+      <SiteHeader />
       <main id="obsah">
         <ScrollStory />
         <div className="story-trust">
