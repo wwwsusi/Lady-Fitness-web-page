@@ -2066,11 +2066,10 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
 /* Opaque rose lettering with a quieter image behind the opening copy. */
 .scroll-story--film .story-copy em { color:#bb3d65; opacity:1; }
 .scroll-story--film .story-wash {
-  background:linear-gradient(90deg, #faf9f5f5 0%, #faf9f5eb 38%, #faf9f5c7 60%, #faf9f51a 85%),
-    linear-gradient(0deg, #faf9f5ed 0%, transparent 40%);
+  background:linear-gradient(90deg, rgba(250,249,245,.62) 0%, rgba(250,249,245,.48) 38%, rgba(250,249,245,.22) 60%, rgba(250,249,245,.05) 85%);
 }
 @media(max-width:760px) {
   .scroll-story--film .story-wash {
-    background:linear-gradient(0deg, #faf9f5fa 0%, #faf9f5e6 48%, #faf9f5d9 78%, #faf9f580 100%);
+    background:linear-gradient(0deg, rgba(250,249,245,.65) 0%, rgba(250,249,245,.55) 48%, rgba(250,249,245,.45) 78%, rgba(250,249,245,.20) 100%);
   }
 }
