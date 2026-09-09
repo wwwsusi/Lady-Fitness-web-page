@@ -1964,3 +1964,39 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.04em; }
 .scroll-story--animated .story-copy {
   opacity: var(--copy-opacity, 1);
 }
+
+/* Final type system: four categories across the public site. */
+:root {
+  --type-display: clamp(44px, 5.5vw, 76px);
+  --type-heading: 28px;
+  --type-body: 16px;
+  --type-label: 13px;
+}
+body { font-size: var(--type-body); }
+h1, h2, .hero-title, .story-copy h1, .story-copy h2, .contact h2,
+.section h2, .booking-section h2, .faq-section h2 {
+  font-size: var(--type-display) !important;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+h3, .service-body h3, .course h3, .education-grid h3, .step h3,
+.practical h3, .sms-preview h3, .pricing-grid h3, .trust-grid h3,
+.mind h3, .senior h3 {
+  font-size: var(--type-heading) !important;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+p, .service-body p, .split-copy p, .course p, .step p, .practical p,
+.booking-explainer, .section-head p, .hero-intro p, .story-description,
+.trust-grid p, .sms-text, .booking-form input, .booking-select {
+  font-size: var(--type-body);
+}
+.nav, .button, .text-link, .card-link, .eyebrow, .number, .chip,
+.booking-form label, .contact-options span, .supplement-item span,
+.practical-grid span, .founder-facts small, .supplement-list small,
+.booking-note, small {
+  font-size: var(--type-label);
+}
+@media (max-width: 760px) {
+  :root { --type-display: clamp(40px, 10vw, 58px); --type-heading: 24px; }
+}
