@@ -54,7 +54,7 @@ export default function Home() {
             <h2>
               Pohyb je začiatok.
               <br />
-              Zvyšok tvoríme spolu.
+              <span>Zvyšok tvoríme spolu.</span>
             </h2>
             <p>
               Nájdi si svoj spôsob, ako byť silnejšia, dopriať si pozornosť a
