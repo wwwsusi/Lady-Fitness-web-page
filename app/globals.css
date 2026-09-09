@@ -2002,3 +2002,5 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 @media (max-width: 760px) {
   :root { --type-display: clamp(40px, 10vw, 58px); --type-heading: 24px; }
 }
+/* Keep the testimonial headline in the same display category as section H2s. */
+.trust-grid h3 { font-size: var(--type-display) !important; line-height: 1.08; letter-spacing: -0.04em; }

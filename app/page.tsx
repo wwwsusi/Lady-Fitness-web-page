@@ -53,7 +53,7 @@ export default function Home() {
           <div className="section-head">
             <h2>
               Pohyb je začiatok.
-              <br />
+              
               Zvyšok <span>tvoríme spolu.</span>
             </h2>
             <p>
@@ -91,7 +91,7 @@ export default function Home() {
                 <span className="number">02 / TVOJ RYTMUS</span>
                 <h3>
                   Jednorazový vstup
-                  <br />& permanentka
+                  & permanentka
                 </h3>
                 <p>
                   Príď si zacvičiť jednorazovo alebo si vyber permanentku pre
@@ -114,7 +114,7 @@ export default function Home() {
                 <span className="number">03 / KAŽDODENNÉ NÁVYKY</span>
                 <h3>
                   Strava
-                  <br />& poradenstvo
+                  & poradenstvo
                 </h3>
                 <p>
                   Porozprávajme sa o stravovaní, tvojom režime a cieľoch.
@@ -147,7 +147,7 @@ export default function Home() {
             <div className="supplement-symbol" aria-hidden="true"><Dumbbell size={29} strokeWidth={1.5} /></div>
             <div>
               <p className="eyebrow">Doplnky stravy</p>
-              <h2>Vyberaj si<br />s rozumom.</h2>
+              <h2>Vyberaj sis rozumom.</h2>
               <p className="supplement-lead">
                 V Lady Fitness nájdeš aj vybrané doplnky ProSupplements. Môžu
                 doplniť tvoj režim, tréning a starostlivosť o seba — nenahrádzajú
@@ -267,7 +267,7 @@ export default function Home() {
               <p className="eyebrow">Detská zumba pre materské školy</p>
               <h2>
                 My prídeme
-                <br />
+                
                 za deťmi.
               </h2>
               <p>
@@ -301,7 +301,7 @@ export default function Home() {
           <div className="section-head">
             <h2>
               Poznaj svoje telo.
-              <br />
+              
               Nájdi svoj systém.
             </h2>
             <p>
@@ -352,7 +352,7 @@ export default function Home() {
             <div className="section-head">
               <h2>
                 Nový cieľ.
-                <br />
+                
                 Spoločný smer.
               </h2>
               <p>
@@ -406,7 +406,7 @@ export default function Home() {
                 </p>
                 <h3>
                   Pohyb má miesto
-                  <br />v každom veku.
+                  v každom veku.
                 </h3>
               </div>
               <div>
@@ -431,7 +431,7 @@ export default function Home() {
           <div className="section-head">
             <h2>
               Skutočné miesto.
-              <br />
+              
               Skutočná komunita.
             </h2>
             <p>
@@ -476,7 +476,7 @@ export default function Home() {
               <p className="eyebrow">Psychohygiena v každodennosti</p>
               <h3 style={{ marginTop: 22 }}>
                 Vypni svet.
-                <br />
+                
                 Zapni seba.
               </h3>
             </div>
@@ -501,7 +501,7 @@ export default function Home() {
           <div className="section-head">
             <h2>
               Prvý krok môže
-              <br />
+              
               byť jednoduchý.
             </h2>
             <p>
@@ -569,7 +569,7 @@ export default function Home() {
             <p className="eyebrow">Dobré vedieť</p>
             <h2>
               Ešte niečo
-              <br />
+              
               pred začiatkom?
             </h2>
           </div>
@@ -581,7 +581,7 @@ export default function Home() {
             <div className="contact-top">
               <h2>
                 Začni tým,
-                <br />
+                
                 že sa ozveš.
               </h2>
               <a className="button lime" href="tel:+421908891961">
