@@ -54,7 +54,7 @@ export default function Home() {
             <h2>
               Pohyb je začiatok.
               <br />
-              <span>Zvyšok tvoríme spolu.</span>
+              Zvyšok <span>tvoríme spolu.</span>
             </h2>
             <p>
               Nájdi si svoj spôsob, ako byť silnejšia, dopriať si pozornosť a
@@ -232,7 +232,7 @@ export default function Home() {
           <div className="trust-grid">
             <div>
               <p className="eyebrow">HLAS KLIENTOK</p>
-              <h3>Atmosféra, ku ktorej sa chceš vracať.</h3>
+              <h3><span>Atmosféra</span>, ku ktorej sa chceš vracať.</h3>
               <p>
                 „Príjemné super ľudia a človek sa tam cíti ako doma.“
               </p>
