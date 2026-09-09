@@ -47,9 +47,10 @@ export default function Walkthrough() {
     window.scrollTo({ top: top + (root.current.offsetHeight - window.innerHeight) * i / (stops.length - 1), behavior: 'smooth' });
   };
   return <>
+    <nav className="version-switch" aria-label="Porovnať verzie stránky"><a href="/">Neanimovaná verzia ↗</a><a href="/prechadzka" aria-current="page">Animovaná verzia</a></nav>
     <header className={styles.header}>
       <a href="/prechadzka" aria-label="Lady Fitness úvod"><img src="/logo.png" alt="Lady Fitness" width="120" height="62" /></a>
-      <nav aria-label="Navigácia novej verzie"><a href="#ponuka">Cvičenie</a><a href="#o-nas">Náš príbeh</a><a href="/">Pôvodná verzia ↗</a></nav>
+      <nav aria-label="Navigácia novej verzie"><a href="#ponuka">Cvičenie</a><a href="#o-nas">Náš príbeh</a></nav>
       <a className={styles.visit} href="#prva-navsteva">Dohodni si návštevu <ArrowUpRight size={17}/></a>
     </header>
     <section ref={root} className={`${styles.journey} ${motion ? styles.motionOn : styles.motionOff}`} aria-label="Prechádzka Lady Fitness">

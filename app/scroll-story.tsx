@@ -62,96 +62,30 @@ export default function ScrollStory() {
     return () => media.removeEventListener('change', change);
   }, []);
   useEffect(() => {
-    if (!enabled || !root.current || !stage.current) return;
-    let frame = 0;
-    let visible = true;
-    const update = () => {
-      frame = 0;
-      if (!root.current || !stage.current) return;
-      const rect = root.current.getBoundingClientRect();
-      const top = parseFloat(getComputedStyle(stage.current).top) || 0;
-      const range = Math.max(
-        1,
-        root.current.offsetHeight - stage.current.offsetHeight,
-      );
-      const progress = clamp((top - rect.top) / range);
-      const weights = sceneWeights(progress, scenes.length);
-      const index = weights.indexOf(Math.max(...weights));
-      weights.forEach((weight, i) => {
-        const panel = panels.current[i];
-        if (!panel) return;
-        panel.style.setProperty('--scene-opacity', String(weight));
-        panel.style.setProperty(
-          '--copy-opacity',
-          String(clamp((weight - 0.45) / 0.55)),
-        );
-        panel.style.setProperty(
-          '--scene-shift',
-          `${(i - progress * (scenes.length - 1)) * 18}px`,
-        );
-        panel.style.setProperty(
-          '--scene-scale',
-          String(1.035 + progress * 0.045),
-        );
-      });
-      root.current.style.setProperty('--story-progress', String(progress));
-      if (lastActive.current !== index) {
-        lastActive.current = index;
-        setActive(index);
+    if (!enabled) return;
+    const timer = window.setInterval(() => {
+      if (!document.hidden && root.current) {
+        const rect = root.current.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          setActive(current => (current + 1) % scenes.length);
+        }
       }
-    };
-    const queue = () => {
-      if (visible && !frame) frame = requestAnimationFrame(update);
-    };
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-      if (visible) queue();
-    });
-    observer.observe(root.current);
-    const resize = new ResizeObserver(queue);
-    resize.observe(root.current);
-    resize.observe(stage.current);
-    window.addEventListener('scroll', queue, { passive: true });
-    window.addEventListener('resize', queue);
-    queue();
-    return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-      resize.disconnect();
-      window.removeEventListener('scroll', queue);
-      window.removeEventListener('resize', queue);
-    };
-  }, [enabled]);
+    }, 6000);
+    return () => window.clearInterval(timer);
+  }, [enabled, active]);
+  function jump(index: number) { setActive(index); }
+  function toggleMotion(value: boolean) { setEnabled(value); }
   function jump(index: number) {
-    if (!root.current || !stage.current) return;
-    if (!enabled) {
-      panels.current[index]?.scrollIntoView({
-        behavior: 'auto',
-        block: 'start',
-      });
-      return;
-    }
-    const top = parseFloat(getComputedStyle(stage.current).top) || 0;
-    const start =
-      root.current.getBoundingClientRect().top + window.scrollY - top;
-    const range = root.current.offsetHeight - stage.current.offsetHeight;
-    window.scrollTo({
-      top: start + (range * index) / (scenes.length - 1),
-      behavior: 'smooth',
-    });
+    setActive(index);
   }
   function toggleMotion(value: boolean) {
-    const top = root.current?.getBoundingClientRect().top ?? 0;
     setEnabled(value);
     setActive(0);
-    lastActive.current = 0;
-    if (top < 0)
-      root.current?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
   return (
     <section
       ref={root}
-      className={`scroll-story ${enabled ? 'scroll-story--animated' : 'scroll-story--still'}`}
+      className={`scroll-story scroll-story--film ${enabled ? 'film-playing' : 'film-paused'}`}
       aria-label="Príbeh Lady Fitness"
     >
       <div className="story-stage" ref={stage}>
@@ -161,9 +95,9 @@ export default function ScrollStory() {
             LADY FITNESS · HUMENNÉ
           </p>
           <div className="motion-control">
-            {!systemReduced && (
+            {(
               <>
-                <label htmlFor="story-motion">Pohyb</label>
+                <label htmlFor="story-motion">{enabled ? 'Prehrávanie' : 'Spustiť film'}</label>
                 <Switch
                   id="story-motion"
                   checked={enabled}
@@ -182,10 +116,10 @@ export default function ScrollStory() {
                 panels.current[i] = el;
               }}
               className={`story-scene story-scene-${i}`}
-              aria-hidden={enabled && active !== i}
-              inert={enabled && active !== i}
+              aria-hidden={active !== i}
+              inert={active !== i}
               style={
-                { '--scene-opacity': i === 0 ? 1 : 0 } as React.CSSProperties
+                { '--scene-opacity': active === i ? 1 : 0, '--copy-opacity': active === i ? 1 : 0 } as React.CSSProperties
               }
             >
               <img
@@ -232,7 +166,7 @@ export default function ScrollStory() {
                 type="button"
                 key={scene.id}
                 onClick={() => jump(i)}
-                aria-current={enabled && active === i ? 'step' : undefined}
+                aria-current={active === i ? 'step' : undefined}
               >
                 <span>0{i + 1}</span>
                 {scene.label}

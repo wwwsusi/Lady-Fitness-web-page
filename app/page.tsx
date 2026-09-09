@@ -14,6 +14,7 @@ export default function Home() {
         Preskočiť na obsah
       </a>
       <header className="site-header">
+        <nav className="version-switch" aria-label="Porovnať verzie stránky"><a href="/" aria-current="page">Neanimovaná verzia</a><a href="/prechadzka">Animovaná verzia ↗</a></nav>
         <div className="wrap topbar">
           <a className="brand" href="#" aria-label="Lady Fitness — úvod">
             <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
