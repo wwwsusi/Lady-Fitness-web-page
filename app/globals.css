@@ -2062,3 +2062,15 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
   .testimonials-section .trust-grid { margin-top:0; padding-top:0; gap:24px; }
   .supplement-card { padding:22px; }
 }
+
+/* Opaque rose lettering with a quieter image behind the opening copy. */
+.scroll-story--film .story-copy em { color:#bb3d65; opacity:1; }
+.scroll-story--film .story-wash {
+  background:linear-gradient(90deg, #faf9f5f5 0%, #faf9f5eb 38%, #faf9f5c7 60%, #faf9f51a 85%),
+    linear-gradient(0deg, #faf9f5ed 0%, transparent 40%);
+}
+@media(max-width:760px) {
+  .scroll-story--film .story-wash {
+    background:linear-gradient(0deg, #faf9f5fa 0%, #faf9f5e6 48%, #faf9f5d9 78%, #faf9f580 100%);
+  }
+}
