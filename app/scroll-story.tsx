@@ -2,8 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
-import { sceneWeights } from './story-progress';
-const scenes = [
+export const scenes = [
   {
     id: 'priestor',
     label: 'Tvoj priestor',
@@ -41,21 +40,16 @@ const scenes = [
     href: '#psychohygiena',
   },
 ];
-const clamp = (n: number) => Math.max(0, Math.min(1, n));
 export default function ScrollStory() {
   const root = useRef<HTMLElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const panels = useRef<(HTMLElement | null)[]>([]);
-  const lastActive = useRef(0);
   const [enabled, setEnabled] = useState(false);
-  const [systemReduced, setSystemReduced] = useState(false);
   const [active, setActive] = useState(0);
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setSystemReduced(media.matches);
     setEnabled(!media.matches);
     const change = () => {
-      setSystemReduced(media.matches);
       setEnabled(!media.matches);
     };
     media.addEventListener('change', change);
@@ -73,8 +67,6 @@ export default function ScrollStory() {
     }, 6000);
     return () => window.clearInterval(timer);
   }, [enabled, active]);
-  function jump(index: number) { setActive(index); }
-  function toggleMotion(value: boolean) { setEnabled(value); }
   function jump(index: number) {
     setActive(index);
   }
@@ -155,7 +147,7 @@ export default function ScrollStory() {
                   <ArrowUpRight size={19} />
                 </a>
               </div>
-              <p className="art-note">Fotografie z priestorov Lady Fitness</p>
+              <p className="art-note">Ilustrované podľa fotografií Lady Fitness</p>
             </article>
           ))}
         </div>

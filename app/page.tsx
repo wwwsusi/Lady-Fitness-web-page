@@ -7,15 +7,15 @@ const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
 const MAP =
   'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9';
 const Arrow = () => <ArrowUpRight size={20} aria-hidden="true" />;
-export default function Home() {
+export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) {
   return (
     <>
-      <a className="skip" href="#obsah">
+      {!contentOnly && <a className="skip" href="#obsah">
         Preskočiť na obsah
-      </a>
-      <SiteHeader />
+      </a>}
+      {!contentOnly && <SiteHeader />}
       <main id="obsah">
-        <ScrollStory />
+        {!contentOnly && <ScrollStory />}
         <div className="story-trust">
           <div className="wrap">
             <div className="trust">
@@ -602,7 +602,7 @@ export default function Home() {
         <a href="#kontakt">Kontakt</a>
         <a href="#prva-navsteva">Prvá návšteva ↑</a>
       </footer>
-      <div className="mobile-contact">
+      {!contentOnly && <div className="mobile-contact">
         <a className="button" href="tel:+421908891961">
           Zavolať <Arrow />
         </a>
@@ -614,7 +614,9 @@ export default function Home() {
         >
           Ako k nám <MoveUpRight size={16} />
         </a>
-      </div>
+      </div>}
     </>
   );
 }
+
+export default function Home() { return <FitnessPage />; }

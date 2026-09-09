@@ -1971,8 +1971,8 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.04em; }
 :root {
   --type-display: clamp(32px, 4vw, 56px);
   --type-heading: 28px;
-  --type-body: 16px;
-  --type-label: 13px;
+  --type-body: 17px;
+  --type-label: 14px;
 }
 body { font-size: var(--type-body); }
 h1, h2, .hero-title, .story-copy h1, .story-copy h2, .contact h2,
@@ -2031,5 +2031,10 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 .scroll-story--film .story-art{transform:scale(1.025);transition:transform 7s linear}
 .scroll-story--film.film-playing .story-scene[aria-hidden="false"] .story-art{transform:scale(1.1)}
 .scroll-story--film .story-copy h1,.scroll-story--film .story-copy h2{max-width:900px;text-wrap:pretty}
+.scroll-story--film .story-scene{height:100%!important}
+.scroll-story--film .story-description{max-width:560px}
+@media(max-width:760px){.scroll-story--film .story-stage{height:max(640px,calc(100svh - 128px))!important}.scroll-story--film .art-note{display:none}}
+.scroll-story--film .story-copy h1 em,.scroll-story--film .story-copy h2 em{margin-left:.12em}
+@media(max-width:760px){.scroll-story--film .story-bottom{bottom:90px}.scroll-story--film .story-copy{padding-bottom:110px}.mobile-contact{padding-bottom:max(12px,env(safe-area-inset-bottom))}}
 .scroll-story--film .story-top,.scroll-story--film .story-bottom{z-index:10}
-@media(max-width:760px){.scroll-story--film .story-stage{height:800px!important}.version-switch{font-size:12px;gap:2px}.version-switch a{padding:8px 12px}}
+@media(max-width:760px){.version-switch{font-size:12px;gap:2px}.version-switch a{padding:8px 12px}}

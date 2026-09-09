@@ -2,12 +2,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import styles from './walkthrough.module.css';
-const stops = [
-  { name: 'Vitaj u nás', image: 'priestory.jpg', title: 'Tvoj čas. Tvoj priestor.', text: 'Vstúp do Lady Fitness. Miesta v Humennom, kde môžeš byť sama sebou.', tag: 'FITNESS PRE ŽENY · OD ROKU 2019', origin: '65% 68%' },
-  { name: 'Priestor pre silu', image: 'vybavenie.jpg', title: 'Objav, čo v tebe je.', text: 'Jednorazový vstup, permanentka alebo tréning s vedením. Vyber si svoje tempo.', tag: 'SILA · OSOBNÉ TRÉNINGY', origin: '40% 65%' },
-  { name: 'Tvoje tempo', image: 'kardio.jpg', title: 'Nadýchni sa. Rozhýb sa.', text: 'Prvý tréning aj nový cieľ. Pohyb má miesto v každom období života.', tag: 'KONDÍCIA · ENERGIA', origin: '60% 55%' },
-  { name: 'Osobný prístup', image: 'trenerka.jpg', title: 'Sama na to nebudeš.', text: 'Správna technika, podpora a skúsenosti. Spoznaj príbeh ženy, ktorá vytvorila Lady Fitness.', tag: 'TVÔJ TRÉNING · TVOJA PODPORA', origin: '35% 35%' },
-];
+import { scenes } from '../scroll-story';
+const stops = scenes.map((scene, i) => ({name: scene.label, title: `${scene.first} ${scene.last}`, text: scene.description, tag: `0${i + 1} / ${scene.label}`, image: ['priestory.jpg', 'trening.jpg', 'komunita.jpg'][i], origin: '55% 60%', href: scene.href, cta: scene.cta}));
 export default function Walkthrough() {
   const root = useRef<HTMLElement>(null);
   const layers = useRef<(HTMLDivElement | null)[]>([]);
@@ -57,9 +53,9 @@ export default function Walkthrough() {
           <p className={styles.tag}>{stops[active].tag}</p>
           <h1>{stops[active].title}</h1>
           <p className={styles.intro}>{stops[active].text}</p>
-          <a className={styles.action} href={active === 3 ? '#o-nas' : '#ponuka'}>{active === 3 ? 'Spoznaj náš príbeh' : 'Objav našu ponuku'} <ArrowUpRight size={20}/></a>
+          <a className={styles.action} href={stops[active].href}>{stops[active].cta} <ArrowUpRight size={20}/></a>
         </div>
-        <div className={styles.bottom}><div className={styles.scroll}><ArrowDown size={19}/><span>Prejdi sa s nami<br/><small>Posúvaj stránku nadol</small></span></div><nav className={styles.stops} aria-label="Zastávky prechádzky">{stops.map((s,i)=><button key={s.name} onClick={()=>go(i)} aria-current={active===i?'step':undefined}><span>0{i+1}</span>{s.name}</button>)}</nav><span className={styles.count}>0{active+1} / 04</span></div>
+        <div className={styles.bottom}><div className={styles.scroll}><ArrowDown size={19}/><span>Prejdi sa s nami<br/><small>Posúvaj stránku nadol</small></span></div><nav className={styles.stops} aria-label="Zastávky prechádzky">{stops.map((s,i)=><button key={s.name} onClick={()=>go(i)} aria-current={active===i?'step':undefined}><span>0{i+1}</span>{s.name}</button>)}</nav><span className={styles.count}>0{active+1} / 0{stops.length}</span></div>
         <div className={styles.progress}><div ref={meter}/></div>
       </div>
     </section>
