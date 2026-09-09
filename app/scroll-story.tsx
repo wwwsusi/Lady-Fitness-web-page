@@ -139,13 +139,13 @@ export default function ScrollStory() {
                 {i === 0 ? (
                   <h1>
                     {scene.first}
-                    <br />
+                    {' '}
                     <em>{scene.last}</em>
                   </h1>
                 ) : (
                   <h2>
                     {scene.first}
-                    <br />
+                    {' '}
                     <em>{scene.last}</em>
                   </h2>
                 )}

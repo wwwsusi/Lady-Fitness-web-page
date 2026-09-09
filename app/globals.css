@@ -2030,5 +2030,6 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 .scroll-story--film .story-copy{opacity:var(--copy-opacity)!important}
 .scroll-story--film .story-art{transform:scale(1.025);transition:transform 7s linear}
 .scroll-story--film.film-playing .story-scene[aria-hidden="false"] .story-art{transform:scale(1.1)}
+.scroll-story--film .story-copy h1,.scroll-story--film .story-copy h2{max-width:900px;text-wrap:pretty}
 .scroll-story--film .story-top,.scroll-story--film .story-bottom{z-index:10}
 @media(max-width:760px){.scroll-story--film .story-stage{height:800px!important}.version-switch{font-size:12px;gap:2px}.version-switch a{padding:8px 12px}}
