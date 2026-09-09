@@ -145,9 +145,11 @@ export default function Home() {
         <section id="doplnky" className="wrap section supplement-section">
             <div className="supplement-card">
             <div className="supplement-symbol" aria-hidden="true"><Dumbbell size={29} strokeWidth={1.5} /></div>
-            <div>
+            <div className="supplement-heading">
               <p className="eyebrow">Doplnky stravy</p>
               <h2>Vyberaj si s rozumom.</h2>
+            </div>
+            <div className="supplement-copy">
               <p className="supplement-lead">
                 V Lady Fitness nájdeš aj vybrané doplnky ProSupplements. Môžu
                 doplniť tvoj režim, tréning a starostlivosť o seba — nenahrádzajú

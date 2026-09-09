@@ -1969,7 +1969,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.04em; }
 
 /* Final type system: four categories across the public site. */
 :root {
-  --type-display: clamp(44px, 5.5vw, 76px);
+  --type-display: clamp(32px, 4vw, 56px);
   --type-heading: 28px;
   --type-body: 16px;
   --type-label: 13px;
@@ -2004,3 +2004,17 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 }
 /* Keep the testimonial headline in the same display category as section H2s. */
 .trust-grid h3 { font-size: var(--type-display) !important; line-height: 1.08; letter-spacing: -0.04em; }
+
+/* Give section titles the available row instead of an artificial narrow column. */
+.section-head h2 { max-width: none; width: 100%; text-wrap: wrap; }
+.supplement-heading { grid-column: 2 / -1; }
+.supplement-heading h2 { max-width: none; }
+.supplement-symbol { grid-column: 1; grid-row: 1; }
+.supplement-copy { grid-column: 2; }
+.supplement-side { grid-column: 3; }
+@media (max-width: 900px) {
+  .supplement-side { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .supplement-heading, .supplement-copy, .supplement-side { grid-column: 1; }
+}
