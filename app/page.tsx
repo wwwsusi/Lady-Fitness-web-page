@@ -213,6 +213,8 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
             <div><strong>Šatňa a sprchy</strong><span>komfort pred aj po tréningu</span></div>
             <div><strong>Pre každú ženu</strong><span>bez ohľadu na vek či skúsenosti</span></div>
           </div>
+        </section>
+        <section id="referencie" className="wrap section testimonials-section" aria-label="Hlas klientok">
           <div className="trust-grid">
             <div>
               <p className="eyebrow">HLAS KLIENTOK</p>
