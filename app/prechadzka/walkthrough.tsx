@@ -13,12 +13,14 @@ export default function Walkthrough() {
   const layers = useRef<(HTMLDivElement | null)[]>([]);
   const meter = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const [motion, setMotion] = useState(false);
+  useEffect(() => { setMotion(!window.matchMedia('(prefers-reduced-motion: reduce)').matches); }, []);
   useEffect(() => {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
     let frame = 0;
     const update = () => {
       frame = 0;
-      if (!root.current || reduce.matches) return;
+      if (!root.current || !motion) return;
       const rect = root.current.getBoundingClientRect();
       const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
       const position = progress * (stops.length - 1);
@@ -36,9 +38,9 @@ export default function Walkthrough() {
     update();
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
-    reduce.addEventListener('change', schedule);
-    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); reduce.removeEventListener('change', schedule); };
-  }, []);
+
+    return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); };
+  }, [motion]);
   const go = (i: number) => {
     if (!root.current) return;
     const top = root.current.getBoundingClientRect().top + window.scrollY;
@@ -50,12 +52,13 @@ export default function Walkthrough() {
       <nav aria-label="Navigácia novej verzie"><a href="#ponuka">Cvičenie</a><a href="#o-nas">Náš príbeh</a><a href="/">Pôvodná verzia ↗</a></nav>
       <a className={styles.visit} href="#prva-navsteva">Dohodni si návštevu <ArrowUpRight size={17}/></a>
     </header>
-    <section ref={root} className={styles.journey} aria-label="Prechádzka Lady Fitness">
+    <section ref={root} className={`${styles.journey} ${motion ? styles.motionOn : styles.motionOff}`} aria-label="Prechádzka Lady Fitness">
       <div className={styles.stage}>
         <div className={styles.photos} aria-hidden="true">{stops.map((s,i) => <div key={s.name} ref={el => {layers.current[i] = el;}} className={styles.photo} style={{opacity: i === 0 ? 1 : 0, transformOrigin:s.origin}}><img src={'/photos/'+s.image} alt="" fetchPriority={i === 0 ? 'high' : 'auto'} /></div>)}</div>
         <div className={styles.shade}/>
-        <div className={styles.location}>HUMENNÉ <span>48°56′ N · LADY FITNESS</span></div>
+        <div className={styles.location}>HUMENNÉ <button className={styles.motionToggle} onClick={() => { setMotion(!motion); setActive(0); }} aria-pressed={motion}>{motion ? 'Vypnúť animáciu' : 'Zapnúť prechádzku'}</button></div>
         <div className={styles.copy} key={active}>
+          {!motion && <p className={styles.motionNote}>Prechádzka je pozastavená. Spusti ju tlačidlom hore.</p>}
           <p className={styles.tag}>{stops[active].tag}</p>
           <h1>{stops[active].title}</h1>
           <p className={styles.intro}>{stops[active].text}</p>
