@@ -2018,3 +2018,17 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 @media (max-width: 760px) {
   .supplement-heading, .supplement-copy, .supplement-side { grid-column: 1; }
 }
+
+/* Comparison navigation and time-driven film on the original version. */
+.version-switch{display:flex;justify-content:center;gap:8px;padding:8px 16px;background:#f6e9ee;font-size:13px}
+.version-switch a{padding:8px 16px;border-radius:30px;white-space:nowrap}
+.version-switch a[aria-current]{background:#252326;color:white}
+.scroll-story--film{height:auto!important}
+.scroll-story--film .story-stage{position:relative!important;top:0!important;height:780px!important;min-height:0!important}
+.scroll-story--film .story-scenes{position:absolute!important;inset:0}
+.scroll-story--film .story-scene{position:absolute!important;inset:0;min-height:0!important;opacity:var(--scene-opacity)!important;transition:opacity 1.4s ease}
+.scroll-story--film .story-copy{opacity:var(--copy-opacity)!important}
+.scroll-story--film .story-art{transform:scale(1.025);transition:transform 7s linear}
+.scroll-story--film.film-playing .story-scene[aria-hidden="false"] .story-art{transform:scale(1.1)}
+.scroll-story--film .story-top,.scroll-story--film .story-bottom{z-index:10}
+@media(max-width:760px){.scroll-story--film .story-stage{height:800px!important}.version-switch{font-size:12px;gap:2px}.version-switch a{padding:8px 12px}}
