@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { VersionSwitch } from '../site-header';
+import { FloatingVersionSwitch, VersionSwitch } from '../site-header';
 import V2ContactForm from './contact-form';
 import HeroStory from './hero-story';
 import styles from './v2.module.css';
@@ -66,6 +66,7 @@ export default function V2Page() {
         </nav>
         <a className={styles.headerCta} href="#kontakt-v2">Dohodni si návštevu</a>
       </header>
+      <FloatingVersionSwitch active="v2" />
 
       <main id="v2-content">
         <HeroStory />
