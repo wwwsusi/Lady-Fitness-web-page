@@ -2040,6 +2040,7 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 .scroll-story--film .story-top,.scroll-story--film .story-bottom{z-index:10}
 @media(max-width:760px){.version-switch{font-size:12px;gap:2px}.version-switch a{padding:8px 12px}}
 @media(max-width:420px){.version-switch{font-size:10px;padding-inline:6px}.version-switch a{padding:7px 8px}}
+.footer > .version-switch { width: 100%; margin-bottom: 10px; background: transparent; }
 
 /* Compact content sections; content may grow on small screens without clipping. */
 main#obsah > .section { height:auto; min-height:0; overflow:visible; }
@@ -2081,6 +2082,10 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
   backdrop-filter:blur(5px);
   font-weight:600;
   line-height:1.45;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-story--film .story-scene { transition:none!important; }
+  .scroll-story--film .story-art { transform:none!important; transition:none!important; }
 }
 
 /* Supplements: introduction and image share a row; products span the card. */

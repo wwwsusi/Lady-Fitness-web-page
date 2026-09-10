@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { VersionSwitch } from '../site-header';
 import V2ContactForm from './contact-form';
+import HeroStory from './hero-story';
 import styles from './v2.module.css';
 
 const facebook = 'https://www.facebook.com/profile.php?id=100057866011115';
@@ -52,8 +53,6 @@ export default function V2Page() {
   return (
     <div className={styles.page}>
       <a className={styles.skipLink} href="#v2-content">Preskočiť na obsah</a>
-      <VersionSwitch active="v2" />
-
       <header className={styles.header}>
         <Link className={styles.brand} href="/v2" aria-label="Lady Fitness V2 — úvod">
           <Image src="/logo.png" alt="Lady Fitness Humenné" width={148} height={77} priority />
@@ -69,19 +68,7 @@ export default function V2Page() {
       </header>
 
       <main id="v2-content">
-        <section className={styles.hero} aria-labelledby="v2-title">
-          <Image className={styles.heroImage} src="/photos/priestory.jpg" alt="Svetlý tréningový priestor Lady Fitness v Humennom" fill priority sizes="100vw" />
-          <div className={styles.heroShade} />
-          <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>Dámske fitness · Humenné</p>
-            <h1 id="v2-title">Tvoj priestor pre silu, pohyb a vlastné tempo.</h1>
-            <p>Fitness iba pre ženy, kde môžeš začať pokojne, odborne a bez porovnávania.</p>
-            <div className={styles.heroActions}>
-              <a className={styles.primaryButton} href="#kontakt-v2">Dohodni si prvú návštevu <span aria-hidden="true">↗</span></a>
-              <a className={styles.textLink} href="#cennik-v2">Pozrieť cenník</a>
-            </div>
-          </div>
-        </section>
+        <HeroStory />
 
         <aside className={styles.factBar} aria-label="Praktické informácie">
           <span><strong>Po–Pi</strong> 6:00–19:30</span>
@@ -132,7 +119,7 @@ export default function V2Page() {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.testimonials}`} aria-labelledby="testimonials-title">
+        <section id="referencie-v2" className={`${styles.section} ${styles.testimonials}`} aria-labelledby="testimonials-title">
           <div>
             <p className={styles.eyebrow}>Hlas klientok</p>
             <h2 id="testimonials-title"><span>Atmosféra</span>, ku ktorej sa chceš vracať.</h2>
@@ -247,7 +234,7 @@ export default function V2Page() {
           <V2ContactForm />
         </section>
 
-        <section className={`${styles.section} ${styles.faq}`} aria-labelledby="faq-title">
+        <section id="faq-v2" className={`${styles.section} ${styles.faq}`} aria-labelledby="faq-title">
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>Dobré vedieť</p>
             <h2 id="faq-title">Ešte niečo pred začiatkom?</h2>
@@ -259,9 +246,12 @@ export default function V2Page() {
       </main>
 
       <footer className={styles.footer}>
-        <Image src="/logo.png" alt="Lady Fitness Humenné" width={148} height={77} />
-        <p>© 2026 Lady Fitness Humenné</p>
-        <a href="#v2-content">Späť hore ↑</a>
+        <VersionSwitch active="v2" />
+        <div className={styles.footerRow}>
+          <Image src="/logo.png" alt="Lady Fitness Humenné" width={148} height={77} />
+          <p>© 2026 Lady Fitness Humenné</p>
+          <a href="#v2-content">Späť hore ↑</a>
+        </div>
       </footer>
 
       <script type="application/ld+json">{JSON.stringify(schema)}</script>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { ArrowUpRight, Dumbbell, Heart, MoveUpRight } from 'lucide-react';
 import { Faq } from './interactions';
-import SiteHeader from './site-header';
+import SiteHeader, { VersionSwitch, type SiteVariant } from './site-header';
 import Booking from './booking';
 import ScrollStory from './scroll-story';
 const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Dámske fitness na Hrnčiarskej 11 v Humennom. Osobné tréningy, detská zumba, strava a poradenstvo.',
   alternates: { canonical: '/' },
 };
-export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) {
+export function FitnessPage({ contentOnly = false, version = 'original' }: { contentOnly?: boolean; version?: SiteVariant }) {
   return (
     <>
       {!contentOnly && <a className="skip" href="#obsah">
@@ -602,6 +602,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
         </section>
       </main>
       <footer className="wrap footer">
+        <VersionSwitch active={version} />
           <a className="brand" href="/" aria-label="Lady Fitness — úvod">
           <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
         </a>

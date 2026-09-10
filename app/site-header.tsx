@@ -18,7 +18,6 @@ export function VersionSwitch({ active }: { active: SiteVariant }) {
 
 export default function SiteHeader({ animated = false }: { animated?: boolean }) {
   return <header className="site-header">
-    <VersionSwitch active={animated ? 'animated' : 'original'} />
     <div className="wrap topbar">
       <Link className="brand" href={animated ? '/prechadzka' : '/'} aria-label="Lady Fitness — úvod"><Image src="/logo.png" alt="Lady Fitness Humenné" width={148} height={77} priority /></Link>
       <nav className="nav" aria-label="Hlavná navigácia">

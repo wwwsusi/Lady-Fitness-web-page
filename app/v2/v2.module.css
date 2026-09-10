@@ -7,6 +7,7 @@
   --v2-pink-soft: #f8dce5;
   --v2-line: #ded5d9;
   --v2-dark: #211f23;
+  --v2-header-height: 122px;
   min-width: 0;
   overflow: clip;
   color: var(--v2-ink);
@@ -71,14 +72,44 @@
 .header nav a:hover { background: var(--v2-pink-soft); }
 .headerCta { color: white !important; background: var(--v2-dark); }
 
-.hero {
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.v2Story {
   position: relative;
+  height: 240svh;
+  background: var(--v2-dark);
+}
+.v2StoryStage {
+  position: sticky;
+  top: 0;
+  height: calc(100svh - var(--v2-header-height));
+  min-height: 540px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--v2-dark);
+}
+.v2StoryScenes,
+.v2StoryScene {
+  position: absolute;
+  inset: 0;
+}
+.v2StoryScene {
+  position: absolute;
   display: flex;
-  min-height: min(720px, calc(100svh - 148px));
+  height: 100%;
   align-items: flex-end;
   isolation: isolate;
   overflow: hidden;
   background: var(--v2-dark);
+  transition: opacity .55s cubic-bezier(.22,.61,.36,1);
 }
 .heroImage { z-index: -2; object-fit: cover; object-position: 58% center; }
 .heroShade {
@@ -102,8 +133,27 @@
   letter-spacing: .13em;
   text-transform: uppercase;
 }
-.hero .eyebrow { color: #ff9ab9; }
-.hero h1,
+.heroBadge {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 38px;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 24px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255,255,255,.58);
+  border-radius: 999px;
+  color: white;
+  background: rgba(20,17,20,.55);
+  backdrop-filter: blur(9px);
+  font-size: clamp(.8125rem, .77rem + .22vw, .95rem);
+  font-weight: 820;
+  line-height: 1.2;
+  letter-spacing: .105em;
+  text-transform: uppercase;
+}
+.heroBadge span { color: #ff9ab9; font-size: 1.15em; }
+.v2Story h2,
 .sectionHead h2,
 .story h2,
 .testimonials h2,
@@ -118,7 +168,7 @@
   letter-spacing: -.055em;
   text-wrap: balance;
 }
-.heroContent > p:not(.eyebrow) { max-width: 620px; margin: 22px 0 0; color: #fff; font-weight: 520; }
+.heroContent > p:not(.heroBadge) { max-width: 650px; margin: 22px 0 0; color: #fff; font-weight: 560; }
 .heroActions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin-top: 30px; }
 .primaryButton,
 .secondaryButton {
@@ -139,6 +189,52 @@
 .primaryButton { color: white !important; background: var(--v2-pink); }
 .secondaryButton { color: var(--v2-ink) !important; background: var(--v2-pink-soft); }
 .textLink { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; font-weight: 720; text-underline-offset: 5px; }
+
+.heroControls {
+  position: absolute;
+  z-index: 5;
+  right: 22px;
+  bottom: 24px;
+  left: 22px;
+  max-width: 1276px;
+  margin: 0 auto;
+}
+.heroControls nav {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 6px;
+  padding: 6px;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 999px;
+  background: rgba(20,17,20,.62);
+  backdrop-filter: blur(10px);
+  scrollbar-width: none;
+}
+.heroControls nav::-webkit-scrollbar { display: none; }
+.heroControls button {
+  display: inline-flex;
+  min-width: 48px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  background: transparent;
+  font: inherit;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.heroControls button span:first-child { color: #ff9ab9; }
+.heroControls button[aria-current='step'] { color: var(--v2-ink); background: white; }
+.heroControls button[aria-current='step'] span:first-child { color: var(--v2-pink); }
+.heroProgress { display: block; width: 100%; height: 3px; margin-top: 10px; overflow: hidden; background: rgba(255,255,255,.28); }
+.heroProgress span { display: block; width: 100%; height: 100%; background: #ff9ab9; transform-origin: left; }
 
 .factBar {
   display: grid;
@@ -256,7 +352,9 @@
 .faq { max-width: 900px; }
 .faq .sectionHead { margin-bottom: 28px; }
 
-.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 30px; max-width: 1320px; margin: 0 auto; padding: 28px 22px; border-top: 1px solid var(--v2-line); }
+.footer { max-width: 1320px; margin: 0 auto; padding: 20px 22px 28px; border-top: 1px solid var(--v2-line); }
+.footer > :global(.version-switch) { margin-bottom: 18px; background: transparent; }
+.footerRow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 30px; }
 .footer img { width: 104px; height: auto; }
 .footer p { margin: 0; color: var(--v2-muted); font-size: .875rem; }
 .footer a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 700; }
@@ -267,12 +365,12 @@
 }
 
 @media (min-width: 760px) {
+  .page { --v2-header-height: 92px; }
   .header { grid-template-columns: auto 1fr auto; padding-block: 12px; }
   .brand img { width: 132px; }
   .header nav { grid-column: auto; justify-content: center; }
-  .hero { min-height: min(720px, calc(100svh - 126px)); }
   .heroContent { padding-block: 88px; }
-  .heroContent > p:not(.eyebrow) { font-size: 1.16rem; }
+  .heroContent > p:not(.heroBadge) { font-size: 1.16rem; }
   .factBar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .factBar span { padding: 20px 14px; border-right: 1px solid var(--v2-line); border-bottom: 0; }
   .factBar span:last-child { border-right: 0; }
@@ -307,7 +405,8 @@
 @media (max-width: 759px) {
   .headerCta { padding-inline: 13px; font-size: .875rem; }
   .heroShade { background: linear-gradient(0deg, rgba(22,19,22,.92), rgba(22,19,22,.35)); }
-  .heroContent { padding-bottom: 52px; }
+  .heroContent { padding-bottom: 154px; }
+  .controlLabel { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .factBar { font-size: .875rem; }
   .gallery figcaption { line-height: 1.25; }
 }
@@ -315,4 +414,11 @@
 @media (prefers-reduced-motion: no-preference) {
   .primaryButton, .headerCta, .serviceGrid article { transition: transform .2s ease, background-color .2s ease; }
   .primaryButton:hover, .headerCta:hover { transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v2Story { height: auto; }
+  .v2StoryStage { position: relative; height: max(540px, calc(100svh - var(--v2-header-height))); }
+  .v2StoryScene { transition: none; }
+  .heroProgress { display: none; }
 }
