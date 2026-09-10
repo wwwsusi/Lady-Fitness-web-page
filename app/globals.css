@@ -2068,11 +2068,6 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
 .scroll-story--film .story-wash {
   background:linear-gradient(90deg, rgba(250,249,245,.62) 0%, rgba(250,249,245,.48) 38%, rgba(250,249,245,.22) 60%, rgba(250,249,245,.05) 85%);
 }
-@media(max-width:760px) {
-  .scroll-story--film .story-wash {
-    background:linear-gradient(0deg, rgba(250,249,245,.65) 0%, rgba(250,249,245,.55) 48%, rgba(250,249,245,.45) 78%, rgba(250,249,245,.20) 100%);
-  }
-}
 
 /* Supplements: introduction and image share a row; products span the card. */
 .supplement-card { grid-template-columns:58px minmax(0,1fr) minmax(160px,240px); align-items:start; }
