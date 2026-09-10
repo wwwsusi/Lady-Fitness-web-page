@@ -2068,6 +2068,19 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
 .scroll-story--film .story-wash {
   background:linear-gradient(90deg, rgba(250,249,245,.62) 0%, rgba(250,249,245,.48) 38%, rgba(250,249,245,.22) 60%, rgba(250,249,245,.05) 85%);
 }
+.scroll-story--film .story-description {
+  width:fit-content;
+  max-width:640px;
+  margin:22px 0;
+  padding:10px 14px;
+  color:#242126;
+  background:rgba(255,255,255,.78);
+  border-radius:10px;
+  box-shadow:0 3px 16px rgba(30,24,28,.08);
+  backdrop-filter:blur(5px);
+  font-weight:600;
+  line-height:1.45;
+}
 
 /* Supplements: introduction and image share a row; products span the card. */
 .supplement-card { grid-template-columns:58px minmax(0,1fr) minmax(160px,240px); align-items:start; }
@@ -2092,4 +2105,33 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
 }
 @media(min-width:601px) and (max-width:760px) {
   .supplement-heading { grid-column:2 / -1; }
+}
+
+/* Final readability and editorial alignment pass. */
+.testimonials-section .trust-grid { grid-template-columns:1fr 1fr; gap:20px; }
+.testimonial-shot {
+  justify-self:start;
+  width:min(100%,460px);
+  border:0;
+  border-radius:0;
+}
+.mind h3 {
+  color:#bb3d65;
+  font-size:clamp(48px,5vw,72px) !important;
+  font-weight:650;
+  line-height:1.02;
+}
+@media(min-width:1200px) {
+  .single-line-copy { max-width:none !important; white-space:nowrap; }
+  .booking-explainer.single-line-copy { width:max-content; }
+}
+@media(max-width:760px) {
+  .scroll-story--film .story-description {
+    max-width:min(88vw,560px);
+    padding:9px 11px;
+    background:rgba(255,255,255,.82);
+    font-size:16px;
+  }
+  .testimonials-section .trust-grid { grid-template-columns:1fr; gap:20px; }
+  .testimonial-shot { width:100%; }
 }

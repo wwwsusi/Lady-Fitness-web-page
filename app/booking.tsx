@@ -130,7 +130,7 @@ export default function Booking() {
           <br />
           spôsob kontaktu.
         </h2>
-        <p className="booking-explainer">
+        <p className="booking-explainer single-line-copy">
           Príď osobne, zavolaj alebo nám napíš. Ak si chceš pripraviť správu,
           generátor nájdeš hneď vedľa.
         </p>

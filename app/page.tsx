@@ -39,7 +39,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
               
               Zvyšok <span>tvoríme spolu.</span>
             </h2>
-            <p>
+            <p className="single-line-copy">
               Nájdi si svoj spôsob, ako byť silnejšia, dopriať si pozornosť a
               cítiť sa lepšie vo vlastnom tele.
             </p>
@@ -95,13 +95,12 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
               </div>
               <div className="service-body">
                 <span className="number">03 / KAŽDODENNÉ NÁVYKY</span>
-                <h3>
-                  Strava
-                  & poradenstvo
-                </h3>
+                <h3>Strava & poradenstvo</h3>
                 <p>
-                  Porozprávajme sa o stravovaní, tvojom režime a cieľoch.
-                  Hľadajme zmeny, ktoré zapadnú do tvojho bežného života.
+                  Nestačí iba cvičiť. Chceme, aby si svojmu telu aj rozumela.
+                  Prepájame pohyb so vzdelávaním. Na seminároch vysvetľujeme
+                  zdravie zrozumiteľne a prakticky – bez extrémnych diét a
+                  zázračných riešení.
                 </p>
                 <div className="chips">
                   <span className="chip">Individuálny prístup</span>
@@ -201,9 +200,9 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
                 môžeš učiť, posilňovať a cítiť sa dobre bez porovnávania.
               </p>
               <div className="founder-facts">
-                <span><strong>Od 2019</strong><small>Lady Fitness v Humennom</small></span>
-                <span><strong>Po–Pi 6:00 – 19:30</strong><small>otvorené</small></span>
-                <span><strong>So–Ne 8:00 – 16:30</strong><small>otvorené</small></span>
+                <span><strong>Od 2019</strong></span>
+                <span><strong>Po–Pi 6:00 – 19:30</strong></span>
+                <span><strong>So–Ne 8:00 – 16:30</strong></span>
               </div>
             </div>
           </div>
@@ -291,7 +290,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
               
               Nájdi svoj systém.
             </h2>
-            <p>
+            <p className="single-line-copy">
               Pochopenie, praktické príklady a zmeny použiteľné v bežnom živote.
               Štyri tematické bloky prepájame v jednej veľkej prezentácii.
             </p>
@@ -342,7 +341,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
                 
                 Spoločný smer.
               </h2>
-              <p>
+              <p className="single-line-copy">
                 Špeciálne skupinové kurzy pre ženy so zameraním na konkrétne
                 partie a vedomý pohyb.
               </p>
@@ -421,7 +420,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
               
               Skutočná komunita.
             </h2>
-            <p>
+            <p className="single-line-copy">
               Svetlé priestory, miesto na silový aj kondičný tréning a ľudia, s
               ktorými môžeš zdieľať radosť z pohybu.
             </p>
@@ -491,7 +490,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
               
               byť jednoduchý.
             </h2>
-            <p>
+            <p className="single-line-copy">
               Nemusíš mať hotový plán ani športové skúsenosti. Začnime
               rozhovorom o tom, čo potrebuješ.
             </p>
