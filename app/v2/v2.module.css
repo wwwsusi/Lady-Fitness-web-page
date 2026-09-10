@@ -369,7 +369,7 @@
   .header { grid-template-columns: auto 1fr auto; padding-block: 12px; }
   .brand img { width: 132px; }
   .header nav { grid-column: auto; justify-content: center; }
-  .heroContent { padding-block: 88px; }
+  .heroContent { padding-top: 88px; padding-bottom: 148px; }
   .heroContent > p:not(.heroBadge) { font-size: 1.16rem; }
   .factBar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .factBar span { padding: 20px 14px; border-right: 1px solid var(--v2-line); border-bottom: 0; }
