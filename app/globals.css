@@ -2093,9 +2093,8 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 .version-flyout nav a[aria-current='page'] { color:white; background:#252326; }
 .version-flyout:not([open]) nav { display:none; }
 @media(max-width:760px){
-  .version-flyout{right:12px;bottom:88px}
-  .version-flyout--v2{top:14px;bottom:auto}
-  .version-flyout--v2 nav{top:calc(100% + 8px);bottom:auto}
+  .version-flyout{right:8px;bottom:88px}
+  .version-flyout summary{min-width:56px;padding-inline:8px;font-size:11px}
 }
 
 /* Compact content sections; content may grow on small screens without clipping. */
