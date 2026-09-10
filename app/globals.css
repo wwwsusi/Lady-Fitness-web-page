@@ -1011,9 +1011,9 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.04em; }
 .practical-grid strong { font-size:16px; color:var(--ink); }
 .practical-grid span { color:#777; font-size:13px; line-height:1.4; }
 .trust-grid { display:grid; grid-template-columns:1fr .8fr; gap:32px; align-items:center; margin-top:0; padding-top:0; }
-.trust-grid h3 { margin:18px 0 22px; font-size:clamp(28px,3vw,44px); }
-.trust-grid h3 { font-size:clamp(42px,4.4vw,66px); color:var(--ink); }
-.trust-grid h3 span, .section-head h2 span { color:#e8849f; }
+.trust-grid h2 { margin:18px 0 22px; font-size:clamp(28px,3vw,44px); }
+.trust-grid h2 { font-size:clamp(42px,4.4vw,66px); color:var(--ink); }
+.trust-grid h2 span, .section-head h2 span { color:#e8849f; }
 .section-head { display:block; }
 .section-head p { max-width:680px; margin-top:18px; }
 .trust-grid p:not(.eyebrow) { color:#4f4d55; font-size:18px; line-height:1.5; margin:16px 0; }
@@ -1983,7 +1983,7 @@ h1, h2, .hero-title, .story-copy h1, .story-copy h2, .contact h2,
   letter-spacing: -0.04em;
 }
 h3, .service-body h3, .course h3, .education-grid h3, .step h3,
-.practical h3, .sms-preview h3, .pricing-grid h3, .trust-grid h3,
+.practical h3, .sms-preview h3, .pricing-grid h3, .trust-grid h2,
 .mind h3, .senior h3 {
   font-size: var(--type-heading) !important;
   line-height: 1.15;
@@ -2004,7 +2004,7 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
   :root { --type-display: clamp(40px, 10vw, 58px); --type-heading: 24px; }
 }
 /* Keep the testimonial headline in the same display category as section H2s. */
-.trust-grid h3 { font-size: var(--type-display) !important; line-height: 1.08; letter-spacing: -0.04em; }
+.trust-grid h2 { font-size: var(--type-display) !important; line-height: 1.08; letter-spacing: -0.04em; }
 
 /* Give section titles the available row instead of an artificial narrow column. */
 .section-head h2 { max-width: none; width: 100%; text-wrap: wrap; }
@@ -2039,6 +2039,7 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 @media(max-width:760px){.scroll-story--film .story-bottom{bottom:90px}.scroll-story--film .story-copy{padding-bottom:110px}.mobile-contact{padding-bottom:max(12px,env(safe-area-inset-bottom))}}
 .scroll-story--film .story-top,.scroll-story--film .story-bottom{z-index:10}
 @media(max-width:760px){.version-switch{font-size:12px;gap:2px}.version-switch a{padding:8px 12px}}
+@media(max-width:420px){.version-switch{font-size:10px;padding-inline:6px}.version-switch a{padding:7px 8px}}
 
 /* Compact content sections; content may grow on small screens without clipping. */
 main#obsah > .section { height:auto; min-height:0; overflow:visible; }

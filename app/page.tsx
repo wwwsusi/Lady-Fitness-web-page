@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { ArrowUpRight, Dumbbell, Heart, MoveUpRight } from 'lucide-react';
 import { Faq } from './interactions';
 import SiteHeader from './site-header';
@@ -7,6 +8,11 @@ const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
 const MAP =
   'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9';
 const Arrow = () => <ArrowUpRight size={20} aria-hidden="true" />;
+export const metadata: Metadata = {
+  title: 'Lady Fitness Humenné — Tvoja sila. Tvoj priestor.',
+  description: 'Dámske fitness na Hrnčiarskej 11 v Humennom. Osobné tréningy, detská zumba, strava a poradenstvo.',
+  alternates: { canonical: '/' },
+};
 export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) {
   return (
     <>
@@ -163,12 +169,12 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
             <p>Ceny doplníme neskôr. Už dnes si môžeš vybrať službu a ozvať sa nám na recepcii, telefonicky alebo správou.</p>
           </div>
           <div className="pricing-grid">
-            <article><span>01</span><h3>Jednorazový vstup</h3><p>Príď si zacvičiť v čase, ktorý ti vyhovuje.</p></article>
-            <article><span>02</span><h3>Permanentka</h3><p>Pravidelný pohyb a priestor vytvoriť si vlastný rytmus.</p></article>
-            <article><span>03</span><h3>Osobný tréning</h3><p>Naučiť sa správne cvičiť, nájsť istotu pri strojoch a nastaviť si tréning. Som tu pre teba.</p></article>
-            <article><span>04</span><h3>Strava & poradenstvo</h3><p>Praktické rozhovory o jedle, režime a cieľoch bez extrémov.</p></article>
-            <article><span>05</span><h3>Psychohygiena</h3><p>Čas pre seba, pohyb a príjemná komunita žien.</p></article>
-            <article><span>06</span><h3>Detská zumba pre škôlky</h3><p>Program do materských škôl. Kontaktuj riaditeľa alebo riaditeľku škôlky.</p></article>
+            <article><span>01</span><h3>Jednorazový vstup</h3><p><strong>10 €</strong></p><p>Príď si zacvičiť v čase, ktorý ti vyhovuje.</p></article>
+            <article><span>02</span><h3>Mesačná permanentka</h3><p><strong>50 €</strong></p><p>Pravidelný pohyb a priestor vytvoriť si vlastný rytmus.</p></article>
+            <article><span>03</span><h3>Osobný tréning</h3><p><strong>Vstup alebo permanentka + 20 €</strong></p><p>Správna technika, istota pri strojoch a tréning podľa tvojho cieľa.</p></article>
+            <article><span>04</span><h3>Strava & poradenstvo</h3><p><strong>150 €</strong></p><p>Praktické a zrozumiteľné poradenstvo bez extrémov.</p></article>
+            <article><span>05</span><h3>Psychohygiena</h3><p><strong>V rámci fitka zdarma</strong></p><p>Dobrá nálada sa pri vstupe osobitne neúčtuje.</p></article>
+            <article><span>06</span><h3>Detská zumba pre škôlky</h3><p><strong>Individuálna cena podľa škôlky</strong></p><p>O cene a podmienkach sa informuj vo svojej škôlke.</p></article>
           </div>
         </section>
         <section id="o-nas" className="wrap section founder-section">
@@ -213,11 +219,11 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
             <div><strong>Pre každú ženu</strong><span>bez ohľadu na vek či skúsenosti</span></div>
           </div>
         </section>
-        <section id="referencie" className="wrap section testimonials-section" aria-label="Hlas klientok">
+        <section id="referencie" className="wrap section testimonials-section" aria-labelledby="referencie-title">
           <div className="trust-grid">
             <div>
               <p className="eyebrow">HLAS KLIENTOK</p>
-              <h3><span>Atmosféra</span>, ku ktorej sa chceš vracať.</h3>
+              <h2 id="referencie-title"><span>Atmosféra</span>, ku ktorej sa chceš vracať.</h2>
               <p>
                 „Príjemné super ľudia a človek sa tam cíti ako doma.“
               </p>
@@ -596,7 +602,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
         </section>
       </main>
       <footer className="wrap footer">
-          <a className="brand" href="#">
+          <a className="brand" href="/" aria-label="Lady Fitness — úvod">
           <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
         </a>
         <p>© {new Date().getFullYear()} Lady Fitness Humenné</p>
