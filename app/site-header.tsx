@@ -20,17 +20,6 @@ export function VersionSwitch({ active }: { active: SiteVariant }) {
   );
 }
 
-export function FloatingVersionSwitch({ active }: { active: SiteVariant }) {
-  return (
-    <details className={`version-flyout version-flyout--${active}`}>
-      <summary>Verzie</summary>
-      <nav aria-label="Rýchle porovnanie verzií stránky">
-        {versionLinks.map(([id, href, label]) => <Link key={id} href={href} aria-current={active === id ? 'page' : undefined}>{label}</Link>)}
-      </nav>
-    </details>
-  );
-}
-
 export default function SiteHeader({ animated = false }: { animated?: boolean }) {
   return <header className="site-header">
     <div className="wrap topbar">
@@ -41,6 +30,5 @@ export default function SiteHeader({ animated = false }: { animated?: boolean })
       <a className="button desktop-cta" href="#prva-navsteva">Poďme začať <ArrowUpRight size={20} aria-hidden="true" /></a>
       <MobileMenu />
     </div>
-    <FloatingVersionSwitch active={animated ? 'animated' : 'original'} />
   </header>;
 }
