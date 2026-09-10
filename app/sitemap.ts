@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
+import { siteUrl } from './site-config';
 
-const base = 'https://lady-fitness-humenne.michal-susko.chatgpt.site';
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ['/', '/prechadzka', '/v2'].map((path) => ({
-    url: `${base}${path}`,
+    url: siteUrl(path),
     lastModified: new Date(),
   }));
 }

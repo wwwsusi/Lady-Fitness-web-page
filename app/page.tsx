@@ -4,6 +4,7 @@ import { Faq } from './interactions';
 import SiteHeader, { VersionSwitch, type SiteVariant } from './site-header';
 import Booking from './booking';
 import ScrollStory from './scroll-story';
+import { assetPath, siteBasePath, siteUrl } from './site-config';
 const FB = 'https://www.facebook.com/profile.php?id=100057866011115';
 const MAP =
   'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9';
@@ -11,7 +12,7 @@ const Arrow = () => <ArrowUpRight size={20} aria-hidden="true" />;
 export const metadata: Metadata = {
   title: 'Lady Fitness Humenné — Tvoja sila. Tvoj priestor.',
   description: 'Dámske fitness na Hrnčiarskej 11 v Humennom. Osobné tréningy, detská zumba, strava a poradenstvo.',
-  alternates: { canonical: '/' },
+  alternates: { canonical: siteUrl('/') },
 };
 export function FitnessPage({ contentOnly = false, version = 'original' }: { contentOnly?: boolean; version?: SiteVariant }) {
   return (
@@ -53,7 +54,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
           <div className="service-grid">
             <article className="service-card featured">
               <img
-                src="/illustrations/pohyb.webp"
+                src={assetPath('/illustrations/pohyb.webp')}
                 alt="Ilustrovaná scéna spoločného tréningu v Lady Fitness"
                 loading="lazy"
                 width="960"
@@ -151,7 +152,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
               </div>
             </div>
             <div className="supplement-side">
-              <img className="supplement-product" src="/products/pro8.png" alt="Pro8 od ProSupplements" loading="lazy" width="484" height="724" />
+              <img className="supplement-product" src={assetPath('/products/pro8.png')} alt="Pro8 od ProSupplements" loading="lazy" width="484" height="724" />
             </div>
               <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
                 <div className="supplement-item"><strong>PRO 8</strong><span>Esenciálne aminokyseliny pre regeneráciu a svaly.</span></div>
@@ -182,7 +183,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
             <div className="founder-photo-wrap">
               <img
                 className="founder-photo"
-                src="/photos/trenerka.jpg"
+                src={assetPath('/photos/trenerka.jpg')}
                 alt="Trénerka Lady Fitness v priestoroch fitka"
                 loading="lazy"
                 width="1006"
@@ -237,7 +238,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
             </div>
             <img
               className="testimonial-shot"
-              src="/photos/referencie.png"
+              src={assetPath('/photos/referencie.png')}
               alt="Verejné odporúčania klientok pre Lady Fitness na Facebooku"
               loading="lazy"
               width="1212"
@@ -249,7 +250,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
           <div className="split">
             <img
               className="split-photo"
-              src="/photos/detska-zumba.jpg"
+              src={assetPath('/photos/detska-zumba.jpg')}
               alt="Detská skupina na spoločnej fotografii v Lady Fitness"
               loading="lazy"
               width="960"
@@ -434,7 +435,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
           <div className="gallery">
             <figure>
               <img
-                src="/illustrations/priestor.webp"
+                src={assetPath('/illustrations/priestor.webp')}
                 alt="Ilustrovaný tréningový priestor Lady Fitness s posilňovacími strojmi"
                 loading="lazy"
                 width="1440"
@@ -444,7 +445,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
             </figure>
             <figure>
               <img
-                src="/photos/kardio.jpg"
+                src={assetPath('/photos/kardio.jpg')}
                 alt="Kardio zóna so stacionárnymi bicyklami"
                 loading="lazy"
                 width="1440"
@@ -454,7 +455,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
             </figure>
             <figure>
               <img
-                src="/illustrations/komunita.webp"
+                src={assetPath('/illustrations/komunita.webp')}
                 alt="Ilustrované komunitné stretnutie žien v Lady Fitness"
                 loading="lazy"
                 width="960"
@@ -603,8 +604,8 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
       </main>
       <footer className="wrap footer">
         <VersionSwitch active={version} />
-          <a className="brand" href="/" aria-label="Lady Fitness — úvod">
-          <img src="/logo.png" alt="Lady Fitness Humenné" width="148" height="77" />
+          <a className="brand" href={siteBasePath || '/'} aria-label="Lady Fitness — úvod">
+          <img src={assetPath('/logo.png')} alt="Lady Fitness Humenné" width="148" height="77" />
         </a>
         <p>© {new Date().getFullYear()} Lady Fitness Humenné</p>
         <a href="#kontakt">Kontakt</a>

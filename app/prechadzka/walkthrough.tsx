@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import styles from './walkthrough.module.css';
+import { assetPath } from '../site-config';
 import { scenes } from '../scroll-story';
 const stops = scenes.map((scene, i) => ({name: scene.label, title: `${scene.first} ${scene.last}`, text: scene.description, tag: `0${i + 1} / ${scene.label}`, image: ['priestory.jpg', 'trening.jpg', 'komunita.jpg'][i], origin: '55% 60%', href: scene.href, cta: scene.cta}));
 export default function Walkthrough() {
@@ -45,7 +46,7 @@ export default function Walkthrough() {
   return <>
     <section ref={root} className={`${styles.journey} ${motion ? styles.motionOn : styles.motionOff}`} aria-label="Prechádzka Lady Fitness">
       <div className={styles.stage}>
-        <div className={styles.photos} aria-hidden="true">{stops.map((s,i) => <div key={s.name} ref={el => {layers.current[i] = el;}} className={styles.photo} style={{opacity: i === 0 ? 1 : 0, transformOrigin:s.origin}}><img src={'/photos/'+s.image} alt="" fetchPriority={i === 0 ? 'high' : 'auto'} /></div>)}</div>
+        <div className={styles.photos} aria-hidden="true">{stops.map((s,i) => <div key={s.name} ref={el => {layers.current[i] = el;}} className={styles.photo} style={{opacity: i === 0 ? 1 : 0, transformOrigin:s.origin}}><img src={assetPath('/photos/'+s.image)} alt="" fetchPriority={i === 0 ? 'high' : 'auto'} /></div>)}</div>
         <div className={styles.shade}/>
         <div className={styles.location}>HUMENNÉ <button className={styles.motionToggle} onClick={() => { setMotion(!motion); setActive(0); }} aria-pressed={motion}>{motion ? 'Vypnúť animáciu' : 'Zapnúť prechádzku'}</button></div>
         <div className={styles.copy} key={active}>

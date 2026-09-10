@@ -3,13 +3,14 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import styles from './v2.module.css';
+import { assetPath } from '../site-config';
 
 const scenes = [
   {
     kicker: 'JEDINÉ DÁMSKE FITNESS · HUMENNÉ',
     title: 'Tvoj priestor pre silu, pohyb a vlastné tempo.',
     text: 'Fitness iba pre ženy, kde môžeš začať pokojne, odborne a bez porovnávania.',
-    image: '/photos/priestory.jpg',
+    image: assetPath('/photos/priestory.jpg'),
     alt: 'Svetlý tréningový priestor Lady Fitness v Humennom',
     actions: [
       ['Dohodni si prvú návštevu', '#kontakt-v2'],
@@ -20,7 +21,7 @@ const scenes = [
     kicker: 'PRVÁ NÁVŠTEVA · HRNČIARSKA 11',
     title: 'Nemusíš mať plán. Stačí prísť.',
     text: 'Parkovanie zdarma priamo pri fitku, šatňa aj sprchy k dispozícii. Prvý krok prebehne v pokoji, spolu s trénerkou.',
-    image: '/photos/trening.jpg',
+    image: assetPath('/photos/trening.jpg'),
     alt: 'Tréning žien v Lady Fitness',
     actions: [
       ['Ako prebieha prvá návšteva', '#faq-v2'],
@@ -31,7 +32,7 @@ const scenes = [
     kicker: 'OD ROKU 2019 · HUMENNÉ',
     title: 'Skutočné ženy. Skutočný pokrok.',
     text: 'Založené trénerkou s rokmi skúseností. Komunita, kde sa nemusíš porovnávať – len hýbať vlastným tempom.',
-    image: '/photos/komunita.jpg',
+    image: assetPath('/photos/komunita.jpg'),
     alt: 'Komunita žien Lady Fitness',
     actions: [
       ['Náš príbeh', '#pribeh-v2'],

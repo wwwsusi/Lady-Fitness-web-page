@@ -5,6 +5,7 @@ import { VersionSwitch } from '../site-header';
 import V2ContactForm from './contact-form';
 import HeroStory from './hero-story';
 import styles from './v2.module.css';
+import { assetPath, siteUrl } from '../site-config';
 
 const facebook = 'https://www.facebook.com/profile.php?id=100057866011115';
 const map = 'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9';
@@ -12,11 +13,11 @@ const map = 'https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4
 export const metadata: Metadata = {
   title: 'Lady Fitness Humenné | Dámske fitness a osobné tréningy',
   description: 'Dámske fitness v Humennom. Vlastný tréning, osobné tréningy, poradenstvo, detská zumba a programy pre ženy v každom veku.',
-  alternates: { canonical: '/v2' },
+  alternates: { canonical: siteUrl('/v2/') },
   openGraph: {
     title: 'Lady Fitness Humenné | Tvoj priestor pre pohyb',
     description: 'Dámske fitness v Humennom s osobným prístupom a komunitou žien.',
-    images: ['/photos/priestory.jpg'],
+    images: [siteUrl('/photos/priestory.jpg')],
   },
 };
 
@@ -33,9 +34,9 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'HealthClub',
   name: 'Lady Fitness Humenné',
-  url: 'https://lady-fitness-humenne.michal-susko.chatgpt.site/v2',
+  url: siteUrl('/v2/'),
   telephone: '+421908891961',
-  image: 'https://lady-fitness-humenne.michal-susko.chatgpt.site/photos/priestory.jpg',
+  image: siteUrl('/photos/priestory.jpg'),
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Hrnčiarska 11',
@@ -55,7 +56,7 @@ export default function V2Page() {
       <a className={styles.skipLink} href="#v2-content">Preskočiť na obsah</a>
       <header className={styles.header}>
         <Link className={styles.brand} href="/v2" aria-label="Lady Fitness V2 — úvod">
-          <Image src="/logo.png" alt="Lady Fitness Humenné" width={148} height={77} priority />
+          <Image src={assetPath('/logo.png')} alt="Lady Fitness Humenné" width={148} height={77} priority />
         </Link>
         <nav aria-label="Hlavná navigácia V2">
           <a href="#sluzby-v2">Služby</a>
@@ -103,7 +104,7 @@ export default function V2Page() {
 
         <section id="pribeh-v2" className={`${styles.section} ${styles.story}`} aria-labelledby="story-title">
           <div className={styles.storyImage}>
-            <Image src="/photos/trenerka.jpg" alt="Trénerka Lady Fitness v priestoroch fitka" fill sizes="(min-width: 800px) 42vw, 100vw" />
+            <Image src={assetPath('/photos/trenerka.jpg')} alt="Trénerka Lady Fitness v priestoroch fitka" fill sizes="(min-width: 800px) 42vw, 100vw" />
           </div>
           <div className={styles.storyCopy}>
             <p className={styles.eyebrow}>Môj príbeh</p>
@@ -173,7 +174,7 @@ export default function V2Page() {
             </ul>
             <p className={styles.note}>Doplnky nenahrádzajú pestrú stravu ani odbornú zdravotnú starostlivosť. Viac informácií nájdeš na <a href="https://prosupplements.sk" target="_blank" rel="noreferrer">ProSupplements</a>.</p>
           </div>
-          <Image src="/products/pro8.png" alt="PRO 8 od ProSupplements" width={484} height={724} sizes="(min-width: 800px) 260px, 180px" />
+          <Image src={assetPath('/products/pro8.png')} alt="PRO 8 od ProSupplements" width={484} height={724} sizes="(min-width: 800px) 260px, 180px" />
         </section>
 
         <section className={`${styles.section} ${styles.gallerySection}`} aria-labelledby="gallery-title">
@@ -182,9 +183,9 @@ export default function V2Page() {
             <h2 id="gallery-title">Skutočné miesto. Skutočná komunita.</h2>
           </div>
           <div className={styles.gallery}>
-            <figure><Image src="/photos/vybavenie.jpg" alt="Posilňovacie stroje v Lady Fitness" fill sizes="(min-width: 800px) 42vw, 100vw" /><figcaption>Priestor pre tvoj tréning</figcaption></figure>
-            <figure><Image src="/photos/kardio.jpg" alt="Kardio zóna Lady Fitness" fill sizes="(min-width: 800px) 26vw, 50vw" /><figcaption>Sila aj kondícia</figcaption></figure>
-            <figure><Image src="/photos/komunita.jpg" alt="Komunitné stretnutie v Lady Fitness" fill sizes="(min-width: 800px) 26vw, 50vw" /><figcaption>Spolu aj mimo tréningu</figcaption></figure>
+            <figure><Image src={assetPath('/photos/vybavenie.jpg')} alt="Posilňovacie stroje v Lady Fitness" fill sizes="(min-width: 800px) 42vw, 100vw" /><figcaption>Priestor pre tvoj tréning</figcaption></figure>
+            <figure><Image src={assetPath('/photos/kardio.jpg')} alt="Kardio zóna Lady Fitness" fill sizes="(min-width: 800px) 26vw, 50vw" /><figcaption>Sila aj kondícia</figcaption></figure>
+            <figure><Image src={assetPath('/photos/komunita.jpg')} alt="Komunitné stretnutie v Lady Fitness" fill sizes="(min-width: 800px) 26vw, 50vw" /><figcaption>Spolu aj mimo tréningu</figcaption></figure>
           </div>
         </section>
 
@@ -247,7 +248,7 @@ export default function V2Page() {
       <footer className={styles.footer}>
         <VersionSwitch active="v2" />
         <div className={styles.footerRow}>
-          <Image src="/logo.png" alt="Lady Fitness Humenné" width={148} height={77} />
+          <Image src={assetPath('/logo.png')} alt="Lady Fitness Humenné" width={148} height={77} />
           <p>© 2026 Lady Fitness Humenné</p>
           <a href="#v2-content">Späť hore ↑</a>
         </div>

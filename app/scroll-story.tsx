@@ -2,11 +2,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { Switch } from '@/components/ui/switch';
+import { assetPath } from './site-config';
 export const scenes = [
   {
     id: 'priestor',
     label: 'Tvoj priestor',
-    image: '/illustrations/priestor.webp',
+    image: assetPath('/illustrations/priestor.webp'),
     alt: 'Tréningový priestor Lady Fitness s posilňovacími strojmi a modrými sedadlami.',
     first: 'Tvoja sila.',
     last: 'Tvoj priestor.',
@@ -18,7 +19,7 @@ export const scenes = [
   {
     id: 'pohyb',
     label: 'Tvoj pohyb',
-    image: '/illustrations/pohyb.webp',
+    image: assetPath('/illustrations/pohyb.webp'),
     alt: 'Ženy cvičia spoločne v priestoroch Lady Fitness.',
     first: 'Začni tam,',
     last: 'kde práve si.',
@@ -30,7 +31,7 @@ export const scenes = [
   {
     id: 'komunita',
     label: 'Tvoja komunita',
-    image: '/illustrations/komunita.webp',
+    image: assetPath('/illustrations/komunita.webp'),
     alt: 'Komunitné stretnutie žien v Lady Fitness.',
     first: 'Spolu sa',
     last: 'hýbe ľahšie.',

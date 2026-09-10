@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { assetPath } from '../site-config';
 export default function Directions() {
   return (
     <main className="wrap direction-page">
@@ -43,7 +44,7 @@ export default function Directions() {
               Tvoj <em>priestor.</em>
             </h3>
             <img
-              src="/photos/priestory.jpg"
+              src={assetPath('/photos/priestory.jpg')}
               alt="Priestory Lady Fitness vo výraznom modernom návrhu"
             />
           </div>
@@ -89,7 +90,7 @@ export default function Directions() {
               <span className="sample-cta">Spoznaj Lady Fitness ↗</span>
             </div>
             <img
-              src="/photos/trening.jpg"
+              src={assetPath('/photos/trening.jpg')}
               alt="Skupinové cvičenie v jemnejšom ružovom návrhu"
             />
           </div>
@@ -127,7 +128,7 @@ export default function Directions() {
               <p>Začína to tebou. Pokračuje to každý deň.</p>
             </div>
             <img
-              src="/photos/komunita.jpg"
+              src={assetPath('/photos/komunita.jpg')}
               alt="Komunita žien v návrhu značky s petrolejovou farbou"
             />
           </div>
