@@ -147,6 +147,7 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
             </div>
             <div className="supplement-side">
               <img className="supplement-product" src="/products/pro8.png" alt="Pro8 od ProSupplements" loading="lazy" width="484" height="724" />
+            </div>
               <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
                 <div className="supplement-item"><strong>PRO 8</strong><span>Esenciálne aminokyseliny pre regeneráciu a svaly.</span></div>
                 <div className="supplement-item"><strong>PRO Magnesium</strong><span>Horčík pre nervový systém a normálnu funkciu svalov.</span></div>
@@ -154,7 +155,6 @@ export function FitnessPage({ contentOnly = false }: { contentOnly?: boolean }) 
                 <div className="supplement-item"><strong>NAD+</strong><span>Doplnok pre energiu a bunkový metabolizmus.</span></div>
                 <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode <a href="https://prosupplements.sk" target="_blank" rel="noreferrer">ProSupplements</a> a viac info o produktoch.</small>
               </div>
-            </div>
           </div>
         </section>
         <section id="cennik" className="wrap section pricing-section">
