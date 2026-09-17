@@ -74,20 +74,23 @@ export default function Journey() {
   const layers = useRef<(HTMLDivElement | null)[]>([]);
   const meter = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const [motion, setMotion] = useState(false);
+  const [autoplay, setAutoplay] = useState(false);
 
   useEffect(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const frame = requestAnimationFrame(() => setMotion(!preference.matches));
+    const frame = requestAnimationFrame(() => setAutoplay(!preference.matches));
     return () => cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
-    if (!motion) {
+    if (autoplay) {
       layers.current.forEach((layer, index) => {
         if (!layer) return;
         layer.style.opacity = index === active ? '1' : '0';
-        layer.style.transform = 'scale(1.035) translate3d(0, 0, 0)';
+        const direction = scenes[index].direction;
+        layer.style.transform = index === active
+          ? `scale(1.045) translate3d(${direction * -0.8}%, 0, 0)`
+          : `scale(1.12) translate3d(${direction * 2.4}%, 0, 0)`;
       });
       if (meter.current) meter.current.style.transform = `scaleX(${active / (scenes.length - 1)})`;
       return;
@@ -128,10 +131,18 @@ export default function Journey() {
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
     };
-  }, [active, motion]);
+  }, [active, autoplay]);
+
+  useEffect(() => {
+    if (!autoplay) return;
+    const timer = window.setInterval(() => {
+      setActive((index) => (index + 1) % scenes.length);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [autoplay]);
 
   const goTo = (index: number) => {
-    if (!motion || !root.current) {
+    if (autoplay || !root.current) {
       setActive(index);
       return;
     }
@@ -141,7 +152,7 @@ export default function Journey() {
   };
 
   return (
-    <section ref={root} className={`${styles.journey} ${motion ? styles.motionOn : styles.motionOff}`} aria-label="Ilustrovaná prechádzka Lady Fitness">
+    <section ref={root} className={styles.journey} aria-label="Ilustrovaná prechádzka Lady Fitness">
       <div className={styles.stage}>
         <div className={styles.layers} aria-hidden="true">
           {scenes.map((scene, index) => (
@@ -159,9 +170,9 @@ export default function Journey() {
 
         <div className={styles.topline}>
           <span><Footprints size={17} aria-hidden="true" /> ILUSTROVANÁ PRECHÁDZKA · LADY FITNESS</span>
-          <button type="button" onClick={() => setMotion((value) => !value)} aria-pressed={motion}>
-            {motion ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
-            {motion ? 'Pozastaviť pohyb' : 'Spustiť pohyb'}
+          <button type="button" onClick={() => setAutoplay((value) => !value)} aria-pressed={autoplay}>
+            {autoplay ? <Pause size={16} aria-hidden="true" /> : <Play size={16} aria-hidden="true" />}
+            {autoplay ? 'Pozastaviť pohyb' : 'Spustiť pohyb'}
           </button>
         </div>
 
@@ -173,7 +184,10 @@ export default function Journey() {
         </div>
 
         <div className={styles.bottom}>
-          <div className={styles.scrollHint}><ArrowDown size={20} aria-hidden="true" /><span>Roluj a prejdi sa fitkom</span></div>
+          <div className={styles.scrollHint}>
+            {autoplay ? <Play size={18} aria-hidden="true" /> : <ArrowDown size={20} aria-hidden="true" />}
+            <span>{autoplay ? 'Prehliadka sa prehráva automaticky' : 'Roluj a prejdi sa fitkom'}</span>
+          </div>
           <nav className={styles.stops} aria-label="Zastávky prechádzky">
             {scenes.map((scene, index) => (
               <button type="button" key={scene.id} onClick={() => goTo(index)} aria-current={active === index ? 'step' : undefined} aria-label={`${scene.number} ${scene.label}`}>

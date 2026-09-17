@@ -30,7 +30,7 @@
 .layer {
   overflow: hidden;
   will-change: transform, opacity;
-  transition: opacity 80ms linear;
+  transition: opacity 900ms ease, transform 1800ms cubic-bezier(.2,.7,.2,1);
 }
 
 .layer img {
@@ -230,18 +230,6 @@
   background: #ef789a;
   transform: scaleX(0);
   transform-origin: left;
-}
-
-.motionOff {
-  height: 100svh;
-}
-
-.motionOff .stage {
-  position: relative;
-}
-
-.motionOff .scrollHint {
-  display: none;
 }
 
 .details :global(.story-trust) {
