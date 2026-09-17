@@ -1,0 +1,316 @@
+.page {
+  background: #fffafb;
+  color: #252326;
+}
+
+.journey {
+  position: relative;
+  height: 420svh;
+  background: #211c22;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  color: #fff;
+  background: #211c22;
+  isolation: isolate;
+}
+
+.layers,
+.layer,
+.wash {
+  position: absolute;
+  inset: 0;
+}
+
+.layer {
+  overflow: hidden;
+  will-change: transform, opacity;
+  transition: opacity 80ms linear;
+}
+
+.layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wash {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(24, 17, 24, .86) 0%, rgba(24, 17, 24, .58) 38%, rgba(24, 17, 24, .08) 72%),
+    linear-gradient(0deg, rgba(24, 17, 24, .72), transparent 34%),
+    linear-gradient(180deg, rgba(24, 17, 24, .42), transparent 24%);
+}
+
+.topline,
+.copy,
+.bottom,
+.progress {
+  position: absolute;
+  z-index: 2;
+}
+
+.topline {
+  top: clamp(24px, 4vh, 44px);
+  left: clamp(24px, 5vw, 84px);
+  right: clamp(24px, 5vw, 84px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.topline > span,
+.topline button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topline button {
+  min-height: 44px;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,.46);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(31, 24, 31, .58);
+  backdrop-filter: blur(14px);
+  font: inherit;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+.copy {
+  top: 47%;
+  left: clamp(24px, 7vw, 120px);
+  width: min(760px, 76vw);
+  transform: translateY(-50%);
+  animation: copyIn .48s cubic-bezier(.2,.7,.2,1);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 22px;
+  padding: 10px 15px;
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(35, 27, 35, .58);
+  backdrop-filter: blur(12px);
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.kicker span {
+  color: #ffafc4;
+}
+
+.copy h1 {
+  max-width: 760px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(52px, 6.1vw, 96px) !important;
+  line-height: .98;
+  letter-spacing: -.06em;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 620px;
+  margin: 26px 0 0;
+  color: rgba(255,255,255,.92);
+  font-size: clamp(17px, 1.35vw, 22px) !important;
+  line-height: 1.52;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 54px;
+  margin-top: 30px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  color: #252326;
+  background: #fffafb;
+  font-weight: 800;
+}
+
+.bottom {
+  left: clamp(24px, 5vw, 84px);
+  right: clamp(24px, 5vw, 84px);
+  bottom: clamp(104px, calc(92px + 3vh), 124px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.stops {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  max-width: 880px;
+  justify-self: center;
+  width: 100%;
+  padding: 7px;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 999px;
+  background: rgba(30, 24, 30, .54);
+  backdrop-filter: blur(14px);
+}
+
+.stops button {
+  min-width: 0;
+  min-height: 46px;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.stops button span {
+  color: #ffafc4;
+  margin-right: 8px;
+}
+
+.stops button b {
+  font-size: 12px;
+}
+
+.stops button[aria-current] {
+  color: #252326;
+  background: #fffafb;
+}
+
+.stops button[aria-current] span {
+  color: #bd315e;
+}
+
+.counter {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.progress {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: rgba(255,255,255,.2);
+}
+
+.progress div {
+  height: 100%;
+  background: #ef789a;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.motionOff {
+  height: 100svh;
+}
+
+.motionOff .stage {
+  position: relative;
+}
+
+.motionOff .scrollHint {
+  display: none;
+}
+
+.details :global(.story-trust) {
+  border-top: 0;
+}
+
+.details :global(.mobile-contact) {
+  display: none;
+}
+
+@keyframes copyIn {
+  from { opacity: 0; transform: translateY(calc(-50% + 16px)); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(-50%); filter: blur(0); }
+}
+
+@media (max-width: 980px) {
+  .stage { min-height: 660px; }
+  .bottom { grid-template-columns: 1fr auto; }
+  .scrollHint { display: none; }
+  .stops { justify-self: stretch; }
+  .stops button b { display: none; }
+  .stops button span { margin: 0; }
+  .copy { width: min(720px, 86vw); }
+}
+
+@media (max-width: 640px) {
+  .journey { height: 360svh; }
+  .stage { min-height: 620px; }
+  .layer img { object-position: center; }
+  .wash {
+    background:
+      linear-gradient(90deg, rgba(24,17,24,.78), rgba(24,17,24,.18)),
+      linear-gradient(0deg, rgba(24,17,24,.82), transparent 52%),
+      linear-gradient(180deg, rgba(24,17,24,.48), transparent 30%);
+  }
+  .topline {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+  .topline > span { max-width: 52%; font-size: 10px; }
+  .topline button { padding-inline: 12px; font-size: 11px; }
+  .copy {
+    top: 45%;
+    left: 24px;
+    right: 24px;
+    width: auto;
+  }
+  .kicker { margin-bottom: 16px; font-size: 10px !important; }
+  .copy h1 { font-size: clamp(44px, 14vw, 64px) !important; }
+  .lead { margin-top: 20px; font-size: 16px !important; }
+  .cta { margin-top: 22px; min-height: 50px; }
+  .bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 92px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
+  .stops { gap: 2px; padding: 5px; }
+  .stops button { min-height: 40px; padding: 7px 5px; }
+  .counter { font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layer,
+  .copy,
+  .progress div {
+    transition: none;
+    animation: none;
+  }
+}

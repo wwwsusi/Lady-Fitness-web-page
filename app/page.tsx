@@ -15,13 +15,14 @@ export const metadata: Metadata = {
   alternates: { canonical: siteUrl('/') },
 };
 export function FitnessPage({ contentOnly = false, version = 'original' }: { contentOnly?: boolean; version?: SiteVariant }) {
+  const ContentTag = contentOnly ? 'div' : 'main';
   return (
     <>
       {!contentOnly && <a className="skip" href="#obsah">
         Preskočiť na obsah
       </a>}
       {!contentOnly && <SiteHeader />}
-      <main id="obsah">
+      <ContentTag id={contentOnly ? undefined : 'obsah'}>
         {!contentOnly && <ScrollStory />}
         <div className="story-trust">
           <div className="wrap">
@@ -601,7 +602,7 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
             </div>
           </div>
         </section>
-      </main>
+      </ContentTag>
       <footer className="wrap footer">
         <VersionSwitch active={version} />
           <a className="brand" href={siteBasePath || '/'} aria-label="Lady Fitness — úvod">

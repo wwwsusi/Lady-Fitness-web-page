@@ -2021,7 +2021,7 @@ p, .service-body p, .split-copy p, .course p, .step p, .practical p,
 }
 
 /* Comparison navigation and time-driven film on the original version. */
-.version-switch{display:flex;justify-content:center;gap:8px;padding:8px 16px;background:#f6e9ee;font-size:13px}
+.version-switch{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:8px 16px;background:#f6e9ee;font-size:13px}
 .version-switch a{padding:8px 16px;border-radius:30px;white-space:nowrap}
 .version-switch a[aria-current]{background:#252326;color:white}
 .scroll-story--film{height:auto!important}

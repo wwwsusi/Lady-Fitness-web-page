@@ -5,5 +5,5 @@ import styles from './walkthrough.module.css';
 import { siteUrl } from '../site-config';
 export const metadata = { title: 'Lady Fitness | Vstúp do svojho priestoru', description: 'Prejdi sa Lady Fitness Humenné. Priestor pre pohyb, silu a čas pre seba.', alternates: { canonical: siteUrl('/prechadzka/') } };
 export default function WalkPage() {
-  return <div className={styles.version}><a className="skip" href="#obsah">Preskočiť na obsah</a><SiteHeader animated /><Walkthrough /><div className={styles.details}><FitnessPage contentOnly version="animated" /></div></div>;
+  return <div className={styles.version}><a className="skip" href="#obsah">Preskočiť na obsah</a><SiteHeader animated /><main id="obsah"><Walkthrough /><div className={styles.details}><FitnessPage contentOnly version="animated" /></div></main></div>;
 }

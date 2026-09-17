@@ -4,7 +4,7 @@ import { siteUrl } from './site-config';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ['/', '/prechadzka', '/v2'].map((path) => ({
+  return ['/', '/prechadzka', '/v2', '/v4'].map((path) => ({
     url: siteUrl(path),
     lastModified: new Date(),
   }));

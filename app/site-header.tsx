@@ -5,12 +5,13 @@ import { MobileMenu } from './interactions';
 import { links } from './navigation';
 import { assetPath } from './site-config';
 
-export type SiteVariant = 'original' | 'animated' | 'v2';
+export type SiteVariant = 'original' | 'animated' | 'v2' | 'v4';
 
 const versionLinks: Array<[SiteVariant, string, string]> = [
   ['original', '/', 'Neanimovaná verzia'],
   ['animated', '/prechadzka', 'Animovaná verzia'],
   ['v2', '/v2', 'Verzia V2'],
+  ['v4', '/v4', 'Verzia V4'],
 ];
 
 export function VersionSwitch({ active }: { active: SiteVariant }) {
@@ -21,10 +22,11 @@ export function VersionSwitch({ active }: { active: SiteVariant }) {
   );
 }
 
-export default function SiteHeader({ animated = false }: { animated?: boolean }) {
+export default function SiteHeader({ animated = false, homeHref }: { animated?: boolean; homeHref?: string }) {
+  const resolvedHomeHref = homeHref ?? (animated ? '/prechadzka' : '/');
   return <header className="site-header">
     <div className="wrap topbar">
-      <Link className="brand" href={animated ? '/prechadzka' : '/'} aria-label="Lady Fitness — úvod"><Image src={assetPath('/logo.png')} alt="Lady Fitness Humenné" width={148} height={77} priority /></Link>
+      <Link className="brand" href={resolvedHomeHref} aria-label="Lady Fitness — úvod"><Image src={assetPath('/logo.png')} alt="Lady Fitness Humenné" width={148} height={77} priority /></Link>
       <nav className="nav" aria-label="Hlavná navigácia">
         {links.slice(0, 7).map(([href, text]) => <a href={href} key={href}>{text}</a>)}
       </nav>
