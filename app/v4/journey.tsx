@@ -152,7 +152,12 @@ export default function Journey() {
   };
 
   return (
-    <section ref={root} className={styles.journey} aria-label="Ilustrovaná prechádzka Lady Fitness">
+    <section
+      ref={root}
+      className={styles.journey}
+      data-autoplay={autoplay ? 'true' : 'false'}
+      aria-label="Ilustrovaná prechádzka Lady Fitness"
+    >
       <div className={styles.stage}>
         <div className={styles.layers} aria-hidden="true">
           {scenes.map((scene, index) => (
@@ -162,7 +167,7 @@ export default function Journey() {
               ref={(element) => { layers.current[index] = element; }}
               style={{ opacity: index === active ? 1 : 0 }}
             >
-              <Image src={assetPath(`/v4/${scene.image}`)} alt="" fill sizes="100vw" priority={index === 0} />
+              <Image src={assetPath(`/v4/${scene.image}`)} alt="" fill sizes="100vw" priority />
             </div>
           ))}
         </div>

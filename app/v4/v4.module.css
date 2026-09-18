@@ -295,9 +295,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .layer,
-  .copy,
-  .progress div {
+  .journey[data-autoplay='false'] .layer,
+  .journey[data-autoplay='false'] .copy,
+  .journey[data-autoplay='false'] .progress div {
     transition: none;
     animation: none;
   }
