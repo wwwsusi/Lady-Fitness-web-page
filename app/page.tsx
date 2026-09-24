@@ -85,15 +85,16 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
                   & permanentka
                 </h3>
                 <p>
-                  Príď si zacvičiť jednorazovo alebo si vyber permanentku pre
-                  pravidelný pohyb. Aktuálne možnosti a ceny ti radi vysvetlíme.
+                  Príď si zacvičiť jednorazovo alebo si vyber časovú či
+                  viacvstupovú permanentku podľa toho, ako často chceš cvičiť.
                 </p>
                 <div className="chips">
-                  <span className="chip">Jednorazovo</span>
-                  <span className="chip">Pravidelne</span>
+                  <span className="chip">Jednorazový vstup</span>
+                  <span className="chip">Časové permanentky</span>
+                  <span className="chip">10–30 vstupov</span>
                 </div>
-                <a className="card-link" href="#rozvrh">
-                  Zisti možnosti vstupu <Arrow />
+                <a className="card-link" href="#cennik">
+                  Pozri cenník <Arrow />
                 </a>
               </div>
             </article>
@@ -105,13 +106,13 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
                 <span className="number">03 / KAŽDODENNÉ NÁVYKY</span>
                 <h3>Strava & poradenstvo</h3>
                 <p>
-                  Nestačí iba cvičiť. Chceme, aby si svojmu telu aj rozumela.
-                  Prepájame pohyb so vzdelávaním. Na seminároch vysvetľujeme
-                  zdravie zrozumiteľne a prakticky – bez extrémnych diét a
-                  zázračných riešení.
+                  Prepájame pohyb s praktickým vedením v oblasti stravovania.
+                  Môžeš si dohodnúť individuálnu konzultáciu alebo vypracovanie
+                  tréningového plánu a jedálnička podľa svojich cieľov.
                 </p>
                 <div className="chips">
                   <span className="chip">Individuálny prístup</span>
+                  <span className="chip">Tréningový plán & jedálniček</span>
                 </div>
                 <a className="card-link" href="#prva-navsteva">
                   Dohodni si konzultáciu <Arrow />
@@ -167,25 +168,35 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
         <section id="cennik" className="wrap section pricing-section">
           <p className="eyebrow">Cenník & služby</p>
           <div className="section-head">
-            <h2>Vyber si, čo potrebuješ.</h2>
-            <p>Cenník platný od 1. 1. 2026.</p>
+            <h2>Vyber si, čo ti vyhovuje.</h2>
+            <p>Aktuálny cenník platný od 1. 1. 2026.</p>
           </div>
+          <h3 className="pricing-group-title">Vstupy & permanentky</h3>
           <div className="pricing-grid">
             <article><span>01</span><h3>Jednorazový vstup</h3><p><strong>6 €</strong></p><p>Dospelí</p></article>
-            <article><span>02</span><h3>Mesačná permanentka</h3><p><strong>47 €</strong></p><p>Dospelí</p></article>
+            <article><span>02</span><h3>Mesačná permanentka</h3><p><strong>47 €</strong></p></article>
             <article><span>03</span><h3>2-mesačná permanentka</h3><p><strong>90 €</strong></p><p>45 € / mesiac</p></article>
-            <article><span>04</span><h3>3-mesačná permanentka</h3><p><strong>130 €</strong></p><p>približne 43,33 € / mesiac</p></article>
-            <article><span>05</span><h3>10-vstupová permanentka</h3><p><strong>57 €</strong></p><p>5,70 € / vstup</p></article>
-            <article><span>06</span><h3>15-vstupová permanentka</h3><p><strong>81 €</strong></p><p>5,40 € / vstup</p></article>
-            <article><span>07</span><h3>20-vstupová permanentka</h3><p><strong>108 €</strong></p><p>5,40 € / vstup</p></article>
-            <article><span>08</span><h3>30-vstupová permanentka</h3><p><strong>162 €</strong></p><p>5,40 € / vstup</p></article>
-            <article><span>09</span><h3>Polročná permanentka</h3><p><strong>259 €</strong></p><p>približne 43,17 € / mesiac</p></article>
-            <article><span>10</span><h3>Ročná permanentka</h3><p><strong>510 €</strong></p><p>42,50 € / mesiac</p></article>
-            <article><span>11</span><h3>Študenti do 18 rokov & seniori nad 60 rokov</h3><p><strong>5 € jednorazovo · 42 € mesačne</strong></p></article>
-            <article><span>12</span><h3>Detské kruhové tréningy 6–10 rokov</h3><p><strong>6 €</strong></p></article>
-            <article><span>13</span><h3>Detské kruhové tréningy — predškolský vek</h3><p><strong>8 €</strong></p></article>
-            <article><span>14</span><h3>Osobný tréning</h3><p><strong>18 €</strong></p></article>
-            <article><span>15</span><h3>Tréningový plán & jedálniček</h3><p><strong>250 €</strong></p><p>Vypracovanie tréningového plánu a jedálnička.</p></article>
+            <article><span>04</span><h3>3-mesačná permanentka</h3><p><strong>130 €</strong></p><p>≈ 43,33 € / mesiac</p></article>
+            <article><span>05</span><h3>Polročná permanentka</h3><p><strong>259 €</strong></p><p>≈ 43,17 € / mesiac</p></article>
+            <article><span>06</span><h3>Ročná permanentka</h3><p><strong>510 €</strong></p><p>42,50 € / mesiac</p></article>
+          </div>
+          <h3 className="pricing-group-title">Viacvstupové permanentky</h3>
+          <div className="pricing-grid">
+            <article><span>07</span><h3>10 vstupov</h3><p><strong>57 €</strong></p><p>5,70 € / vstup</p></article>
+            <article><span>08</span><h3>15 vstupov</h3><p><strong>81 €</strong></p><p>5,40 € / vstup</p></article>
+            <article><span>09</span><h3>20 vstupov</h3><p><strong>108 €</strong></p><p>5,40 € / vstup</p></article>
+            <article><span>10</span><h3>30 vstupov</h3><p><strong>162 €</strong></p><p>5,40 € / vstup</p></article>
+          </div>
+          <h3 className="pricing-group-title">Zvýhodnené vstupy</h3>
+          <div className="pricing-grid">
+            <article><span>11</span><h3>Študenti do 18 rokov & seniori nad 60 rokov</h3><p><strong>5 € jednorazovo</strong></p><p><strong>42 € mesačne</strong></p></article>
+          </div>
+          <h3 className="pricing-group-title">Tréningy & služby</h3>
+          <div className="pricing-grid">
+            <article><span>12</span><h3>Osobný tréning</h3><p><strong>18 €</strong></p></article>
+            <article><span>13</span><h3>Tréningový plán & jedálniček</h3><p><strong>250 €</strong></p><p>Vypracovanie tréningového plánu a jedálnička.</p></article>
+            <article><span>14</span><h3>Detské kruhové tréningy 6–10 rokov</h3><p><strong>6 €</strong></p></article>
+            <article><span>15</span><h3>Detské kruhové tréningy — predškolský vek</h3><p><strong>8 €</strong></p></article>
           </div>
         </section>
         <section id="o-nas" className="wrap section founder-section">
