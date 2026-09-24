@@ -5,8 +5,8 @@ const timePasses = [
   ["Mesačná","47 €",""],
   ["2-mesačná","90 €",""],
   ["3-mesačná","130 €",""],
-  ["Polročná","259 €",""],
-  ["Ročná","510 €",""],
+  ["Polročná","259 €","−8 %"],
+  ["Ročná","510 €","−10 %"],
 ];
 const visitPasses = [
   ["10 vstupov","57 €","−5 %"],
@@ -45,7 +45,7 @@ export default function V5Page() {
 
   <section id="cennik" className={styles.pricing}>
    <div className={styles.section}><p className={styles.kicker}>CENNÍK · PLATNÝ OD 1. 1. 2026</p><div className={styles.heading}><h2>Vyber si rytmus, ktorý ti sedí.</h2><p>Jednoduchý vstup, časová permanentka alebo balík vstupov.</p></div>
-    <div className={styles.priceBlock}><h3>Vstupy & časové permanentky</h3><div className={styles.priceGrid}>
+    <div className={styles.priceBlock}><h3>Vstupy & časové permanentky</h3><p className={styles.note}>Pri polročnej a ročnej permanentke ukazujeme úsporu oproti 6× / 12× mesačnej permanentke za 47 €.</p><div className={styles.priceGrid}>
      <article className={styles.entry}><small>JEDNORAZOVÝ VSTUP</small><strong>6 €</strong><p>dospelí</p></article>
      {timePasses.map(([n,p,d])=><article key={n}><small>{n.toUpperCase()}</small><strong>{p}</strong>{d&&<em>{d}</em>}</article>)}
     </div></div>
