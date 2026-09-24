@@ -2144,3 +2144,15 @@ main#obsah > .section { height:auto; min-height:0; overflow:visible; }
   .testimonials-section .trust-grid { grid-template-columns:1fr; gap:20px; }
   .testimonial-shot { width:100%; }
 }
+
+
+/* Pricing section groups */
+.pricing-group-title {
+  margin: 2.5rem 0 1rem;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.pricing-section .pricing-group-title:first-of-type {
+  margin-top: 1.5rem;
+}
