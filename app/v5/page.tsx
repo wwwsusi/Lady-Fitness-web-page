@@ -23,7 +23,7 @@ const retail = [
 export default function V5Page() {
  return <main className={styles.page}>
   <header className={styles.header}>
-   <Link href="/v5" className={styles.logo}>LADY <b>FITNESS</b><small>HUMENNÉ</small></Link>
+   <Link href="/v5" className={styles.logo} aria-label="Lady Fitness Humenné"><img src="/Lady-Fitness-web-page/logo.png" alt="Lady Fitness" /></Link>
    <nav><a href="#sluzby">Služby</a><a href="#cennik">Cenník</a><a href="#produkty">Produkty</a><a href="#vzdelavanie">Vzdelávanie</a><a href="#kontakt">Kontakt</a></nav>
    <a className={styles.cta} href="#prva-navsteva">Chcem začať</a>
   </header>
