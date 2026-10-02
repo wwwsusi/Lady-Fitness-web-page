@@ -1,6 +1,10 @@
 # Lady Fitness Humenné
 
-Slovak website for Lady Fitness with current services, a kindergarten Zumba offer, planned programs, one educational seminar, authentic supplied photographs, and a visitor SMS drafting form.
+Slovak website implementation for Lady Fitness. Website copy reflects the recorded implementation and must be checked against current authorized Google Drive requirements before publication.
+
+## Governance
+
+Read [repository instructions](AGENTS.md) and [website governance](docs/00_WEBSITE_GOVERNANCE.md). Google Drive is business truth; this repository is implementation truth. README descriptions and old website briefs are technical/history references, not a current catalogue or price list.
 
 Routes:
 - `/`: customer website
@@ -8,7 +12,7 @@ Routes:
 
 Reservation requests are drafted locally. The visitor opens their SMS app or copies the draft; no message is sent by the website and no reservation is automatically confirmed. No database or email delivery is configured.
 
-The private draft has indexing disabled. Before public launch, confirm fitness prices and hours, staff details, operating entity information and the final visual direction. The kindergarten offer is based on the supplied website brief: 45 minutes, weekly, maximum 25 children, €50 per kindergarten lesson.
+The private draft has indexing disabled. Before public launch, confirm fitness prices and hours, staff details, operating entity information and the final visual direction. The earlier kindergarten brief is superseded for business truth. Use the primary-school/school requirement and the current programs master; operational details and prices must be verified there. This documentation change does not correct application copy.
 
 Scripts: `pnpm dev`, `pnpm build`. Framework: Vinext with Sites hosting.
 
