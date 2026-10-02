@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 };
 
 const prices = [
-  ['Jednorazový vstup', '10 €', 'Príď si zacvičiť v čase, ktorý ti vyhovuje.'],
-  ['Mesačná permanentka', '50 €', 'Pravidelný pohyb a priestor vytvoriť si vlastný rytmus.'],
-  ['Osobný tréning', 'Vstup alebo permanentka + 20 €', 'Technika, istota pri strojoch a tréning podľa tvojho cieľa.'],
-  ['Strava & poradenstvo', '150 €', 'Praktické poradenstvo o režime a návykoch bez extrémov.'],
+  ['Jednorazový vstup', '6 €', 'Príď si zacvičiť v čase, ktorý ti vyhovuje.'],
+  ['Mesačná permanentka', '47 €', 'Pravidelný pohyb a priestor vytvoriť si vlastný rytmus.'],
+  ['Osobný tréning', '18 €', 'Technika, istota pri strojoch a tréning podľa tvojho cieľa.'],
+  ['Strava & poradenstvo', 'Cena na overenie', 'Praktické poradenstvo o režime a návykoch bez extrémov.'],
   ['Psychohygiena', 'V rámci fitka zdarma', 'Dobrá nálada sa pri vstupe osobitne neúčtuje.'],
-  ['Detská zumba pre škôlky', 'Individuálna cena podľa škôlky', 'O cene a podmienkach sa informuj vo svojej škôlke.'],
+  ['Detská Zumba vo škole · pilot', 'Cena na overenie', 'Termín a podmienky si overte pri kontakte s Lady Fitness.'],
 ];
 
 const schema = {
@@ -139,8 +139,8 @@ export default function V2Page() {
           </div>
           <div className={styles.programGrid}>
             <details open>
-              <summary>Detská zumba pre materské školy</summary>
-              <p>Hudba, jednoduché tanečné kroky a radosť z pohybu priamo v škôlke. Program vedie certifikovaná lektorka; 1× týždenne, 45 minút, najviac 25 detí. O spoluprácu požiadajte vedenie vašej škôlky.</p>
+              <summary>Detská Zumba vo škole · pilot</summary>
+              <p>Hudba, jednoduché tanečné kroky a radosť z pohybu. Pilotný program pre základné školy a školy. Termín, dĺžku, veľkosť skupiny a cenu si overte pri kontakte s Lady Fitness.</p>
             </details>
             <details>
               <summary>Vzdelávací seminár</summary>
@@ -168,8 +168,6 @@ export default function V2Page() {
             <p>V Lady Fitness nájdeš vybrané doplnky ProSupplements. Ako klientka máš na vybrané produkty zvýhodnené ceny; aktuálnu ponuku si over na recepcii.</p>
             <ul className={styles.cleanList}>
               <li><strong>PRO 8</strong> · esenciálne aminokyseliny</li>
-              <li><strong>PRO Magnesium</strong> · horčík</li>
-              <li><strong>PRO Liver</strong> · starostlivosť o pečeň</li>
               <li><strong>NAD+</strong> · energia a bunkový metabolizmus</li>
             </ul>
             <p className={styles.note}>Doplnky nenahrádzajú pestrú stravu ani odbornú zdravotnú starostlivosť. Viac informácií nájdeš na <a href="https://prosupplements.sk" target="_blank" rel="noreferrer">ProSupplements</a>.</p>
