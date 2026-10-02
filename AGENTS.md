@@ -1,6 +1,6 @@
 # Lady Fitness repository instructions
 
-Read [website governance](docs/00_WEBSITE_GOVERNANCE.md) before changing website content or assets.
+Read [website governance](docs/00_WEBSITE_GOVERNANCE.md) before changing website content or assets. For cloud setup and task handoff, read [Codex Cloud workflow](docs/01_CODEX_CLOUD_WORKFLOW.md).
 
 This repository is implementation truth. Google Drive is business truth; 03_PROJECT_INSTRUCTIONS.md there is the highest project governance document. These instructions apply that governance and do not replace it.
 
