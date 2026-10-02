@@ -16,7 +16,7 @@ Cloud readiness evidence to record privately:
 - Access to required Drive sources or authorized task-specific handoff: TBD.
 - Open the same task/PR from another computer: NOT VERIFIED.
 
-The governance documents are currently in draft PR #4, not main. Select the authorized branch containing them during validation, or merge within authorization before expecting new tasks based on main to see them.
+Before starting a cloud task, verify that its selected repository ref contains AGENTS.md and both governance/workflow documents. Governance introduced by PR #4 is available on main only after that PR has been merged.
 
 ## Repository setup inputs
 
