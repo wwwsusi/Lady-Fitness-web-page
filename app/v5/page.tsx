@@ -15,7 +15,7 @@ const visitPasses = [
   ["30 vstupov","162 €","−10 %"],
 ];
 const retail = [
-  ["Doplnky výživy",[["Creatin 500 g","16,50 €"],["Pro 8 650 g","57 €"],["Pro 8 500 g","45 €"],["NAD+ 30 g (60 kps)","30 €"],["Elektrolity 500 g","19,90 €"]]],
+  ["Doplnky výživy",[["Creatin 500 g","16,50 €"],["Pro 8 650 g","57 €"],["Pro 8 325 g","45 €"],["NAD+ 30 g (60 kps)","30 €"],["Elektrolity 500 g","19,90 €"]]],
   ["Nápoje & drobné produkty",[["Carnitin 1 liter","24 €"],["Nartes voda 750 ml","1,20 €"],["Carnitin drink 750 ml","2,50 €"],["Magnézium","2 €"],["Tyčinky","1 €"],["Proteín 30 g","1,40 €"],["Iontový nápoj 1 l","19 €"]]],
   ["Doplnky & oblečenie",[["Rukavice","8,50 €"],["Uterák","3,50 €"],["Opasok","25 €"],["Shaker 700 ml","8 €"],["Shaker 600 ml","3,52 €"],["Tričko","15 €"]]],
 ];
