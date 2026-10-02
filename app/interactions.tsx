@@ -58,7 +58,7 @@ const faqs = [
   ],
   [
     'Pre aký vek je detská zumba?',
-    'Detskú zumbu organizujeme ako program pre materské školy. Ak máte záujem, kontaktujte riaditeľa alebo riaditeľku vašej materskej školy a požiadajte ich o spojenie s Lady Fitness.',
+    'Detská Zumba je pilotný program pre základné školy a školy. Vek detí, rozsah programu, termín a cenu si overte pri kontakte s Lady Fitness.',
   ],
   [
     'Kedy začnú nové kurzy a mobilita pre seniorov?',
