@@ -158,8 +158,6 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
             </div>
               <div className="supplement-list" aria-label="Príklady kategórií doplnkov">
                 <div className="supplement-item"><strong>PRO 8</strong><span>Esenciálne aminokyseliny pre regeneráciu a svaly.</span></div>
-                <div className="supplement-item"><strong>PRO Magnesium</strong><span>Horčík pre nervový systém a normálnu funkciu svalov.</span></div>
-                <div className="supplement-item"><strong>PRO Liver</strong><span>Doplnok zameraný na starostlivosť o pečeň.</span></div>
                 <div className="supplement-item"><strong>NAD+</strong><span>Doplnok pre energiu a bunkový metabolizmus.</span></div>
                 <small>Aktuálnu dostupnosť a ceny pre verejnosť nájdeš v obchode <a href="https://prosupplements.sk" target="_blank" rel="noreferrer">ProSupplements</a> a viac info o produktoch.</small>
               </div>
@@ -278,30 +276,22 @@ export function FitnessPage({ contentOnly = false, version = 'original' }: { con
               height="720"
             />
             <div className="split-copy">
-              <p className="eyebrow">Detská zumba pre materské školy</p>
+              <p className="eyebrow">Pilot · Detská Zumba vo škole</p>
               <h2>
                 My prídeme
                 
                 za deťmi.
               </h2>
               <p>
-                Hudba, jednoduché tanečné kroky a radosť z pohybu priamo vo
-                vašej škôlke. Program vedie certifikovaná lektorka detskej
-                zumby.
+                Hudba, jednoduché tanečné kroky a radosť z pohybu.
+                Pilotný program pre základné školy a školy.
               </p>
-              <div className="chips">
-                <span className="chip">1× týždenne</span>
-                <span className="chip">45 minút</span>
-                <span className="chip">Najviac 25 detí</span>
-              </div>
               <p>
-                Lady Fitness zabezpečí lektorku, obsah a hudbu. Škôlka poskytne
-                vhodný priestor, skupinu detí a dohodnutý termín. Kontaktujte
-                riaditeľa alebo riaditeľku vašej materskej školy a požiadajte
-                ich o spojenie s Lady Fitness.
+                Termín, dĺžku, veľkosť skupiny a cenu si overte pri kontakte
+                s Lady Fitness.
               </p>
               <a className="button" href="#objednanie">
-                Chceme zumbu v našej škôlke <Arrow />
+                Prebrať Zumbu vo škole <Arrow />
               </a>
             </div>
           </div>
