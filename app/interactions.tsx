@@ -15,6 +15,7 @@ import {
   AccordionContent,
 } from '@/components/ui/accordion';
 import { links } from './navigation';
+import { assetPath } from './site-config';
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   return (
@@ -32,6 +33,9 @@ export function MobileMenu() {
             </a>
           ))}
         </nav>
+        <a className="button lime" href={assetPath('/permanentka/')} onClick={() => setOpen(false)}>
+          Moja permanentka
+        </a>
         <a className="button" href="tel:+421908891961">
           +421 908 891 961
         </a>
