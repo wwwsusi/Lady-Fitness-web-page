@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Skontroluj si permanentku | Lady Fitness Humenné</title>
+<meta name="description" content="Zadaj číslo z karty Lady Fitness a zisti, dokedy platí tvoja permanentka a koľko vstupov ti ostáva.">
+<link rel="icon" href="../favicon.svg">
+<style>
+:root{--ink:#202020;--bg:#fafafa;--card:#fff;--line:#dededc;--muted:#666;--lime:#d2ff4b;--purple:#784bd7;--pink:#e82a6b;--ok:#17803d;--ok-bg:#e3f6e9;--warn:#9a5b00;--warn-bg:#fff1d6;--bad:#b3261e;--bad-bg:#fde7e5}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 16px 56px}
+.brand{display:flex;align-items:center;gap:12px;margin:4px 0 18px}
+.brand img{height:56px;width:auto}
+h1{font-size:clamp(28px,6vw,38px);line-height:1.15;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 22px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+label{display:block;font-weight:600;margin-bottom:8px}
+input{width:100%;font:600 34px/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.18em;text-align:center;padding:14px 10px;border:2px solid var(--line);border-radius:14px;background:#fff;color:var(--ink)}
+input:focus{outline:3px solid var(--purple);outline-offset:2px;border-color:var(--purple)}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+button{font-family:inherit;font-weight:700;font-size:19px;line-height:1.2;min-height:54px;padding:12px 22px;border-radius:14px;border:2px solid var(--ink);background:var(--lime);color:var(--ink);cursor:pointer;flex:1 1 200px}
+button.secondary{background:#fff}
+button:disabled{opacity:.55;cursor:wait}
+button:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+.msg{margin:16px 0 0;padding:14px 16px;border-radius:14px;font-weight:600}
+.msg.error{background:var(--bad-bg);color:var(--bad)}
+.msg.info{background:#eef0ff;color:#3a2a8a}
+video{display:block;width:100%;max-height:60vh;margin-top:14px;border-radius:14px;background:#000;object-fit:cover}
+.hello{font-size:clamp(26px,5.5vw,34px);font-weight:800;margin:24px 0 12px}
+.pass{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin:0 0 14px}
+.pass h2{font-size:22px;line-height:1.25;margin:0 0 10px}
+.badge{display:inline-block;font-weight:800;font-size:20px;padding:6px 16px;border-radius:999px;margin-bottom:12px}
+.badge.ok{background:var(--ok-bg);color:var(--ok)}.badge.warn{background:var(--warn-bg);color:var(--warn)}.badge.bad{background:var(--bad-bg);color:var(--bad)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px 20px;margin:0}
+.facts div{display:flex;flex-direction:column}
+.facts dt{color:var(--muted);font-size:16px}
+.facts dd{margin:0;font-weight:800;font-size:26px;line-height:1.25}
+.note{color:var(--muted);font-size:15px;margin:22px 0 0}
+a{color:var(--purple)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+ <div class="brand"><img src="../logo.png" alt="Lady Fitness"></div>
+ <h1>Skontroluj si permanentku</h1>
+ <p class="lead">Zadaj 8-miestne číslo z tvojej karty Lady Fitness alebo naskenuj QR kód kamerou.</p>
+ <section class="panel" aria-labelledby="lbl">
+  <form id="form" novalidate>
+   <label id="lbl" for="code">Číslo karty</label>
+   <input id="code" name="code" inputmode="numeric" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="9" placeholder="0000 0000" aria-describedby="msg">
+   <div class="row">
+    <button id="check" type="submit">Skontrolovať</button>
+    <button id="scan" type="button" class="secondary">Naskenovať QR kód</button>
+   </div>
+  </form>
+  <video id="video" playsinline muted hidden></video>
+  <div class="row" id="scan-row" hidden><button id="scan-stop" type="button" class="secondary">Zavrieť kameru</button></div>
+  <p id="msg" class="msg" role="status" aria-live="polite" hidden></p>
+ </section>
+ <section id="result" aria-live="polite" hidden></section>
+ <p class="note">Zobrazíme len tvoje krstné meno, stav permanentky, platnosť a zostávajúce vstupy. Nič z toho sa neukladá v tvojom prehliadači. Ak ti údaje nesedia, ozvi sa nám v štúdiu.</p>
+</main>
+<script type="module" src="./pass.mjs"></script>
+</body>
+</html>
