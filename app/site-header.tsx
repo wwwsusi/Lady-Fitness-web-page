@@ -30,6 +30,7 @@ export default function SiteHeader({ animated = false, homeHref }: { animated?: 
       <nav className="nav" aria-label="Hlavná navigácia">
         {links.slice(0, 7).map(([href, text]) => <a href={href} key={href}>{text}</a>)}
       </nav>
+      <a className="button lime header-pass" href={assetPath('/permanentka/')}>Moja permanentka</a>
       <a className="button desktop-cta" href="#prva-navsteva">Poďme začať <ArrowUpRight size={20} aria-hidden="true" /></a>
       <MobileMenu />
     </div>
