@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { calculate, DEFAULTS } from '../public/kalkulacky/prijem/prijem.mjs';
-import { walk, PACKS, TREE } from '../public/kalkulacky/sprievodca/sprievodca.mjs';
+import { walk, PACKS, TREE, applyLive, prune, priceText, euro, loadLive } from '../public/kalkulacky/sprievodca/sprievodca.mjs';
 
 const NOW = new Date('2026-11-24T10:00:00Z');
 
@@ -65,4 +65,46 @@ test('guide: a stale path is cut at the first unknown option', () => {
   const { answers, pack } = walk([0, 99]);
   assert.equal(answers.length, 1);
   assert.equal(pack, null);
+});
+
+const CATALOGUE = [
+  { id: 'LF-SVC-001', lifecycle: 'ACTIVE', price_eur: 6 }, { id: 'LF-SVC-002', lifecycle: 'ACTIVE', price_eur: 47 }, { id: 'LF-SVC-005', lifecycle: 'ACTIVE', price_eur: 57 },
+  { id: 'LF-SVC-015', lifecycle: 'ACTIVE', price_eur: 18 }, { id: 'LF-SVC-030', lifecycle: 'ACTIVE', price_eur: 150 }, { id: 'LF-SVC-031', lifecycle: 'PILOT', price_eur: 8 }, { id: 'LF-SVC-036', lifecycle: 'PILOT', price_eur: 49 },
+];
+
+test('guide live: catalogue prices and pilot stage replace the built-in ones', () => {
+  const live = applyLive(PACKS, CATALOGUE.map(x => x.id === 'LF-SVC-002' ? { ...x, price_eur: 49.5 } : x));
+  assert.equal(Object.keys(live).length, Object.keys(PACKS).length);
+  assert.equal(priceText(live.mem), '49,50 € / mesiac');
+  assert.equal(priceText(live.trial), '6 €');
+  assert.equal(live.start.pilot, true);
+  assert.equal(live.pt.pilot, false);
+  assert.equal(euro(49), '49 €');
+});
+
+test('guide live: an unavailable or unpriced service disappears, with its options and empty questions', () => {
+  const live = applyLive(PACKS, CATALOGUE.filter(x => x.id !== 'LF-SVC-031' && x.id !== 'LF-SVC-036'));
+  assert.equal(live.grp, undefined);
+  assert.equal(live.start, undefined);
+  const tree = prune(TREE, live);
+  assert.ok(!tree.a1.o.some(o => o.p === 'start'), 'START option removed from the beginner question');
+  assert.ok(!tree.t3.o.some(o => o.p === 'grp'), 'group training removed');
+  assert.ok(tree.t3.o.length >= 2);
+  // lose every personal-help service: the "trainer help" branch must vanish instead of leading to an empty question
+  const noHelp = applyLive(PACKS, CATALOGUE.filter(x => !['LF-SVC-015', 'LF-SVC-031', 'LF-SVC-030'].includes(x.id)));
+  const t2 = prune(TREE, noHelp);
+  assert.ok(!t2.t1.o.some(o => o.n === 't3'), 'branch with no services is pruned');
+  assert.ok(t2.root.o.every(o => o.n === 't1' || o.n === 'a1'));
+  const bad = applyLive(PACKS, [{ id: 'LF-SVC-001', lifecycle: 'PREPARING', price_eur: 6 }, { id: 'LF-SVC-002', lifecycle: 'ACTIVE', price_eur: null }]);
+  assert.deepEqual(Object.keys(bad), []);
+  assert.equal(prune(TREE, bad).root.o.length, 0, 'nothing live: nothing offered');
+});
+
+test('guide live: loadLive returns services only for a clean OK answer and never throws', async () => {
+  const ok = async url => { assert.match(url, /\?ids=LF-SVC-001,/); return { ok: true, json: async () => ({ result: 'OK', services: CATALOGUE }) }; };
+  assert.equal((await loadLive(ok)).length, 7);
+  assert.equal(await loadLive(async () => ({ ok: false, json: async () => ({ code: 'NOT_ACTIVE' }) })), null);
+  assert.equal(await loadLive(async () => ({ ok: true, json: async () => ({ result: 'OK', services: 'x' }) })), null);
+  assert.equal(await loadLive(async () => { throw new Error('offline'); }), null);
+  assert.equal(await loadLive(() => new Promise(() => {}), 20), null, 'a hanging request is abandoned');
 });
