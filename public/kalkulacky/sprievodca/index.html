@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nájdi svoj balíček | Lady Fitness Humenné</title>
+<meta name="description" content="Odpovedz na pár otázok a ukážeme ti službu Lady Fitness, ktorá ti sedí.">
+<link rel="icon" href="../../favicon.svg">
+<link rel="stylesheet" href="../kalkulacky.css">
+<style>
+.layout{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
+.left{flex:0 1 460px;min-width:280px;display:flex;flex-direction:column;gap:10px}
+.right{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.answer{text-align:left;display:flex;align-items:center;gap:12px;width:100%;padding:10px 14px;border-radius:12px;border:2px solid var(--green);background:var(--green-bg);color:var(--ink);cursor:pointer}
+.answer .n{width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none}
+.answer .t{flex:1;min-width:0;display:flex;flex-direction:column}
+.answer .t small{font-size:12px;color:var(--muted)}.answer .t b{font-size:16px}
+.answer .chg{font-size:13px;font-weight:700;color:var(--green-d);flex:none}
+.q .k{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--green-d)}
+.q h2{font-size:24px;margin:4px 0 12px}
+.opt{display:flex;flex-direction:column;gap:3px;text-align:left;width:100%;padding:14px 16px;margin:0 0 8px;border-radius:12px;border:2px solid var(--soft);background:#fff;color:var(--ink);cursor:pointer}
+.opt:hover{border-color:var(--green)}
+.opt b{font-size:17px}.opt span{font-size:14px;color:var(--muted);line-height:1.35}
+.restart{padding:12px 16px;border-radius:12px;border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:15px;font-weight:700;cursor:pointer}
+.empty{border:2px dashed var(--line);background:#F7F7F4;border-radius:16px;padding:28px;text-align:center}
+.empty b{font-size:22px;display:block;margin:4px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.head .name{font-size:clamp(26px,4vw,34px);font-weight:800;line-height:1.15}
+.head .price{font-size:clamp(30px,5vw,44px);font-weight:800;color:var(--green-d);text-align:right}
+.kicker{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--green-d)}
+.panel .kicker+.items,.pilot+*{margin-top:10px}
+.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;margin-top:8px}
+.item{background:#F1F1EE;border-radius:12px;padding:10px 14px;font-weight:700;font-size:15px}
+.item small{display:block;font-weight:400;font-size:13px;color:#3A423D;margin-top:2px}
+.benefit{background:var(--green-bg);border-radius:12px;padding:14px 16px;font-weight:600;color:var(--green-d);margin-top:12px}
+.pilot{display:inline-block;background:var(--amber-bg);color:var(--amber);font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:999px;margin-top:8px}
+.contact{background:var(--ink);color:#fff;border-radius:16px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.contact small{display:block;color:#C8CCC4;font-size:13px}
+.contact a{background:#fff;color:var(--ink);font-weight:800;padding:12px 20px;border-radius:999px;text-decoration:none;white-space:nowrap}
+</style>
+</head>
+<body>
+<main>
+ <div class="top"><a href="../../"><img src="../../logo.png" alt="Lady Fitness"></a><span class="crumbs"><a href="../">← Kalkulačky</a></span></div>
+ <h1>Nájdi svoj balíček</h1>
+ <p class="lead">Odpovedz na pár krátkych otázok a ukážeme ti službu, ktorá ti sedí. Začni tam, kde práve si.</p>
+ <div class="layout">
+  <div class="left" id="left"></div>
+  <div class="right" id="right"></div>
+ </div>
+ <p class="note" style="margin-top:18px">Odporúčanie je orientačné. Presné nastavenie spolu doladíme osobne, podľa toho, ako sa cítiš a čo ti vyhovuje. Ceny a dostupnosť si pred návštevou môžeš overiť telefonicky.</p>
+</main>
+<script type="module" src="./sprievodca.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* Shared styles for the Lady Fitness calculators (static pages, no build step). */
+:root{--ink:#14201B;--bg:#F1F1EE;--card:#fff;--line:#C8CCC4;--soft:#E2E2DE;--muted:#46564E;--green:#4F7F26;--green-d:#2E5A12;--green-bg:#E7F2E4;--lime:#d2ff4b;--red:#9F1D1D;--red-bg:#FBE7E7;--amber:#8A4F0C;--amber-bg:#FDF3DF;--blue:#1E3F9F;--blue-bg:#E7EEFB}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:1240px;margin:0 auto;padding:18px 16px 56px}
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px}
+.top img{height:56px;width:auto;mix-blend-mode:multiply}
+.crumbs a{color:var(--green-d);font-weight:600;text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.15;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 18px;max-width:60ch}
+.panel{background:var(--card);border-radius:20px;padding:18px}
+h2{font-size:18px;margin:0 0 10px}
+a{color:var(--green-d)}
+[hidden]{display:none!important}
+button,input,select{font-family:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.note{font-size:13px;color:var(--muted)}
+
+/* hub */
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px}
+.hub a.card{display:flex;flex-direction:column;gap:8px;background:var(--card);border-radius:20px;padding:22px;text-decoration:none;color:var(--ink);border:2px solid transparent}
+.hub a.card:hover{border-color:var(--green)}
+.hub .tag{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--green-d)}
+.hub h2{font-size:24px;margin:0}
+.hub p{margin:0;color:var(--muted)}
+.hub .go{margin-top:auto;font-weight:700;color:var(--green-d)}
+
+/* form controls */
+.field{display:flex;flex-direction:column;gap:6px;margin:0 0 14px}
+.field>label,.field>.lbl{font-size:14px;font-weight:600}
+.seg{display:flex;gap:4px;padding:4px;background:var(--soft);border-radius:14px}
+.seg button{flex:1;min-height:44px;border:0;border-radius:11px;background:transparent;color:#3A423D;font-size:15px;font-weight:600;cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;color:var(--green);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+select,input[type=number]{height:44px;border:1.5px solid var(--line);border-radius:12px;padding:0 10px;font-size:16px;background:#fff;color:var(--ink);width:100%}
+.num{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.num input[type=number]{width:96px;text-align:right;font-weight:600}
+input[type=range]{width:100%;accent-color:var(--green);height:28px;margin:0}
+.switch{width:52px;height:30px;border-radius:15px;border:0;padding:3px;display:flex;align-items:center;justify-content:flex-start;background:#B8BDB4;cursor:pointer;flex:none}
+.switch[aria-checked=true]{background:var(--green);justify-content:flex-end}
+.switch span{width:24px;height:24px;border-radius:12px;background:#fff;display:block}

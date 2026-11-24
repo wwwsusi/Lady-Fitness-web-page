@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koľko by si mala denne prijať? | Lady Fitness Humenné</title>
+<meta name="description" content="Odhad denného príjmu kalórií a makrozložiek, graf cesty k cieľovej váhe a míľniky.">
+<link rel="icon" href="../../favicon.svg">
+<link rel="stylesheet" href="../kalkulacky.css">
+<style>
+.layout{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.col-in{flex:0 0 300px;display:flex;flex-direction:column;gap:16px}
+.col-out{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px 28px;font-weight:600;color:var(--green-d);font-size:17px}
+svg.chart{width:100%;height:auto;display:block}
+.miles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:6px;font-size:14px;color:var(--muted)}
+.miles b{display:block;color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.tile{border:2px solid transparent;border-radius:18px;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.tile b{font-size:15px;font-weight:600}.tile strong{font-size:22px}.tile small{font-size:13px}
+.t-en{background:#fff;border-color:var(--line);color:var(--ink)}.t-p{background:var(--red-bg);color:var(--red)}.t-f{background:var(--amber-bg);color:var(--amber)}.t-c{background:var(--blue-bg);color:var(--blue)}.t-v{background:var(--green-bg);color:var(--green-d)}
+.days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.day{border-radius:18px;padding:12px 16px;display:flex;flex-direction:column;gap:2px}
+.day b{font-size:15px}.day strong{font-size:24px}
+.low{background:var(--blue-bg);color:var(--blue)}.high{background:var(--amber-bg);color:var(--amber)}
+.two{display:flex;flex-wrap:wrap;gap:14px}.two>.panel{flex:1 1 300px}
+.meal{font-size:14px;line-height:1.35;margin:0 0 6px}
+.tip{font-size:13px;line-height:1.4;color:var(--green-d);background:var(--green-bg);border-radius:10px;padding:8px 10px;margin:6px 0 0}
+.app{display:flex;gap:14px;align-items:center;font-size:14px;line-height:1.4;color:var(--muted)}
+.app img.qr{width:112px;height:112px;border:1px solid #E3E5DF;border-radius:8px;flex:none}
+.badges{width:240px;max-width:100%;height:auto;border-radius:8px;margin-top:10px}
+.bad{font-size:17px}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.miles{grid-template-columns:repeat(2,minmax(0,1fr))}.days{grid-template-columns:1fr}.col-in{flex-basis:100%}}
+</style>
+</head>
+<body>
+<main>
+ <div class="top"><a href="../../"><img src="../../logo.png" alt="Lady Fitness"></a><span class="crumbs"><a href="../">← Kalkulačky</a></span></div>
+ <h1>Koľko by si mala denne prijať?</h1>
+ <p class="lead">Odhad kalórií a makrozložiek, graf cesty k cieľovej váhe a míľniky. Nič z toho, čo zadáš, sa neukladá ani neodosiela.</p>
+
+ <div class="layout">
+  <form class="col-in" id="form" onsubmit="return false" novalidate>
+   <div class="panel">
+    <div class="field"><span class="lbl">Pohlavie</span><div class="seg" data-key="sex"><button type="button" data-v="f">Žena</button><button type="button" data-v="m">Muž</button></div></div>
+    <div class="field"><span class="lbl">Chcem</span><div class="seg" data-key="goal"><button type="button" data-v="lose">Schudnúť</button><button type="button" data-v="gain">Nabrať svaly</button><button type="button" data-v="keep">Byť fit</button></div></div>
+    <div class="field"><div class="num"><label for="by">Rok narodenia</label><input id="by" type="number" inputmode="numeric" data-key="by"></div></div>
+    <div class="field"><div class="num"><label for="h">Výška (cm)</label><input id="h" type="number" inputmode="numeric" data-key="h"></div></div>
+    <div class="field"><div class="num"><label for="w">Váha (kg)</label><input id="w" type="number" inputmode="decimal" data-key="w"></div></div>
+    <div class="field">
+     <div class="num"><label for="tw">Cieľová hmotnosť (kg)</label><div style="display:flex;align-items:center;gap:8px"><input id="tw" type="number" inputmode="decimal" data-key="tw"><button type="button" class="switch" id="tOn" role="switch" aria-label="Zapnúť cieľovú hmotnosť"><span></span></button></div></div>
+     <input id="twr" type="range" min="40" max="150" step="1" aria-label="Cieľová hmotnosť, posuvník">
+    </div>
+   </div>
+   <div class="panel">
+    <div class="field"><label for="work">Typ práce (sedavá alebo manuálna)</label><select id="work" data-key="work"><option value="sit">Väčšinu dňa sedím</option><option value="mix">50 / 50</option><option value="act">Veľa sa hýbem</option></select></div>
+    <div class="field"><span class="lbl">Tréningy týždenne</span><div class="seg" data-key="freq"><button type="button" data-v="0">0</button><button type="button" data-v="1">1</button><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4</button><button type="button" data-v="5">5</button><button type="button" data-v="6">6+</button></div></div>
+    <div id="trainOpts" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+     <div class="field"><label for="dur">Dĺžka tréningu</label><select id="dur" data-key="dur"><option value="30">30 min</option><option value="45">45 min</option><option value="60">60 min</option><option value="90">90 min</option></select></div>
+     <div class="field"><label for="type">Typ tréningu</label><select id="type" data-key="type"><option value="cardio">Kardio</option><option value="str">Silový</option><option value="both">Oboje</option></select></div>
+    </div>
+    <div class="field"><label for="sleep">Spánok</label><select id="sleep" data-key="sleep"><option value="low">Pod 6 hodín</option><option value="ok">6 až 7 hodín</option><option value="good">7 až 9 hodín</option></select></div>
+    <div class="field"><label for="stress">Stres</label><select id="stress" data-key="stress"><option value="low">Nízky</option><option value="mid">Stredný</option><option value="high">Vysoký</option></select></div>
+    <div class="field"><label for="diet">Stravovanie</label><select id="diet" data-key="diet"><option value="all">Jem všetko</option><option value="veg">Vegetarián</option><option value="vegan">Vegán</option><option value="lf">Bez laktózy</option><option value="carn">Carnivore</option></select></div>
+    <div class="field"><span class="lbl">Vysoké a nízke dni (vysokých týždenne)</span><div class="seg" data-key="cyc"><button type="button" data-v="0">Nie</button><button type="button" data-v="1">1 deň</button><button type="button" data-v="2">2 dni</button><button type="button" data-v="3">3 dni</button></div></div>
+    <div class="field"><label for="bf">Telesný tuk (%) <span class="note">· ak vieš</span></label><input id="bf" type="number" inputmode="decimal" placeholder="auto" data-key="bf"></div>
+   </div>
+  </form>
+
+  <div class="col-out" id="out" aria-live="polite">
+   <div class="panel bad" id="invalid" hidden>Skontroluj údaje. Zadaj reálny vek, výšku a váhu.</div>
+   <div id="valid">
+    <div class="panel">
+     <div class="chips"><span id="rateText"></span><span id="firstText"></span></div>
+     <svg class="chart" viewBox="0 0 760 230" role="img" aria-label="Graf vývoja hmotnosti"><g stroke="#E3E5DF" stroke-width="1"><line x1="0" y1="40" x2="760" y2="40"/><line x1="0" y1="95" x2="760" y2="95"/><line x1="0" y1="150" x2="760" y2="150"/><line x1="0" y1="205" x2="760" y2="205"/></g><path id="curve" fill="none" stroke="#4F7F26" stroke-width="5" stroke-linecap="round"/><g id="dots"/></svg>
+     <div class="miles" id="miles"></div>
+    </div>
+    <div id="cycBox" hidden style="margin-top:14px"><div class="days" id="days"></div><p class="note" id="avgLine" style="margin:8px 0 0"></p></div>
+    <div class="tiles" id="tiles" style="margin-top:14px"></div>
+    <div class="two" style="margin-top:14px">
+     <div class="panel"><h2 id="mealsTitle"></h2><div id="meals"></div><div id="tips"></div></div>
+     <div class="panel"><h2>Zapisuj, čo jješ</h2>
+      <div class="app"><img class="qr" src="../img/qr-kaloricke-tabulky.svg" alt="QR kód na aplikáciu Kalorické tabuľky" width="112" height="112"><div>Aplikácia <b style="color:var(--ink)">Kalorické tabuľky</b><br>Zapíš si jedlá a uvidíš, koľko kalórií obsahujú. Naskenuj kód.</div></div>
+      <img class="badges" src="../img/app-store-google-play.png" alt="Stiahnuť z App Store a Google Play" width="240">
+     </div>
+    </div>
+    <p class="note" style="margin-top:14px">Odhad: Mifflin-St Jeor, alebo Katch-McArdle pri zadanom % tuku. Výpočty vychádzajú z odhadov a priemerov, nie sú garantované a nie sú lekárskym odporúčaním. Neplatí pre tehotné, dojčiace a deti. Pri ochoreniach alebo špeciálnej strave sa poraď s lekárom alebo dietológom.</p>
+   </div>
+  </div>
+ </div>
+</main>
+<script type="module" src="./prijem.mjs"></script>
+</body>
+</html>

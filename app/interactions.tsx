@@ -33,6 +33,9 @@ export function MobileMenu() {
             </a>
           ))}
         </nav>
+        <a className="button" href={assetPath('/kalkulacky/')} onClick={() => setOpen(false)}>
+          Kalkulačky
+        </a>
         <a className="button lime" href={assetPath('/permanentka/')} onClick={() => setOpen(false)}>
           Moja permanentka
         </a>
