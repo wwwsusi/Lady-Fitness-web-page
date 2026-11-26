@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lady Fitness Humenné — náhľad nového webu</title>
+<meta name="description" content="Dámske fitness v Humennom na Hrnčiarskej 11. Aktuálny cenník, otváracie hodiny, osobný tréning a fotky priestorov.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ED0D5B;--navy:#0F1D30;--blush:#FDF1F5;--white:#fff;--line:#f0dbe3;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font:400 17px/1.6 Inter,system-ui,sans-serif;color:var(--navy);background:var(--white)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+h1,h2,h3,.price{font-family:Oswald,"Arial Narrow",sans-serif;line-height:1.15}
+h1{font-size:clamp(2.6rem,9vw,5rem);font-weight:600}
+h2{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:500;margin-bottom:12px}
+h3{font-size:1.35rem;font-weight:500}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:64px 0}
+.tint{background:var(--blush)}
+.lead{max-width:56ch;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;font-weight:700;font-size:1.17rem;text-decoration:none;border:2px solid var(--pink);background:var(--pink);color:#fff;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--navy);border-color:#fff}
+.btn.line{background:transparent;color:var(--navy);border-color:var(--navy)}
+
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px}
+.logo img{height:60px;width:auto}
+footer img{height:96px;width:auto}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:500}
+nav a{text-decoration:none;padding:8px 0}
+nav a:hover{text-decoration:underline;text-decoration-color:var(--pink);text-decoration-thickness:2px;text-underline-offset:6px}
+.actions{display:flex;gap:8px;align-items:center}
+.pass{min-height:42px;font-size:.95rem;padding:0 18px}
+#menu{display:none;background:none;border:1.5px solid var(--navy);border-radius:999px;min-height:42px;padding:0 16px;font:700 .95rem Inter,sans-serif;color:var(--navy);cursor:pointer}
+
+.hero{position:relative;min-height:min(78vh,680px);display:flex;align-items:flex-end;padding:0;color:#fff;isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(15,29,48,.94) 10%,rgba(15,29,48,.65) 48%,rgba(15,29,48,.12))}
+.hero .wrap{padding:120px 0 48px}
+.hero h1 span{display:block;color:#ff8fb4}
+.hero p{max-width:46ch;margin:16px 0 28px;font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+.hero>img{object-position:50% 25%}
+@media (min-width:901px){
+  .hero{background:var(--navy);overflow:hidden}
+  .hero>img{left:auto;right:0;width:50%;object-position:50% 24%}
+  .hero::after{background:linear-gradient(to right,var(--navy) 50%,rgba(15,29,48,0) 68%)}
+  .hero{align-items:center}
+  .hero .wrap{padding:56px 0}
+  .hero h1{font-size:clamp(3rem,5.6vw,5rem)}
+  .hero p{max-width:40ch}
+}
+.info{background:var(--navy);color:#fff;padding:22px 0}
+.info ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.info small{display:block;color:#ffb3cc;font-weight:500;font-size:.85rem}
+.info li{font-weight:500;line-height:1.4}
+
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card img[src$="osobny-trening.webp"]{object-position:50% 45%}
+.card img[src$="priestor.webp"]{object-position:50% 55%}
+.card div{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card p{font-size:.97rem}
+.card b{margin-top:auto;padding-top:6px}
+.soon{margin-top:20px;border:1.5px dashed var(--pink);border-radius:var(--r);padding:20px}
+
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan{background:#fff;border-radius:var(--r);padding:26px;border:2px solid transparent}
+.plan.hi{border-color:var(--pink)}
+.tag{display:inline-block;background:var(--navy);color:#fff;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:700;margin-bottom:8px}
+.price{font-size:3.4rem;font-weight:600;margin:8px 0 2px}
+details{background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-top:14px}
+summary{cursor:pointer;padding:18px 22px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--pink);font-size:1.5rem;line-height:1}
+details[open]>summary::after{content:"–"}
+details>.in{padding:0 22px 20px}
+.tables{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 40px;align-items:start}
+table{width:100%;border-collapse:collapse;margin-bottom:12px}
+caption{text-align:left;font:500 1.2rem Oswald,sans-serif;padding:8px 0}
+td{padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td+td{text-align:right;white-space:nowrap;padding-left:12px;font-weight:700}
+td small{display:block;font-weight:400;font-size:.85rem;opacity:.75}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gallery button{border:0;padding:0;background:var(--blush);border-radius:12px;overflow:hidden;cursor:zoom-in;aspect-ratio:1}
+.gallery img{width:100%;height:100%;object-fit:cover}
+dialog{border:0;padding:0;background:transparent;margin:auto;max-width:min(94vw,900px);max-height:94vh;overflow:visible}
+dialog::backdrop{background:rgba(15,29,48,.93)}
+dialog img{max-height:76vh;border-radius:12px;margin-inline:auto}
+.lb{display:flex;justify-content:center;gap:10px;margin-top:14px}
+.lb button{min-width:54px;min-height:48px;border-radius:999px;border:0;background:#fff;color:var(--navy);font:700 1rem Inter,sans-serif;cursor:pointer;padding:0 18px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:#fff;border-radius:var(--r);padding:24px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--pink);color:#fff;font:600 1.4rem Oswald,sans-serif;margin-bottom:14px}
+
+.about{display:grid;grid-template-columns:2fr 3fr;gap:48px;align-items:center}
+.about>img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%}
+.quotes{display:grid;gap:12px;margin-top:24px}
+blockquote{border-left:4px solid var(--pink);background:var(--blush);padding:14px 18px;border-radius:0 12px 12px 0}
+.note{font-size:.88rem;opacity:.75;margin-top:12px}
+
+.narrow{max-width:760px}
+.contact{background:var(--navy);color:#fff}
+.contact .cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.contact dl div{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.contact dt{font-size:.85rem;color:#ffb3cc}
+.contact dd{font-size:1.15rem;font-weight:500}
+.map{border:0;width:100%;min-height:340px;height:100%;border-radius:var(--r);background:#fff}
+footer{padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+
+.dock{display:none}
+
+.skip{position:absolute;left:16px;top:-80px;z-index:40;background:var(--navy);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700}
+.skip:focus{top:12px}
+main:focus{outline:none}
+.logo{display:inline-flex;align-items:center;min-height:44px}
+.pass,#menu{min-height:44px;white-space:nowrap}
+.info a,.contact dd a,.narrow p a,details .in a{display:inline-flex;align-items:center;min-height:44px}
+
+@media (max-width:560px){
+  section{padding:40px 0}
+  .hero{padding:0}
+  .lead{margin-bottom:20px}
+  .cards{gap:12px}
+  .card{display:grid;grid-template-columns:112px 1fr}
+  .card img{aspect-ratio:auto;height:0;min-height:100%}
+  .card div{padding:14px;gap:4px}
+  .plans{gap:10px}
+  .plan{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;padding:16px 18px}
+  .plan .tag{grid-column:1/-1;justify-self:start}
+  .plan .price{grid-column:2;grid-row:span 2;font-size:2.2rem;margin:0}
+  .plan p{grid-column:1;font-size:.92rem}
+  .steps{gap:10px}
+  .steps li{display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding:16px}
+  .steps li::before{grid-row:span 2;margin:0}
+  .about{gap:24px}
+  .about>img{aspect-ratio:1;object-position:50% 20%}
+}
+@media (max-width:360px){
+  .pass .long{display:none}
+  .pass{text-transform:capitalize}
+}
+@media (orientation:landscape) and (max-height:500px){
+  html{scroll-padding-top:60px}
+  .bar{height:56px}
+  .logo img{height:50px}
+  nav{top:56px;max-height:calc(100vh - 56px);overflow:auto}
+  .hero{min-height:calc(100svh - 56px - 57px)}
+  .hero{background:var(--navy);overflow:hidden}
+  .hero>img{left:auto;right:0;width:42%;object-position:50% 38%}
+  .hero::after{background:linear-gradient(to right,var(--navy) 58%,rgba(15,29,48,0) 76%)}
+  .hero .wrap{padding:20px 0 16px}
+  .hero h1{font-size:2.1rem}
+  .hero h1 span{display:inline}
+  .hero p{max-width:54%;margin:6px 0 12px;font-size:.95rem;line-height:1.45}
+  .hero .btn{min-height:44px}
+  .dock{padding-block:6px}
+  .dock a{min-height:44px}
+  body{padding-bottom:58px}
+}
+
+@media (max-width:900px) and (min-height:501px){
+  .hero{flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:0;background:var(--navy);overflow:hidden}
+  .hero>img{position:static;z-index:0;flex:none;height:clamp(210px,calc(100svh - 440px),620px);object-position:50% 38%}
+  .hero::after{display:none}
+  .hero .wrap{position:relative;z-index:1;width:100%;margin:-72px 0 0;padding:44px 16px 28px;background:linear-gradient(to bottom,rgba(15,29,48,0),var(--navy) 72px)}
+}
+
+/* Jemné animácie — vypnuté, ak má zariadenie obmedzený pohyb */
+@media (prefers-reduced-motion:no-preference){
+  .hero{overflow:hidden}
+  .hero>img{animation:zoom 9s ease-out both}
+  .hero .wrap>*{animation:rise .8s ease-out both}
+  .hero .wrap>p{animation-delay:.18s}
+  .hero .wrap>.cta{animation-delay:.34s}
+  @keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .reveal{opacity:0;translate:0 28px;transition:opacity .6s ease var(--d,0s),translate .6s ease var(--d,0s)}
+  .reveal.in-view{opacity:1;translate:0 0}
+  .btn,.card,.plan,.dock a{transition:transform .25s ease,box-shadow .25s ease,opacity .6s ease var(--d,0s),translate .6s ease var(--d,0s)}
+  .card img,.gallery img{transition:transform .5s ease}
+  .btn:active,.dock a:active{transform:scale(.97)}
+}
+@media (prefers-reduced-motion:no-preference) and (hover:hover){
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,29,48,.2)}
+  .card:hover,.plan:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(15,29,48,.14)}
+  .card:hover img,.gallery button:hover img{transform:scale(1.06)}
+}
+
+@media (max-width:900px){
+  #menu{display:block}
+  nav{display:none;position:absolute;left:0;right:0;top:68px;background:#fff;border-bottom:1px solid var(--line);padding:8px 16px 16px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0}
+  nav a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .info ul,.cards{grid-template-columns:1fr 1fr}
+  .plans,.steps,.about,.contact .cols,.tables{grid-template-columns:1fr}
+  .about>img{max-width:420px}
+  .gallery{grid-template-columns:1fr 1fr}
+  .dock{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .dock a{display:grid;place-items:center;min-height:48px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;border:1.5px solid var(--navy)}
+  .dock a:first-child{background:var(--pink);border-color:var(--pink);color:#fff;font-size:1.17rem}
+  body{padding-bottom:74px}
+}
+@media (max-width:560px){
+  .cards{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .hero{min-height:82vh}
+  .logo img{height:56px}
+  .pass{padding:0 12px;font-size:.85rem}
+  #menu{padding:0 12px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#domov">Preskočiť na obsah</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#domov"><img src="img/logo.webp" alt="Lady Fitness — domov" width="305" height="360"></a>
+    <nav id="nav" aria-label="Hlavná navigácia">
+      <ul>
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#cennik">Cenník</a></li>
+        <li><a href="#galeria">Galéria</a></li>
+        <li><a href="#o-nas">O nás</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a class="btn line pass" href="https://wwwsusi.github.io/Lady-Fitness-web-page/permanentka/" target="_blank" rel="noopener"><span class="long">Moja&nbsp;</span>permanentka</a>
+      <button id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="domov" tabindex="-1">
+<section class="hero">
+  <img src="img/uvod-2.webp" alt="Trénerka pri sťahovaní hornej kladky vo fitku" width="1122" height="1402" fetchpriority="high">
+  <div class="wrap">
+    <h1>Tvoja sila. <span>Tvoj priestor.</span></h1>
+    <p>Dámske fitness v Humennom. Cvič vlastným tempom, s podporou a v kruhu žien, ktoré ti rozumejú.</p>
+    <div class="cta">
+      <a class="btn" href="#prva">Prvá návšteva</a>
+      <a class="btn ghost" href="#cennik">Cenník</a>
+    </div>
+  </div>
+</section>
+
+<div class="info">
+  <ul class="wrap">
+    <li><small id="today-label">Dnes otvorené</small><span id="today">Po–Pi 6:00–19:30, So–Ne 8:00–16:30</span></li>
+    <li><small>Adresa</small>Hrnčiarska 11, Humenné<br>(na poschodí)</li>
+    <li><small>Parkovanie</small>Zdarma pri fitku</li>
+    <li><small>Telefón</small><a href="tel:+421908891961">+421 908 891 961</a></li>
+  </ul>
+</div>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2>Čo u nás nájdeš</h2>
+    <p class="lead">Nemusíš mať hotový plán ani skúsenosti. Vyber si, ako chceš začať.</p>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section id="cennik" class="tint">
+  <div class="wrap">
+    <h2>Cenník</h2>
+    <p class="lead" id="price-note" role="status">Načítavam aktuálne ceny…</p>
+    <div class="plans" id="plans"></div>
+    <details id="full" hidden>
+      <summary>Celý cenník</summary>
+      <div class="in tables" id="tables"></div>
+    </details>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <h2>Pozri sa k nám</h2>
+    <p class="lead">Ťukni na fotku a zväčši si ju.</p>
+    <div class="gallery">
+      <button><img loading="lazy" src="img/zrkadlo.webp" alt="Trénerka pri zrkadle v posilňovni" style="object-position:50% 25%"></button>
+      <button><img loading="lazy" src="img/sala.webp" alt="Sála so vstupom do fitka" style="object-position:50% 55%"></button>
+      <button><img loading="lazy" src="https://wwwsusi.github.io/Lady-Fitness-web-page/photos/vybavenie.jpg" alt="Silová zóna"></button>
+      <button><img loading="lazy" src="https://wwwsusi.github.io/Lady-Fitness-web-page/photos/kardio.jpg" alt="Kardio zóna"></button>
+      <button><img loading="lazy" src="img/kardio-stepper.webp" alt="Cvičenie na schodovom trenažéri" style="object-position:50% 40%"></button>
+      <button><img loading="lazy" src="https://wwwsusi.github.io/Lady-Fitness-web-page/photos/komunita.jpg" alt="Stretnutie komunity vo fitku"></button>
+    </div>
+  </div>
+</section>
+
+<section id="prva" class="tint">
+  <div class="wrap">
+    <h2>Prvá návšteva v 3 krokoch</h2>
+    <p class="lead">Nemusíš byť vo forme, aby si mohla začať.</p>
+    <ol class="steps">
+      <li><h3>Ozvi sa</h3><p>Zavolaj alebo napíš, s čím chceš začať.</p></li>
+      <li><h3>Dohodneme sa</h3><p>Prejdeme možnosti, termín a cenu.</p></li>
+      <li><h3>Príď cvičiť</h3><p>Zober si pohodlné oblečenie, čistú športovú obuv, uterák a vodu. Máme šatňu aj sprchy.</p></li>
+    </ol>
+    <p style="margin-top:28px"><a class="btn" href="tel:+421908891961">Zavolať a dohodnúť sa</a></p>
+  </div>
+</section>
+
+<section id="o-nas">
+  <div class="wrap about">
+    <img loading="lazy" src="img/trenerka.webp" alt="Zakladateľka a trénerka Lady Fitness">
+    <div>
+      <h2>Fitko, ktoré vzniklo z lásky k pohybu</h2>
+      <p>Lady Fitness založila trénerka s rokmi skúseností, viacerými certifikátmi a osobným prístupom ku každej žene. Od roku 2019 vytvára v Humennom miesto iba pre ženy, kde sa môžeš učiť, posilňovať a cítiť sa dobre bez porovnávania.</p>
+      <div class="quotes">
+        <blockquote>„Príjemné super ľudia a človek sa tam cíti ako doma.“</blockquote>
+        <blockquote>„Pani, ktorá je veľmi zlatá a poradí, ako správne cvičiť.“</blockquote>
+        <blockquote>„Super atmosféra, super trénerka.“</blockquote>
+      </div>
+      <p class="note">Z verejných odporúčaní klientok na Facebooku.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap narrow">
+    <h2>Časté otázky</h2>
+    <details><summary>Nikdy som necvičila. Môžem prísť?</summary><div class="in">Áno. Ozvi sa pred prvou návštevou a spoločne dohodneme vhodný prvý krok.</div></details>
+    <details><summary>Čo si mám priniesť?</summary><div class="in">Pohodlné športové oblečenie, čistú obuv na cvičenie, uterák a vodu.</div></details>
+    <details data-svc="LF-SVC-015" hidden><summary>Ako sa objednám na osobný tréning?</summary><div class="in">Zavolaj na <a href="tel:+421908891961">+421 908 891 961</a> a termín si dohodneme priamo.</div></details>
+    <details><summary>Majú klientky zľavu na doplnky výživy?</summary><div class="in">Áno, na vybrané doplnky ProSupplements. Aktuálnu ponuku a ceny zistíš na recepcii.</div></details>
+    <p style="margin-top:22px">Skús aj naše <a href="https://wwwsusi.github.io/Lady-Fitness-web-page/kalkulacky/" target="_blank" rel="noopener">kalkulačky</a>.</p>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap cols">
+    <div>
+      <h2>Príď za nami</h2>
+      <dl>
+        <div><dt>Adresa</dt><dd>Hrnčiarska 11, Humenné (na poschodí)</dd></div>
+        <div><dt>Pondelok – piatok</dt><dd>6:00 – 19:30</dd></div>
+        <div><dt>Sobota – nedeľa</dt><dd>8:00 – 16:30</dd></div>
+        <div><dt>Telefón</dt><dd><a href="tel:+421908891961">+421 908 891 961</a></dd></div>
+        <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/profile.php?id=100057866011115" target="_blank" rel="noopener">Lady Fitness — oznamy a správy</a></dd></div>
+      </dl>
+    </div>
+    <iframe class="map" title="Mapa: Hrnčiarska 11, Humenné" loading="lazy" src="https://www.google.com/maps?q=Hrn%C4%8Diarska+11,+Humenn%C3%A9&output=embed"></iframe>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" style="align-items:center"><img src="img/logo.webp" alt="Lady Fitness" width="305" height="360" loading="lazy"><span>Lady Fitness Humenné</span><span>Pracovný náhľad, nie je to zverejnený web.</span></div></footer>
+
+<div class="dock">
+  <a href="tel:+421908891961">Zavolať</a>
+  <a href="https://www.facebook.com/profile.php?id=100057866011115" target="_blank" rel="noopener">Napísať</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Lady+Fitness+Hrn%C4%8Diarska+11+Humenn%C3%A9" target="_blank" rel="noopener">Navigovať</a>
+</div>
+
+<dialog id="lightbox" aria-label="Zväčšená fotka">
+  <img alt="">
+  <div class="lb"><button data-d="-1" aria-label="Predchádzajúca">←</button><button data-close>Zavrieť</button><button data-d="1" aria-label="Ďalšia">→</button></div>
+</dialog>
+
+<script>
+const $=id=>document.getElementById(id);
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+const setMenu=o=>{nav.classList.toggle('open',o);menu.setAttribute('aria-expanded',o);menu.textContent=o?'Zavrieť':'Menu'};
+menu.onclick=()=>setMenu(!nav.classList.contains('open'));
+nav.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){setMenu(false);menu.focus()}});
+document.addEventListener('click',e=>{if(!e.target.closest('#nav,#menu'))setMenu(false)});
+
+// Otváracie hodiny podľa času na Slovensku (sviatky a výnimky nezohľadňuje).
+const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Bratislava',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+const fmt=m=>Math.floor(m/60)+':'+String(m%60).padStart(2,'0');
+const HOURS={week:[360,1170],weekend:[480,990]},DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function openState(day,now){
+  const hours=d=>HOURS[d%6===0?'weekend':'week'],[from,to]=hours(day);
+  if(now>=from&&now<to)return['Teraz otvorené','Dnes do '+fmt(to)];
+  if(now<from)return['Teraz zatvorené','Otvárame dnes o '+fmt(from)];
+  return['Teraz zatvorené','Otvárame zajtra o '+fmt(hours((day+1)%7)[0])];
+}
+[$('today-label').textContent,$('today').textContent]=openState(DAYS.indexOf(p.weekday),+p.hour*60+ +p.minute);
+
+// ---- Služby z databázy ----
+// Verejný (publishable) kľúč smie byť v kóde webu. Umožňuje iba volanie web_services(),
+// pozri supabase/web_services.sql. Tajný (service_role) kľúč sem nikdy nepatrí.
+const SOURCE={url:'https://aptqqxshslbzxrtsnyxb.supabase.co',key:'sb_publishable_4ENdwiysxMR-eWUxpGFwkg_jT_7h2vb'};
+
+const OLD='https://wwwsusi.github.io/Lady-Fitness-web-page/photos/';
+// Texty a fotky patria webu. Karta sa ukáže, iba ak je služba v databáze aktívna.
+const CARDS={
+ 'LF-SVC-015':['Osobný tréning','img/osobny-trening.webp','Trénerka na lavičke pri multipresse','Technika, istota pri strojoch a tréning podľa tvojho cieľa.'],
+ 'LF-SVC-030':['Tréningový plán na mieru',OLD+'trening.jpg','Ženy pri cvičení','Plán, 3 osobné tréningy a vstup do fitka počas nich.'],
+ 'LF-SVC-019':['Detská Zumba pre škôlky',OLD+'detska-zumba.jpg','Skupina detí po cvičení','Prídeme za deťmi priamo do materskej školy.']
+};
+const el=(tag,props={},...kids)=>{const n=Object.assign(document.createElement(tag),props);n.append(...kids);return n};
+const eur=v=>new Intl.NumberFormat('sk-SK',{maximumFractionDigits:2,minimumFractionDigits:Number.isInteger(+v)?0:2}).format(v)+' €';
+const per=s=>s.units>1&&['vstup','mesiac'].includes(s.unit)?eur(s.price_eur/s.units)+' / '+s.unit:s.unit==='hodina'?'cena za hodinu':'';
+
+function render(list){
+  const adult=s=>s.category==='Dospelí', discount=s=>s.category.startsWith('Študenti');
+  const entry=s=>(adult(s)||discount(s))&&['vstup','mesiac'].includes(s.unit);
+  const card=(title,img,alt,text,price)=>el('article',{className:'card'},
+    el('img',{src:img,alt}),el('div',{},el('h3',{textContent:title}),el('p',{textContent:text}),el('b',{textContent:price})));
+  const entries=list.filter(s=>entry(s)&&adult(s));
+  if(entries.length)$('cards').append(card('Fitness','img/priestor.webp','Posilňovňa s multipressom a strojmi','Silové stroje aj kardio zóna. Príď jednorazovo alebo na permanentku.','od '+eur(Math.min(...entries.map(s=>s.price_eur)))));
+  for(const s of list)if(CARDS[s.code])$('cards').append(card(...CARDS[s.code],eur(s.price_eur)+(s.unit==='hodina'?' / hodina':'')));
+
+  for(const [code,note] of [['LF-SVC-001','Na vyskúšanie.'],['LF-SVC-002','Na pravidelné cvičenie.'],['LF-SVC-005','']]){
+    const s=list.find(x=>x.code===code); if(!s)continue;
+    const hi=code==='LF-SVC-002';
+    const box=el('div',{className:hi?'plan hi':'plan'});
+    if(hi)box.append(el('span',{className:'tag',textContent:'Neobmedzene'}));
+    box.append(el('h3',{textContent:s.name}),el('div',{className:'price',textContent:eur(s.price_eur)}),el('p',{textContent:note||per(s)}));
+    $('plans').append(box);
+  }
+
+  const table=(title,rows)=>rows.length?el('table',{},el('caption',{textContent:title}),el('tbody',{},...rows.map(s=>{
+    const name=el('td',{textContent:s.name}); if(per(s))name.append(el('small',{textContent:per(s)}));
+    return el('tr',{},name,el('td',{textContent:eur(s.price_eur)}));
+  }))):'';
+  const by=u=>list.filter(s=>adult(s)&&s.unit===u).sort((a,b)=>a.units-b.units);
+  const kids=s=>s.category.startsWith('Materské');
+  $('tables').append(
+    table('Časové permanentky',by('mesiac')),table('Vstupy',by('vstup')),
+    table('Študentky do 18 a seniorky nad 60 rokov',list.filter(discount)),
+    table('Tréningy a služby',list.filter(s=>!entry(s)).sort((a,b)=>kids(a)-kids(b)))
+  );
+  $('full').hidden=!list.length;
+  document.querySelectorAll('[data-svc]').forEach(n=>n.hidden=!list.some(s=>s.code===n.dataset.svc));
+}
+
+async function load(){
+  try{
+    const r=await fetch(SOURCE.url+'/rest/v1/rpc/web_services',{method:'POST',headers:{apikey:SOURCE.key,'Content-Type':'application/json'},body:'{}',cache:'no-store',signal:AbortSignal.timeout(8000)});
+    if(!r.ok)throw new Error(r.status);
+    render(await r.json());$('price-note').textContent='Aktuálna ponuka a ceny.';
+  }catch(e){
+    // Zámerne bez záložného cenníka, aby web nikdy neukázal neaktuálne ceny.
+    $('price-note').textContent='Cenník sa nepodarilo načítať. Aktuálne ceny ti povieme na +421 908 891 961.';
+  }
+}
+
+// Vynorenie blokov pri rolovaní. Bez skriptu ostáva všetko viditeľné.
+load().finally(()=>{
+  if(!('IntersectionObserver'in window)||!matchMedia('(prefers-reduced-motion: no-preference)').matches)return;
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('main h2,.lead,.card,.plan,#cennik details,.gallery button,.steps li,.about>*,.narrow details,.contact dl,.map').forEach(n=>{
+    n.style.setProperty('--d',([...n.parentElement.children].indexOf(n)%4)*.08+'s');
+    n.classList.add('reveal');io.observe(n);
+  });
+});
+
+const dlg=document.getElementById('lightbox'),big=dlg.querySelector('img'),pics=[...document.querySelectorAll('.gallery img')];
+let i=0;const show=n=>{i=(n+pics.length)%pics.length;big.src=pics[i].src;big.alt=pics[i].alt};
+pics.forEach((im,n)=>im.parentElement.onclick=()=>{show(n);dlg.showModal()});
+dlg.addEventListener('click',e=>{const b=e.target.closest('button');if(e.target===dlg||b?.hasAttribute('data-close'))dlg.close();else if(b)show(i+ +b.dataset.d)});
+dlg.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(i+1);if(e.key==='ArrowLeft')show(i-1)});
+</script>
+</body>
+</html>
