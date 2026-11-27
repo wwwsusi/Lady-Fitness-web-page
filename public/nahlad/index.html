@@ -67,8 +67,7 @@ nav a:hover{text-decoration:underline;text-decoration-color:var(--pink);text-dec
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .card img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.card img[src$="osobny-trening.webp"]{object-position:50% 45%}
-.card img[src$="priestor.webp"]{object-position:50% 55%}
+
 .card div{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card p{font-size:.97rem}
 .card b{margin-top:auto;padding-top:6px}
@@ -106,7 +105,7 @@ dialog img{max-height:76vh;border-radius:12px;margin-inline:auto}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--pink);color:#fff;font:600 1.4rem Oswald,sans-serif;margin-bottom:14px}
 
 .about{display:grid;grid-template-columns:2fr 3fr;gap:48px;align-items:center}
-.about>img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%}
+.about>img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;width:100%;height:auto}
 .quotes{display:grid;gap:12px;margin-top:24px}
 blockquote{border-left:4px solid var(--pink);background:var(--blush);padding:14px 18px;border-radius:0 12px 12px 0}
 .note{font-size:.88rem;opacity:.75;margin-top:12px}
@@ -177,6 +176,10 @@ main:focus{outline:none}
   .hero>img{position:static;z-index:0;flex:none;height:clamp(210px,calc(100svh - 440px),620px);object-position:50% 38%}
   .hero::after{display:none}
   .hero .wrap{position:relative;z-index:1;width:100%;margin:-72px 0 0;padding:44px 16px 28px;background:linear-gradient(to bottom,rgba(15,29,48,0),var(--navy) 72px)}
+}
+
+@media (max-width:900px){
+  .gallery button:first-child{grid-column:1/-1;aspect-ratio:3/2}
 }
 
 /* Jemné animácie — vypnuté, ak má zariadenie obmedzený pohyb */
@@ -294,12 +297,15 @@ main:focus{outline:none}
     <h2>Pozri sa k nám</h2>
     <p class="lead">Ťukni na fotku a zväčši si ju.</p>
     <div class="gallery">
-      <button><img loading="lazy" src="img/zrkadlo.webp" alt="Trénerka pri zrkadle v posilňovni" style="object-position:50% 25%"></button>
-      <button><img loading="lazy" src="img/sala.webp" alt="Sála so vstupom do fitka" style="object-position:50% 55%"></button>
-      <button><img loading="lazy" src="https://wwwsusi.github.io/Lady-Fitness-web-page/photos/vybavenie.jpg" alt="Silová zóna"></button>
-      <button><img loading="lazy" src="https://wwwsusi.github.io/Lady-Fitness-web-page/photos/kardio.jpg" alt="Kardio zóna"></button>
-      <button><img loading="lazy" src="img/kardio-stepper.webp" alt="Cvičenie na schodovom trenažéri" style="object-position:50% 40%"></button>
-      <button><img loading="lazy" src="https://wwwsusi.github.io/Lady-Fitness-web-page/photos/komunita.jpg" alt="Stretnutie komunity vo fitku"></button>
+      <button><img loading="lazy" src="img/g-kladky.webp" alt="Kladkové stroje v silovej zóne"></button>
+      <button><img loading="lazy" src="img/g-kardio.webp" alt="Kardio zóna s trenažérmi"></button>
+      <button><img loading="lazy" src="img/g-nohy.webp" alt="Stroje na tréning nôh pri maľbe"></button>
+      <button><img loading="lazy" src="img/g-sila.webp" alt="Lavička, jednoručky a kettlebelly"></button>
+      <button><img loading="lazy" src="img/g-sala.webp" alt="Voľná sála na cvičenie so zrkadlom"></button>
+      <button><img loading="lazy" src="img/g-kettlebell.webp" alt="Farebné kettlebelly"></button>
+      <button><img loading="lazy" src="img/g-recepcia.webp" alt="Recepcia Lady Fitness"></button>
+      <button><img loading="lazy" src="img/g-satna.webp" alt="Šatňa so skrinkami"></button>
+      <button><img loading="lazy" src="img/g-zrkadlo.webp" alt="Trénerka pri zrkadle" style="object-position:50% 35%"></button>
     </div>
   </div>
 </section>
@@ -319,7 +325,7 @@ main:focus{outline:none}
 
 <section id="o-nas">
   <div class="wrap about">
-    <img loading="lazy" src="img/trenerka.webp" alt="Zakladateľka a trénerka Lady Fitness">
+    <img loading="lazy" src="img/o-nas.webp" alt="Zakladateľka a trénerka Lady Fitness" width="800" height="1200">
     <div>
       <h2>Fitko, ktoré vzniklo z lásky k pohybu</h2>
       <p>Lady Fitness založila trénerka s rokmi skúseností, viacerými certifikátmi a osobným prístupom ku každej žene. Od roku 2019 vytvára v Humennom miesto iba pre ženy, kde sa môžeš učiť, posilňovať a cítiť sa dobre bez porovnávania.</p>
@@ -403,8 +409,8 @@ const SOURCE={url:'https://aptqqxshslbzxrtsnyxb.supabase.co',key:'sb_publishable
 const OLD='https://wwwsusi.github.io/Lady-Fitness-web-page/photos/';
 // Texty a fotky patria webu. Karta sa ukáže, iba ak je služba v databáze aktívna.
 const CARDS={
- 'LF-SVC-015':['Osobný tréning','img/osobny-trening.webp','Trénerka na lavičke pri multipresse','Technika, istota pri strojoch a tréning podľa tvojho cieľa.'],
- 'LF-SVC-030':['Tréningový plán na mieru',OLD+'trening.jpg','Ženy pri cvičení','Plán, 3 osobné tréningy a vstup do fitka počas nich.'],
+ 'LF-SVC-015':['Osobný tréning','img/osobny.webp','Trénerka sa smeje na lavičke pri multipresse','Technika, istota pri strojoch a tréning podľa tvojho cieľa.'],
+ 'LF-SVC-030':['Tréningový plán na mieru','img/plan.webp','Trénerka cvičí s expandérom','Plán, 3 osobné tréningy a vstup do fitka počas nich.'],
  'LF-SVC-019':['Detská Zumba pre škôlky',OLD+'detska-zumba.jpg','Skupina detí po cvičení','Prídeme za deťmi priamo do materskej školy.']
 };
 const el=(tag,props={},...kids)=>{const n=Object.assign(document.createElement(tag),props);n.append(...kids);return n};
@@ -414,10 +420,12 @@ const per=s=>s.units>1&&['vstup','mesiac'].includes(s.unit)?eur(s.price_eur/s.un
 function render(list){
   const adult=s=>s.category==='Dospelí', discount=s=>s.category.startsWith('Študenti');
   const entry=s=>(adult(s)||discount(s))&&['vstup','mesiac'].includes(s.unit);
+  // Výrez fotiek na výšku v kartách
+  const POS={'img/osobny.webp':'65% 45%','img/plan.webp':'45% 24%'};
   const card=(title,img,alt,text,price)=>el('article',{className:'card'},
-    el('img',{src:img,alt}),el('div',{},el('h3',{textContent:title}),el('p',{textContent:text}),el('b',{textContent:price})));
+    el('img',{src:img,alt,style:'object-position:'+(POS[img]||'50% 50%')}),el('div',{},el('h3',{textContent:title}),el('p',{textContent:text}),el('b',{textContent:price})));
   const entries=list.filter(s=>entry(s)&&adult(s));
-  if(entries.length)$('cards').append(card('Fitness','img/priestor.webp','Posilňovňa s multipressom a strojmi','Silové stroje aj kardio zóna. Príď jednorazovo alebo na permanentku.','od '+eur(Math.min(...entries.map(s=>s.price_eur)))));
+  if(entries.length)$('cards').append(card('Fitness','img/fitness.webp','Posilňovňa so strojmi a veľkými oknami','Silové stroje aj kardio zóna. Príď jednorazovo alebo na permanentku.','od '+eur(Math.min(...entries.map(s=>s.price_eur)))));
   for(const s of list)if(CARDS[s.code])$('cards').append(card(...CARDS[s.code],eur(s.price_eur)+(s.unit==='hodina'?' / hodina':'')));
 
   for(const [code,note] of [['LF-SVC-001','Na vyskúšanie.'],['LF-SVC-002','Na pravidelné cvičenie.'],['LF-SVC-005','']]){
