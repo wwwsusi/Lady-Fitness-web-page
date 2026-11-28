@@ -122,6 +122,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-bet
 
 .dock{display:none}
 
+#pribeh+#o-nas{border-top:1px solid var(--line)}
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pair .ph,.pair img{display:grid;place-items:center;width:100%;aspect-ratio:3/5;object-fit:cover;border-radius:12px;background:var(--blush);border:1.5px dashed var(--pink);font-weight:700}
+.pair img{border:0}
+.pair figcaption{text-align:center;font:500 1.15rem Oswald,sans-serif;padding-top:6px}
+.result{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px;margin-top:28px;padding:22px 24px;background:var(--blush);border-radius:var(--r)}
+.result .big{font:600 3.2rem/1 Oswald,sans-serif}
+.result .big span{font-size:1.35rem;font-weight:500}
+.result ul{padding-left:20px}
+
 .skip{position:absolute;left:16px;top:-80px;z-index:40;background:var(--navy);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700}
 .skip:focus{top:12px}
 main:focus{outline:none}
@@ -182,6 +193,43 @@ main:focus{outline:none}
   .gallery button:first-child{grid-column:1/-1;aspect-ratio:3/2}
 }
 
+#plans:empty{min-height:216px}
+#plans.failed.failed:empty{min-height:0}
+@media (max-width:900px){#plans:empty{min-height:560px}}
+@media (max-width:560px){#plans:empty{min-height:306px}}
+
+/* Nájdi svoj balíček */
+.find-link{margin-top:22px}
+.find-link a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+#balicek{padding-top:0}
+.finder{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;background:var(--navy);border-radius:var(--r);padding:24px;color:#fff}
+.finder fieldset{border:0;min-width:0}
+.finder fieldset+fieldset,.finder .disc{margin-top:20px}
+.finder legend{font:500 1.35rem Oswald,sans-serif;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:48px;padding:0 20px;border-radius:999px;border:1.5px solid rgba(255,255,255,.55);background:transparent;color:#fff;font:500 1rem Inter,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:#fff;border-color:#fff;color:var(--navy);font-weight:700}
+.chip[aria-pressed=true]::before{content:"✓ "}
+.disc{display:flex;gap:12px;align-items:center;min-height:44px;cursor:pointer}
+.disc input{width:22px;height:22px;flex:none;accent-color:var(--pink)}
+.res{background:#fff;color:var(--navy);border-radius:var(--r);padding:24px}
+.res .price{font-size:3rem;margin:6px 0}
+.res .price small{font:500 1rem Inter,sans-serif;margin-left:8px}
+.res ul{padding-left:20px;margin:8px 0 18px}
+.res .cta{align-items:center}
+.res .more{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+.res-empty{border:1.5px dashed rgba(255,255,255,.4);border-radius:var(--r);padding:24px;min-height:180px;display:grid;place-items:center;text-align:center;align-self:stretch}
+#result{align-self:stretch;display:grid}
+#result>.res{align-self:start;position:sticky;top:92px}
+@media (max-width:900px){
+  .finder{grid-template-columns:1fr;padding:18px}
+  .res-empty{display:none}
+  #result:has(.res-empty){display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .appear{animation:open .35s ease-out}
+}
+
 /* Jemné animácie — vypnuté, ak má zariadenie obmedzený pohyb */
 @media (prefers-reduced-motion:no-preference){
   .hero{overflow:hidden}
@@ -193,6 +241,10 @@ main:focus{outline:none}
   @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
   .reveal{opacity:0;translate:0 28px;transition:opacity .6s ease var(--d,0s),translate .6s ease var(--d,0s)}
   .reveal.in-view{opacity:1;translate:0 0}
+  details[open]>.in{animation:open .35s ease-out}
+  @keyframes open{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  /* ceny sa iba zjavia, neposúvajú sa */
+  #cennik .reveal{translate:none;transition-delay:0s}
   .btn,.card,.plan,.dock a{transition:transform .25s ease,box-shadow .25s ease,opacity .6s ease var(--d,0s),translate .6s ease var(--d,0s)}
   .card img,.gallery img{transition:transform .5s ease}
   .btn:active,.dock a:active{transform:scale(.97)}
@@ -212,6 +264,7 @@ main:focus{outline:none}
   .info ul,.cards{grid-template-columns:1fr 1fr}
   .plans,.steps,.about,.contact .cols,.tables{grid-template-columns:1fr}
   .about>img{max-width:420px}
+  .pairs{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr 1fr}
   .dock{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px}
   .dock a{display:grid;place-items:center;min-height:48px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;border:1.5px solid var(--navy)}
@@ -277,6 +330,18 @@ main:focus{outline:none}
     <h2>Čo u nás nájdeš</h2>
     <p class="lead">Nemusíš mať hotový plán ani skúsenosti. Vyber si, ako chceš začať.</p>
     <div class="cards" id="cards"></div>
+    <p class="find-link" data-finder hidden>Nevieš, čo si vybrať? <a href="#balicek">Nájdi svoj balíček</a></p>
+  </div>
+</section>
+
+<section id="balicek" data-finder hidden>
+  <div class="wrap">
+    <h2>Nájdi svoj balíček</h2>
+    <p class="lead">Vyber, čo potrebuješ. Cenu a podmienky uvidíš hneď.</p>
+    <div class="finder">
+      <div id="steps"></div>
+      <div id="result" aria-live="polite"></div>
+    </div>
   </div>
 </section>
 
@@ -410,8 +475,8 @@ const OLD='https://wwwsusi.github.io/Lady-Fitness-web-page/photos/';
 // Texty a fotky patria webu. Karta sa ukáže, iba ak je služba v databáze aktívna.
 const CARDS={
  'LF-SVC-015':['Osobný tréning','img/osobny.webp','Trénerka sa smeje na lavičke pri multipresse','Technika, istota pri strojoch a tréning podľa tvojho cieľa.'],
- 'LF-SVC-030':['Tréningový plán na mieru','img/plan.webp','Trénerka cvičí s expandérom','Plán, 3 osobné tréningy a vstup do fitka počas nich.'],
- 'LF-SVC-019':['Detská Zumba pre škôlky',OLD+'detska-zumba.jpg','Skupina detí po cvičení','Prídeme za deťmi priamo do materskej školy.']
+ 'LF-SVC-030':['Tréningový plán na mieru','img/plan.webp','Trénerka cvičí s expandérom','Plán vytvorený pre teba. Osobné tréningy si dokúpiš samostatne.'],
+ 'LF-SVC-019':['Detská Zumba pre škôlky',OLD+'detska-zumba.jpg','Skupina detí po cvičení','Pre súkromné materské školy. Prídeme za deťmi priamo k nim.']
 };
 const el=(tag,props={},...kids)=>{const n=Object.assign(document.createElement(tag),props);n.append(...kids);return n};
 const eur=v=>new Intl.NumberFormat('sk-SK',{maximumFractionDigits:2,minimumFractionDigits:Number.isInteger(+v)?0:2}).format(v)+' €';
@@ -449,7 +514,97 @@ function render(list){
     table('Tréningy a služby',list.filter(s=>!entry(s)).sort((a,b)=>kids(a)-kids(b)))
   );
   $('full').hidden=!list.length;
+  finder(list);
   document.querySelectorAll('[data-svc]').forEach(n=>n.hidden=!list.some(s=>s.code===n.dataset.svc));
+}
+
+// ---- Nájdi svoj balíček ----
+// Ponuka a ceny idú z databázy; texty „čo dostaneš“ udržiavaj podľa podmienok služby.
+const pick={need:null,sub:null,size:null,disc:false};
+const plural=(n,a,b,c)=>n===1?a:n<5?b:c;
+const FACTS={
+ 'LF-SVC-015':['1 osobný tréning s trénerkou','Vstup nie je v cene: potrebuješ permanentku alebo jednorazový vstup'],
+ 'LF-SVC-030':['Tréningový plán vytvorený pre teba','Osobné tréningy nie sú v cene, dokúpiš si ich samostatne'],
+ 'LF-SVC-019':['Zumba priamo vo vašej materskej škole','Cena je za jednu hodinu']
+};
+const facts=s=>FACTS[s.code]||(s.unit==='mesiac'?['Platí '+s.units+' '+plural(+s.units,'mesiac','mesiace','mesiacov')+' od kúpy']
+  :s.unit==='vstup'?(s.units>1?[s.units+' vstupov do fitness','Platia 6 mesiacov od prvého použitia']:['1 vstup do fitness']):[]);
+
+function finder(list){
+  const has=c=>list.find(s=>s.code===c), adult=u=>list.filter(s=>s.category==='Dospelí'&&s.unit===u).sort((a,b)=>a.units-b.units);
+  const single=has('LF-SVC-001'), multi=adult('vstup').filter(s=>s.units>1), months=adult('mesiac');
+  const coach=[['LF-SVC-015','Jeden tréning'],['LF-SVC-030','Plán na mieru']].filter(([c])=>has(c));
+  const known=s=>['Dospelí'].includes(s.category)||s.category.startsWith('Študenti')||FACTS[s.code];
+  const other=list.filter(s=>!known(s));
+  const freq=[single&&['once','Občas'],multi.length&&['some','Nepravidelne'],months.length&&['regular','Pravidelne']].filter(Boolean);
+  const needs=[freq.length&&['self','Chcem cvičiť sama'],coach.length&&['coach','Chcem pomoc trénerky'],
+    other.length&&['other','Ďalšie služby']].filter(Boolean); // detská Zumba je pre škôlky, do výberu klientky nepatrí
+  document.querySelectorAll('[data-finder]').forEach(n=>n.hidden=!needs.length);
+
+  const group=(legend,key,options,value)=>el('fieldset',{className:'appear'},el('legend',{textContent:legend}),
+    el('div',{className:'chips'},...options.map(([v,label])=>{
+      const b=el('button',{type:'button',className:'chip',textContent:label});
+      b.dataset.k=key+':'+v; b.setAttribute('aria-pressed',v===value);
+      b.onclick=()=>{pick[key]=v;if(key==='need'){pick.sub=null;pick.size=null}if(key==='sub')pick.size=null;draw(b.dataset.k,key)};
+      return b;
+    })));
+
+  function chosen(){
+    const d=c=>pick.disc&&has(c);
+    if(pick.need==='coach')return has(pick.sub);
+    if(pick.need==='other')return has(pick.sub);
+    if(pick.need!=='self')return;
+    if(pick.sub==='once')return d('LF-SVC-011')||single;
+    if(pick.sub==='some')return multi.find(s=>s.code===pick.size)||multi[0];
+    if(pick.sub==='regular'){const m=months.find(s=>s.code===pick.size)||months[0];return m&&+m.units===1&&d('LF-SVC-012')||m}
+  }
+
+  function draw(focus,changed){
+    const steps=[group('Čo potrebuješ?','need',needs,pick.need)];
+    if(pick.need==='self'){
+      steps.push(group('Ako často budeš chodiť?','sub',freq,pick.sub));
+      const opts=pick.sub==='some'?multi:pick.sub==='regular'?months:null;
+      if(opts)steps.push(group(pick.sub==='some'?'Koľko vstupov?':'Na ako dlho?','size',
+        opts.map(s=>[s.code,s.units+' '+(pick.sub==='some'?'vstupov':plural(+s.units,'mesiac','mesiace','mesiacov'))]),pick.size||opts[0].code));
+      if(has('LF-SVC-011')||has('LF-SVC-012')){
+        const box=el('input',{type:'checkbox',checked:pick.disc});box.dataset.k='disc';
+        box.onchange=()=>{pick.disc=box.checked;draw('disc','disc')};
+        steps.push(el('label',{className:'disc'},box,'Som študentka do 18 rokov alebo mám nad 60'));
+      }
+    }
+    if(pick.need==='coach')steps.push(group('Akú pomoc chceš?','sub',coach,pick.sub));
+    if(pick.need==='other')steps.push(group('Ktorú službu?','sub',other.map(s=>[s.code,s.name]),pick.sub));
+    // animuje sa iba to, čo je po poslednej voľbe nové
+    const order={need:1,sub:2,size:3,disc:9};
+    steps.forEach((n,i)=>{if(!changed||i<order[changed])n.classList.remove('appear')});
+    $('steps').replaceChildren(...steps);
+
+    const s=chosen();
+    if(!s){$('result').replaceChildren(el('div',{className:'res-empty',textContent:'Tu sa zobrazí tvoj balíček a cena.'}))}
+    else{
+      const price=el('div',{className:'price',textContent:eur(s.price_eur)});
+      const extra=s.code==='LF-SVC-015'?'+ vstup':s.unit==='hodina'?'za hodinu':per(s);
+      if(extra)price.append(el('small',{textContent:extra}));
+      const full=el('a',{className:'more',href:'#cennik',textContent:'Celý cenník'});
+      full.onclick=()=>{$('full').open=true};
+      const res=el('div',{className:'res appear'},el('h3',{textContent:s.name}),price,
+        el('ul',{},...facts(s).map(t=>el('li',{textContent:t}))));
+      if(pick.need==='self'&&pick.disc&&!['LF-SVC-011','LF-SVC-012'].includes(s.code))
+        res.append(el('p',{className:'note',textContent:'Zľava platí na jednorazový vstup a mesačnú permanentku.'}));
+      res.append(el('div',{className:'cta'},el('a',{className:'btn',href:'tel:+421908891961',textContent:'Zavolať a dohodnúť'}),full));
+      $('result').replaceChildren(res);
+    }
+    if(focus){
+      document.querySelector('#steps [data-k="'+focus+'"]')?.focus({preventScroll:true});
+      // na mobile posunie nový krok alebo výsledok do zorného poľa
+      const target=s?$('result'):$('steps').lastElementChild;
+      if(matchMedia('(max-width:900px)').matches){
+        const r=target.getBoundingClientRect();
+        if(r.bottom>innerHeight-80)scrollBy({top:Math.min(r.bottom-innerHeight+90,r.top-90),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      }
+    }
+  }
+  draw();
 }
 
 async function load(){
@@ -459,6 +614,7 @@ async function load(){
     render(await r.json());$('price-note').textContent='Aktuálna ponuka a ceny.';
   }catch(e){
     // Zámerne bez záložného cenníka, aby web nikdy neukázal neaktuálne ceny.
+    $('plans').classList.add('failed');
     $('price-note').textContent='Cenník sa nepodarilo načítať. Aktuálne ceny ti povieme na +421 908 891 961.';
   }
 }
