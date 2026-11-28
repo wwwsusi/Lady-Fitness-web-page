@@ -504,7 +504,7 @@ function render(list){
   }
 
   const table=(title,rows)=>rows.length?el('table',{},el('caption',{textContent:title}),el('tbody',{},...rows.map(s=>{
-    const name=el('td',{textContent:s.name}); if(per(s))name.append(el('small',{textContent:per(s)}));
+    const name=el('td',{textContent:s.name}); const info=[s.lifecycle==='PILOT'&&'Pilotná služba',per(s)].filter(Boolean).join(' · '); if(info)name.append(el('small',{textContent:info}));
     return el('tr',{},name,el('td',{textContent:eur(s.price_eur)}));
   }))):'';
   const by=u=>list.filter(s=>adult(s)&&s.unit===u).sort((a,b)=>a.units-b.units);
@@ -526,6 +526,7 @@ const plural=(n,a,b,c)=>n===1?a:n<5?b:c;
 // Názvy pre web tam, kde je v databáze interný názov.
 const NAMES={'LF-SVC-036':'Lady Fitness START'};
 const FACTS={
+ 'LF-SVC-041':['Jedno meranie telesnej kompozície (InBody)','Krátke vysvetlenie výsledkov'],
  'LF-SVC-036':['Asi 60 minút so zaškolenou osobou','Meranie tela InBody a krátke vysvetlenie výsledkov','Zoznámenie s fitkom','Praktická ukážka 5–8 strojov alebo pomôcok','Pripravený tréningový plán a vysvetlenie, ako ho používať','Vstup do fitka počas STARTu je v cene'],
  'LF-SVC-015':['1 osobný tréning s trénerkou','Vstup nie je v cene: potrebuješ permanentku alebo jednorazový vstup'],
  'LF-SVC-030':['Tréningový plán vytvorený pre teba','Osobné tréningy nie sú v cene, dokúpiš si ich samostatne'],
@@ -537,7 +538,7 @@ const facts=s=>FACTS[s.code]||(s.unit==='mesiac'?['Platí '+s.units+' '+plural(+
 function finder(list){
   const has=c=>list.find(s=>s.code===c), adult=u=>list.filter(s=>s.category==='Dospelí'&&s.unit===u).sort((a,b)=>a.units-b.units);
   const single=has('LF-SVC-001'), multi=adult('vstup').filter(s=>s.units>1), months=adult('mesiac');
-  const coach=[['LF-SVC-036','Potrebujem začať'],['LF-SVC-015','Osobný tréning'],['LF-SVC-030','Plán na mieru']].filter(([c])=>has(c));
+  const coach=[['LF-SVC-036','Potrebujem začať'],['LF-SVC-015','Osobný tréning'],['LF-SVC-030','Plán na mieru'],['LF-SVC-041','Meranie tela']].filter(([c])=>has(c));
   const known=s=>['Dospelí'].includes(s.category)||s.category.startsWith('Študenti')||FACTS[s.code];
   const other=list.filter(s=>!known(s));
   const freq=[single&&['once','Občas'],multi.length&&['some','Nepravidelne'],months.length&&['regular','Pravidelne']].filter(Boolean);
@@ -593,6 +594,7 @@ function finder(list){
       full.onclick=()=>{$('full').open=true};
       const res=el('div',{className:'res appear'},el('h3',{textContent:s.name}),price,
         el('ul',{},...facts(s).map(t=>el('li',{textContent:t}))));
+      if(s.lifecycle==='PILOT')res.prepend(el('span',{className:'tag',textContent:'Pilotná služba'}));
       if(pick.need==='self'&&pick.disc&&!['LF-SVC-011','LF-SVC-012'].includes(s.code))
         res.append(el('p',{className:'note',textContent:'Zľava platí na jednorazový vstup a mesačnú permanentku.'}));
       res.append(el('div',{className:'cta'},el('a',{className:'btn',href:'tel:+421908891961',textContent:'Zavolať a dohodnúť'}),full));
