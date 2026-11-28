@@ -17,7 +17,7 @@ export const PACKS = {
   mem: { id: 'LF-SVC-002', name: 'Mesačná permanentka', price: 47, suffix: ' / mesiac', items: [['Pravidelný prístup do fitness', 'Chodíš, kedy ti to vyhovuje, za jednu pevnú mesačnú cenu.']], benefit: 'Jednoduché pravidelné cvičenie za pevnú cenu.' },
   pt: { id: 'LF-SVC-015', name: 'Osobný tréning', price: 18, suffix: ' + vstup', items: [['1 individuálny tréning', 'Jedna vedená hodina len pre teba s certifikovaným trénerom, zameraná presne na to, čo potrebuješ. Vstup sa platí zvlášť.']], benefit: 'Individuálna pomoc presne podľa tvojej potreby.' },
   grp: { id: 'LF-SVC-031', name: 'Skupinový tréning', price: 8, suffix: '', pilot: true, items: [['1 hodina vedeného kondične-silového tréningu', 'Hodina cvičenia pod vedením trénera, ktorá spája kondíciu a silu.'], ['Vstup počas tréningu', 'Vstup do fitness počas tréningu máš v cene.']], benefit: 'Odborné vedenie za nižšiu cenu než osobný tréning.' },
-  plan: { id: 'LF-SVC-030', name: 'Tréningový plán na mieru', price: 150, suffix: '', items: [['Individuálny tréningový plán', 'Plán vytvorený presne pre teba, podľa tvojich možností a potrieb.'], ['3 osobné tréningy', 'Na troch vedených tréningoch si plán prejdeš a naučíš sa ho správne cvičiť.'], ['Vstup počas týchto tréningov', 'Vstup do fitness počas týchto tréningov máš v cene.']], benefit: 'Dostaneš konkrétny plán vytvorený pre teba.' },
+  plan: { id: 'LF-SVC-030', name: 'Tréningový plán na mieru', price: 100, suffix: '', items: [['Individuálny tréningový plán', 'Plán vytvorený presne pre teba, podľa tvojich možností a potrieb.']], benefit: 'Dostaneš konkrétny plán vytvorený pre teba. Osobné tréningy si dokúpiš samostatne.' },
 };
 
 // Decision tree: each option leads to another question (n) or to a pack (p).
@@ -39,7 +39,7 @@ export const TREE = {
   t3: { q: 'Akú pomoc chceš?', o: [
     { l: 'Individuálny tréning', s: 'Hodina len pre mňa.', p: 'pt' },
     { l: 'Vedený tréning v skupine', s: 'Odborné vedenie za nižšiu cenu než osobný tréning.', p: 'grp' },
-    { l: 'Tréningový plán na mieru', s: 'Plán a 3 osobné tréningy.', p: 'plan' } ] },
+    { l: 'Tréningový plán na mieru', s: 'Plán vytvorený pre teba, tréningy zvlášť.', p: 'plan' } ] },
 };
 
 // Walks the tree along the chosen option indexes. Pure, so it can be tested.
