@@ -64,7 +64,7 @@ nav a:hover{text-decoration:underline;text-decoration-color:var(--pink);text-dec
 .info small{display:block;color:#ffb3cc;font-weight:500;font-size:.85rem}
 .info li{font-weight:500;line-height:1.4}
 
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .card img{aspect-ratio:4/3;object-fit:cover;width:100%}
 
@@ -483,6 +483,7 @@ const eur=v=>new Intl.NumberFormat('sk-SK',{maximumFractionDigits:2,minimumFract
 const per=s=>s.units>1&&['vstup','mesiac'].includes(s.unit)?eur(s.price_eur/s.units)+' / '+s.unit:s.unit==='hodina'?'cena za hodinu':'';
 
 function render(list){
+  list=list.map(s=>NAMES[s.code]?{...s,name:NAMES[s.code]}:s);
   const adult=s=>s.category==='Dospelí', discount=s=>s.category.startsWith('Študenti');
   const entry=s=>(adult(s)||discount(s))&&['vstup','mesiac'].includes(s.unit);
   // Výrez fotiek na výšku v kartách
@@ -522,7 +523,10 @@ function render(list){
 // Ponuka a ceny idú z databázy; texty „čo dostaneš“ udržiavaj podľa podmienok služby.
 const pick={need:null,sub:null,size:null,disc:false};
 const plural=(n,a,b,c)=>n===1?a:n<5?b:c;
+// Názvy pre web tam, kde je v databáze interný názov.
+const NAMES={'LF-SVC-036':'Lady Fitness START'};
 const FACTS={
+ 'LF-SVC-036':['Asi 60 minút so zaškolenou osobou','Meranie tela InBody a krátke vysvetlenie výsledkov','Zoznámenie s fitkom','Praktická ukážka 5–8 strojov alebo pomôcok','Pripravený tréningový plán a vysvetlenie, ako ho používať','Vstup do fitka počas STARTu je v cene'],
  'LF-SVC-015':['1 osobný tréning s trénerkou','Vstup nie je v cene: potrebuješ permanentku alebo jednorazový vstup'],
  'LF-SVC-030':['Tréningový plán vytvorený pre teba','Osobné tréningy nie sú v cene, dokúpiš si ich samostatne'],
  'LF-SVC-019':['Zumba priamo vo vašej materskej škole','Cena je za jednu hodinu']
@@ -533,11 +537,11 @@ const facts=s=>FACTS[s.code]||(s.unit==='mesiac'?['Platí '+s.units+' '+plural(+
 function finder(list){
   const has=c=>list.find(s=>s.code===c), adult=u=>list.filter(s=>s.category==='Dospelí'&&s.unit===u).sort((a,b)=>a.units-b.units);
   const single=has('LF-SVC-001'), multi=adult('vstup').filter(s=>s.units>1), months=adult('mesiac');
-  const coach=[['LF-SVC-015','Jeden tréning'],['LF-SVC-030','Plán na mieru']].filter(([c])=>has(c));
+  const coach=[['LF-SVC-036','Potrebujem začať'],['LF-SVC-015','Osobný tréning'],['LF-SVC-030','Plán na mieru']].filter(([c])=>has(c));
   const known=s=>['Dospelí'].includes(s.category)||s.category.startsWith('Študenti')||FACTS[s.code];
   const other=list.filter(s=>!known(s));
   const freq=[single&&['once','Občas'],multi.length&&['some','Nepravidelne'],months.length&&['regular','Pravidelne']].filter(Boolean);
-  const needs=[freq.length&&['self','Chcem cvičiť sama'],coach.length&&['coach','Chcem pomoc trénerky'],
+  const needs=[freq.length&&['self','Chcem cvičiť sama'],coach.length&&['coach','Chcem pomoc'],
     other.length&&['other','Ďalšie služby']].filter(Boolean); // detská Zumba je pre škôlky, do výberu klientky nepatrí
   document.querySelectorAll('[data-finder]').forEach(n=>n.hidden=!needs.length);
 
